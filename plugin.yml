@@ -1,0 +1,7 @@
+name: CustomPVP
+main: CustomPVP\Main
+api: [4.0.0]
+version: 1.0.0
+author: HenryDM
+description: Simple Plugin To Customize PvP In Your Server
+website: https://github.com/Henry12960
