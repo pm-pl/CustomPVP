@@ -16,7 +16,7 @@ class Main extends PluginBase implements Listener {
 	
 	public function onEnable() : void {
 		
-		$this->getLogger()->info(TextFormat::colorize("&aPlugin Enable"));
+		$this->getLogger()->info(TextFormat::colorize("&aCustom PVP By HenryDM"));
 		
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		
