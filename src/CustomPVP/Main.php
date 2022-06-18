@@ -1,7 +1,6 @@
 <?php
 namespace CustomPVP;
 
-
 use pocketmine\plugin\PluginBase;
 use pocketmine\plugin\Plugin;
 use pocketmine\event\Listener;
@@ -17,6 +16,7 @@ class Main extends PluginBase implements Listener {
 	public function onEnable() : void {
 		
 		$this->getLogger()->info(TextFormat::colorize("&aCustom PVP By HenryDM"));
+		$this->getLogger()->info(TextFormat::colorize("&ePlugin Enable!"));
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
 		$this->saveResource("config.yml");
@@ -28,3 +28,4 @@ class Main extends PluginBase implements Listener {
 		return self::$instance;
 		
 	}
+}
