@@ -1,5 +1,5 @@
 name: CustomPVP
-main: CustomPVP\Main
+main: HenryDM\CustomPVP\Main
 api: [4.0.0]
 version: 1.0.0
 author: HenryDM
