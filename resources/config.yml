@@ -1,3 +1,4 @@
+---
 #   _____          _                  _______      _______  
 #  / ____|        | |                |  __ \ \    / /  __ \ 
 # | |    _   _ ___| |_ ___  _ __ ___ | |__) \ \  / /| |__) |
@@ -11,7 +12,7 @@
 # Settings:
 
 # Kill Message
-kill-message: "§c{victim} was killed by {killer}"
+kill-message: "§c{victim} was killed by {killer}!"
 
 # PvP cooldown
 cooldown-time: 1.6
@@ -30,3 +31,10 @@ knockback: true
 restore-helth: true
 # Worlds
 restore-worlds: [KitPvP, Arena] #Examples
+
+# Soup PvP
+soup-message: "§aLife successfully restored."
+regenerate-level: 5
+# Use true to activate
+soup-pvp: true
+...
