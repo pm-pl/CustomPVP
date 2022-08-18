@@ -12,26 +12,18 @@ use HenryDM\CustomPVP\Main;
 
 class EventListener implements Listener {
 	
-	private $main;
-	
+private $main;
+
 	public function __construct(Main $main) {
-		
 		$this->main = $main;
-		
 	}
 	
 	public function onDamage(EntityDamageEvent $ev) : void {
-		
-		
-		$ev->setAttackCooldown($ev->getAttackCooldown() - $this->main->getConfig()->get("cooldown"));
-		
+		$event->setAttackCooldown($ev->getAttackCooldown() - $this->main->getConfig()->get("cooldown"));
 	}
 	
-	public function onEntity(EntityDamageByEntityEvent $ev) : void {
-		
-		
-		$ev->setKnockBack($this->main->getConfig()->get("knockback") * $ev->getKnockBack());
+	public function onEntity(EntityDamageByEntityEvent $ev) : void {	
+		$event->setKnockBack($this->main->getConfig()->get("knockback") * $event->getKnockBack());
 		
 	}
-	
 }
