@@ -18,8 +18,8 @@ private $main;
 		$this->main = $main;
 	}
 	
-	public function onDamage(EntityDamageEvent $ev) : void {
-		$event->setAttackCooldown($ev->getAttackCooldown() - $this->main->getConfig()->get("cooldown"));
+	public function onDamage(EntityDamageEvent $event) : void {
+		$event->setAttackCooldown($event->getAttackCooldown() - $this->main->getConfig()->get("cooldown"));
 	}
 	
 	public function onEntity(EntityDamageByEntityEvent $ev) : void {	
