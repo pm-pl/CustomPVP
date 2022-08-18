@@ -18,6 +18,10 @@ class Message implements Listener {
 
 private $main;
 
+	public function __construct(Main $main) {
+		$this->main = $main;
+	}
+
     public function onDeath(PlayerDeathEvent $event): void {
       if($this->main->getConfig()->get("message") === true) {		
        $player = $event->getPlayer();
