@@ -7,6 +7,7 @@ use pocketmine\player\Player;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerItemUseEvent;
 use pocketmine\plugin\PluginBase;
+use pocketmine\item\ItemFactory;
 use HenryDM\CustomPVP\Main;
 
 class SoupPvP extends PluginBase implements Listener {
@@ -28,7 +29,7 @@ private $main;
                 } else { 
                     $player->setHealth($health + $this->main->getConfig()->get("regenerate-level"));
 		    $player->sendActionBarMessage($this->main->getConfig()->get("soup-message"));
-                    $player->getInventory()->removeItem(Item::get($item->getId(), 0, 1));
+                    $player->getInventory()->removeItem(ItemFactory::getInstance()->get($item->getId(), 0, 1));
 	         }
 	     }
         }
