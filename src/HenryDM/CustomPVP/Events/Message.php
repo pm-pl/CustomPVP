@@ -32,7 +32,7 @@ private $main;
                     if($cause instanceof EntityDamageByEntityEvent) {
                         $damager = $cause->getDamager();
                         if($damager instanceof Player) {
-                            $message = str_replace(["{victin}", "{killer}"], [$event->getPlayer()->getName(), $damager->getName()], $this->main->getConfig()->get("kill-message"));
+                            $message = str_replace(["{victim}", "{killer}"], [$event->getPlayer()->getName(), $damager->getName()], $this->main->getConfig()->get("kill-message"));
                             $event->setDeathMessage($message);
                         }
                    }
