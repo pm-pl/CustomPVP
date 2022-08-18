@@ -1,4 +1,3 @@
----
 #   _____          _                  _______      _______  
 #  / ____|        | |                |  __ \ \    / /  __ \ 
 # | |    _   _ ___| |_ ___  _ __ ___ | |__) \ \  / /| |__) |
@@ -33,8 +32,8 @@ restore-helth: true
 restore-worlds: [KitPvP, Arena] #Examples
 
 # Soup PvP
-soup-message: "§aLife successfully restored."
 regenerate-level: 5
+# Soup Message
+soup-message: "§aLife successfully restored."
 # Use true to activate
 soup-pvp: true
-...
