@@ -14,7 +14,7 @@ use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\world\World;
 use HenryDM\CustomPVP\Main;
 
-class EventListener implements Listener {
+class Message implements Listener {
 
 private $main;
 
