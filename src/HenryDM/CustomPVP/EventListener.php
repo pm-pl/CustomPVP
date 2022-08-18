@@ -10,7 +10,7 @@ use pocketmine\utils\TextFormat;
 use pocketmine\utils\Config;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
-use use pocketmine\event\entity\EntityDeathEvent;
+use pocketmine\event\entity\EntityDeathEvent;
 use pocketmine\world\World;
 use HenryDM\CustomPVP\Main;
 
