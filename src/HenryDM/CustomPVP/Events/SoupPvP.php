@@ -7,6 +7,7 @@ use pocketmine\player\Player;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerItemUseEvent;
 use pocketmine\plugin\PluginBase;
+use HenryDM\CustomPVP\Main;
 
 class SoupPvP extends PluginBase implements Listener {
 
