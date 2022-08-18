@@ -31,8 +31,9 @@ private $main;
                             $message = str_replace(["{victin}", "{killer}"], [$event->getPlayer()->getName(), $damager->getName()], $this->main->getConfig()->get("kill-message"));
                             $event->setDeathMessage($message);
                         }
-                    }
-			}
-		}
-	}
+                   }
+	       }
+           } 
+       } 
+   }
 }	
