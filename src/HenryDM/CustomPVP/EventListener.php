@@ -22,7 +22,7 @@ private $main;
 		$event->setAttackCooldown($event->getAttackCooldown() - $this->main->getConfig()->get("cooldown"));
 	}
 	
-	public function onEntity(EntityDamageByEntityEvent $ev) : void {	
+	public function onEntity(EntityDamageByEntityEvent $event) : void {	
 		$event->setKnockBack($this->main->getConfig()->get("knockback") * $event->getKnockBack());
 		
 	}
