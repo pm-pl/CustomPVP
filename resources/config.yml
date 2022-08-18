@@ -18,3 +18,10 @@ cooldown: 1.6
 #PvP knockback
 knockback: 0.50
 #Info: DO NOT SWITCH TO MORE THAN 5.0 SUBJECT TO BUGS!
+# ==================
+# Restore Health on Kill player
+# Use true to activate 
+Restore-Helth: true
+# Worlds
+Restore-Worlds: [KitPvP, Arena] #Examples
+# ==================
