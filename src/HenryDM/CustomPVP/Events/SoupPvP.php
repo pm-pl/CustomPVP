@@ -21,7 +21,7 @@ private $main;
             $player = $event->getPlayer();
             $item = $event->getItem();
             $health = $player->getHealth();
-              if($player->getInventory()->getItemInHand()->getId("459")) {
+              if($player->getInventory()->getItemInHand()->getId(459)) {
                 if($player->getHealth() == $player->getMaxHealth()) {
                   $event->cancel();	
                 } else { 
