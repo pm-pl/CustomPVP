@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace HenryDM\CustomPVP;
 
@@ -10,7 +11,7 @@ use pocketmine\utils\TextFormat;
 use pocketmine\utils\Config;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
-use pocketmine\event\entity\EntityDeathEvent;
+use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\world\World;
 use HenryDM\CustomPVP\Main;
 
@@ -39,17 +40,17 @@ private $main;
 	}
 
 #==========================
-#    Restore Health
+#     Restore Health
 #==========================
 
-        public function onPlayerDeath(EntityDeathEvent $event) : void {
-         if($this->getConfig()->get("restore-helth") === true) {
-          $damage = $event->getEntity()->getLastDamageCause();
-            if($damage instanceof EntityDamageByEntityEvent) {
+    public function onPlayerDeath(PlayerDeathEvent $event) : void{
+      if($this->getConfig()->get("restore-health") === true){
+        $cause = $event->getPlayer()->getLastDamageCause();
+        if($cause instanceof EntityDamageByEntityEvent){
             $damager = $cause->getDamager();
-             if($damager instanceof Player) {
-              if(in_array($event->getEntity()->getWorld()->getFolderName(), $this->getConfig()->get("restore-worlds"))) {
-                 $damager->setHealth($damager->getMaxHealth());
+            if($damager instanceof Player){
+                if(in_array($event->getPlayer()->getWorld()->getFolderName(), $this->getConfig()->get("restore-worlds"))){
+                    $damager->setHealth($damager->getMaxHealth());
                 }
 	     }
           }			
