@@ -2,15 +2,13 @@
 
 namespace HenryDM\CustomPVP\Events;
 
-
-use pocketmine\player\Player;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerItemUseEvent;
 use pocketmine\plugin\PluginBase;
 use pocketmine\item\ItemFactory;
 use HenryDM\CustomPVP\Main;
 
-class SoupPvP extends PluginBase implements Listener {
+class SoupPvP implements Listener {
 
 private $main;
 
