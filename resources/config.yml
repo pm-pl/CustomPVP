@@ -11,7 +11,9 @@
 # Settings:
 
 # PvP cooldown
-cooldown: 1.6
+cooldown-time: 1.6
+# Use true to activate
+cooldown: true
 # Info: time in milliseconds for the player to hit another player again
 
 # PvP knockback
