@@ -15,7 +15,8 @@ cooldown: 1.6
 # Info: time in milliseconds for the player to hit another player again
 
 # PvP knockback
-knockback: 0.50
+knockback: true
+knockback-level: 0.50
 # Info: DO NOT SWITCH TO MORE THAN 5.0 SUBJECT TO BUGS!
 
 # Restore Health on Kill player
