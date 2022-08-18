@@ -1,4 +1,3 @@
-# ==================================================
 #   _____          _                  _______      _______  
 #  / ____|        | |                |  __ \ \    / /  __ \ 
 # | |    _   _ ___| |_ ___  _ __ ___ | |__) \ \  / /| |__) |
@@ -6,22 +5,21 @@
 # | |___| |_| \__ \ || (_) | | | | | | |      \  /  | |     
 #  \_____\__,_|___/\__\___/|_| |_| |_|_|       \/   |_|     
 #                                                                                                                     
-#A simple plugin to customize pvp on your server 
-#any bugs that come up please report on github: https://github.com/Henry12960
-# ==================================================
-#Settings:
-# ==================
-#PvP cooldown
+# A simple plugin to customize pvp on your server 
+# any bugs that come up please report on github: https://github.com/Henry12960
+
+# Settings:
+
+# PvP cooldown
 cooldown: 1.6
-#Info: time in milliseconds for the player to hit another player again
-# ==================
-#PvP knockback
+# Info: time in milliseconds for the player to hit another player again
+
+# PvP knockback
 knockback: 0.50
-#Info: DO NOT SWITCH TO MORE THAN 5.0 SUBJECT TO BUGS!
-# ==================
+# Info: DO NOT SWITCH TO MORE THAN 5.0 SUBJECT TO BUGS!
+
 # Restore Health on Kill player
 # Use true to activate 
 restore-helth: true
 # Worlds
 restore-worlds: [KitPvP, Arena] #Examples
-# ==================
