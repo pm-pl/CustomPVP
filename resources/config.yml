@@ -21,7 +21,7 @@ knockback: 0.50
 # ==================
 # Restore Health on Kill player
 # Use true to activate 
-Restore-Helth: true
+restore-helth: true
 # Worlds
-Restore-Worlds: [KitPvP, Arena] #Examples
+restore-worlds: [KitPvP, Arena] #Examples
 # ==================
