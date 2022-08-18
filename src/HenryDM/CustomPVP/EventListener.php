@@ -30,6 +30,7 @@ private $main;
              if($this->main->getConfig()->get("cooldown") === true) {
 		$event->setAttackCooldown($event->getAttackCooldown() - $this->main->getConfig()->get("cooldown-time"));
 	}
+     }	 	
 	
 #==========================
 #        KnockBack
@@ -40,6 +41,7 @@ private $main;
 		$event->setKnockBack($this->main->getConfig()->get("knockback-level") * $event->getKnockBack());
 		
 	}
+     }	 
 
 #==========================
 #     Restore Health
