@@ -10,6 +10,7 @@ use pocketmine\utils\TextFormat;
 use pocketmine\utils\Config;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
+use use pocketmine\event\entity\EntityDeathEvent;
 use pocketmine\world\World;
 use HenryDM\CustomPVP\Main;
 
@@ -41,7 +42,7 @@ private $main;
 #    Restore Health
 #==========================
 
-        public function onPlayerDeath(PlayerDeathEvent $event) : void {
+        public function onPlayerDeath(EntityDeathEvent $event) : void {
          if($this->getConfig()->get("Restore-Helth") === true){
           $damage = $event->getPlayer()->getLastDamageCause();
           $damager = $cause->getDamager();
