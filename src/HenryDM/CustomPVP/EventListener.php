@@ -27,7 +27,8 @@ private $main;
 #        Cooldown
 #==========================	
 	public function onDamage(EntityDamageEvent $event) : void {
-		$event->setAttackCooldown($event->getAttackCooldown() - $this->main->getConfig()->get("cooldown"));
+             if($this->main->getConfig()->get("cooldown") === true) {
+		$event->setAttackCooldown($event->getAttackCooldown() - $this->main->getConfig()->get("cooldown-time"));
 	}
 	
 #==========================
@@ -35,7 +36,8 @@ private $main;
 #==========================
 
 	public function onEntity(EntityDamageByEntityEvent $event) : void {	
-		$event->setKnockBack($this->main->getConfig()->get("knockback") * $event->getKnockBack());
+             if($this->main->getConfig()->get("knockback") === true) {
+		$event->setKnockBack($this->main->getConfig()->get("knockback-level") * $event->getKnockBack());
 		
 	}
 
