@@ -17,7 +17,7 @@ private $main;
 		$this->main = $main;
 	}
 
-        public function onPlayerInteract(PlayerInteractEvent $event) : void {
+        public function onPlayerInteract(PlayerItemUseEvent $event) : void {
           if($this->main->getConfig()->get("soup-pvp") === true) {
             $player = $event->getPlayer();
             $item = $event->getItem();
