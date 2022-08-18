@@ -8,6 +8,7 @@ use pocketmine\event\Event;
 use pocketmine\utils\TextFormat;
 use pocketmine\utils\Config;
 use HenryDM\CustomPVP\EventListener;
+use HenryDM\CustomPVP\Events;
 
 class Main extends PluginBase implements Listener {
 	
