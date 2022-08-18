@@ -43,12 +43,12 @@ private $main;
 #==========================
 
         public function onPlayerDeath(EntityDeathEvent $event) : void {
-         if($this->getConfig()->get("Restore-Helth") === true) {
+         if($this->getConfig()->get("restore-helth") === true) {
           $damage = $event->getEntity()->getLastDamageCause();
             if($damage instanceof EntityDamageByEntityEvent) {
             $damager = $cause->getDamager();
              if($damager instanceof Player) {
-              if(in_array($event->getEntity()->getWorld()->getFolderName(), $this->getConfig()->get("Restore-Worlds"))) {
+              if(in_array($event->getEntity()->getWorld()->getFolderName(), $this->getConfig()->get("restore-worlds"))) {
                  $damager->setHealth($damager->getMaxHealth());
                 }
 	     }
