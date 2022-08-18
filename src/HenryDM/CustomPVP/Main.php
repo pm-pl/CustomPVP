@@ -1,14 +1,17 @@
 <?php
 namespace HenryDM\CustomPVP;
 
+# Pocketmine Libs
 use pocketmine\plugin\PluginBase;
 use pocketmine\plugin\Plugin;
 use pocketmine\event\Listener;
 use pocketmine\event\Event;
 use pocketmine\utils\TextFormat;
 use pocketmine\utils\Config;
+
+# Plugin Libs
 use HenryDM\CustomPVP\EventListener;
-use HenryDM\CustomPVP\Events\Message;
+use HenryDM\CustomPVP\Events;
 
 class Main extends PluginBase implements Listener {
 	
