@@ -13,6 +13,7 @@ use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\world\World;
 use HenryDM\CustomPVP\Main;
+use function str_replace;
 
 class Message implements Listener {
 
