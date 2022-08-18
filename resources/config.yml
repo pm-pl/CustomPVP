@@ -10,6 +10,9 @@
 
 # Settings:
 
+# Kill Message
+kill-message: "§c{victim} was killed by {killer}"
+
 # PvP cooldown
 cooldown-time: 1.6
 # Use true to activate
