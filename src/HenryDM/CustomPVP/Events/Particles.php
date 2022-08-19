@@ -37,11 +37,11 @@ private $main;
                    if($config("particle") == true) {
                     if(in_array($event->getEntity()->getWorld()->getFolderName(), $this->main->getConfig()->get("particle-worlds"))){
                       if($config("critical-particle") == true) {
-                     $world->addParticle($position, new AngryVillagerParticle(1));
-                     $world->addParticle($position, new AngryVillagerParticle(1));
-                     $world->addParticle($position->add(1, 0, 0), new AngryVillagerParticle(1));
-                     $world->addParticle($position->add(0, 1, 0), new AngryVillagerParticle(1));
-                     $world->addParticle($position->add(0, 0, 1), new AngryVillagerParticle(1));
+                         $world->addParticle($position, new CriticalParticle(1));
+                         $world->addParticle($position, new CriticalParticle(1));
+                         $world->addParticle($position->add(1, 0, 0), new CriticalParticle;
+                         $world->addParticle($position->add(0, 1, 0), new CriticalParticle;
+                         $world->addParticle($position->add(0, 0, 1), new CriticalParticle;
                }
             }
         } 
