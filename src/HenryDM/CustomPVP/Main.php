@@ -11,7 +11,8 @@ use pocketmine\utils\Config;
 
 # Plugin Libs
 use HenryDM\CustomPVP\EventListener;
-use HenryDM\CustomPVP\Events;
+use HenryDM\CustomPVP\Events\Message;
+use HenryDM\CustomPVP\Events\SoupPvP;
 
 class Main extends PluginBase implements Listener {
 	
