@@ -22,7 +22,7 @@ class Main extends PluginBase {
 	
 	private static Main $instance;
 	
-        private Config $cfg;
+        public Config $cfg;
 
 	public function onEnable() : void {
 	$this->getServer()->getPluginManager()->registerEvents(new Cooldown($this), $this);
