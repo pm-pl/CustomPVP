@@ -9,7 +9,7 @@ use pocketmine\utils\Config;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 
-class Cooldown implements Listener {
+class HealthRestore implements Listener {
 
 private $main;
 
