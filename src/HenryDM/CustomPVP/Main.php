@@ -21,7 +21,12 @@ class Main extends PluginBase {
 	private static $instance;
 	
 	public function onEnable() : void {
-        $this->getServer()->getPluginManager()->registerEvents($this, $this);
+	# Event loading
+	$this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
+	$this->getServer()->getPluginManager()->registerEvents(new Cooldown($this), $this);
+	$this->getServer()->getPluginManager()->registerEvents(new KnockBack($this), $this);
+	$this->getServer()->getPluginManager()->registerEvents(new Message($this), $this);
+	$this->getServer()->getPluginManager()->registerEvents(new SoupPvP($this), $this);
 	$this->saveResource("config.yml");
 	self::$instance = $this;
       }
