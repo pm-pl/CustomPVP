@@ -3,7 +3,7 @@
 namespace HenryDM\CustomPVP\Events;
 
 use HennryDM\CustomPVP\Main;
-use pocketmine\player\Player;
+use pocketmine\entity\Entity;
 use pocketmine\event\Listener;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\Event;
@@ -17,14 +17,14 @@ private $main;
 	}
 
       public function onEntityDamage(EntityDamageByEntityEvent $event) {
-       $player = $event->getPlayer();
+       $player = $event->getEntity();
        $health = $player->getHealth(); 
        $maxhealth = $player->getMaxHealth();
         if($this->main->getConfig()->get("leeching-mode") === true) {
           if($health() === $maxhealth()) {
             $event->cancel();	 
          } else { 
-             if(in_array($event->getPlayer()->getWorld()->getFolderName(), $this->main->getConfig()->get("leeching-worlds"))) {
+             if(in_array($player()->getWorld()->getFolderName(), $this->main->getConfig()->get("leeching-worlds"))) {
                $player->setHealth($health + $this->main->getConfig()->get("leeching-level"));
             }
          }
