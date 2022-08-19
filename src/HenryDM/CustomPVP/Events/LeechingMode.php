@@ -18,7 +18,7 @@ class LeechingMode implements Listener {
 
         public function onDamage(EntityDamageByEntityEvent $event) : void {
           if($this->main->getConfig()->get("leeching-mode") === true) {
-            $player = $event->getPlayer();
+            $player = $event->getEntity();
                 if($player->getHealth() == $player->getMaxHealth()) {
                   $event->cancel();	
                 } else { 
