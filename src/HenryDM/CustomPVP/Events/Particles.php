@@ -17,9 +17,9 @@ class Particles implements Listener {
 	}
 
                public function onPlayerDeath(PlayerDeathEvent $event) { 
-                 $world = $player()->getWorld();
-                 $player = $event()->getPlayer();
-                 $position = $player()->getPosition();
+                 $world = $player->getWorld();
+                 $player = $event->getPlayer();
+                 $position = $player->getPosition();
   
           
                    if($config("particle") == true) {
