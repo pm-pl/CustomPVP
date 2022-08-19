@@ -42,12 +42,54 @@ class Particles implements Listener {
                           $world->addParticle($position->add(0, 1, 0), new CriticalParticle(1));
                           $world->addParticle($position->add(0, 0, 1), new CriticalParticle(1));
 	        }
+                        if($this->main->getConfig()->get("explode-particle") === true) {
+                          $world->addParticle($position, new ExplodeParticle());
+                          $world->addParticle($position, new ExplodeParticle());
+                          $world->addParticle($position->add(1, 0, 0), new ExplodeParticle());
+                          $world->addParticle($position->add(0, 1, 0), new ExplodeParticle());
+                          $world->addParticle($position->add(0, 0, 1), new ExplodeParticle());
+	        }
+                        if($this->main->getConfig()->get("flame-particle") === true) {
+                          $world->addParticle($position, new FlameParticle());
+                          $world->addParticle($position, new FlameParticle());
+                          $world->addParticle($position->add(1, 0, 0), new FlameParticle());
+                          $world->addParticle($position->add(0, 1, 0), new FlameParticle());
+                          $world->addParticle($position->add(0, 0, 1), new FlameParticle());
+	        }
                         if($this->main->getConfig()->get("heart-particle") === true) {
                           $world->addParticle($position, new HeartParticle(1));
                           $world->addParticle($position, new HeartParticle(1));
                           $world->addParticle($position->add(1, 0, 0), new HeartParticle(1));
                           $world->addParticle($position->add(0, 1, 0), new HeartParticle(1));
                           $world->addParticle($position->add(0, 0, 1), new HeartParticle(1));
+		}
+                        if($this->main->getConfig()->get("lava-particle") === true) {
+                          $world->addParticle($position, new LavaParticle());
+                          $world->addParticle($position, new LavaParticle());
+                          $world->addParticle($position->add(1, 0, 0), new LavaParticle());
+                          $world->addParticle($position->add(0, 1, 0), new LavaParticle());
+                          $world->addParticle($position->add(0, 0, 1), new LavaParticle());
+		}
+                        if($this->main->getConfig()->get("nether-particle") === true) {
+                          $world->addParticle($position, new PortalParticle());
+                          $world->addParticle($position, new PortalParticle());
+                          $world->addParticle($position->add(1, 0, 0), new PortalParticle());
+                          $world->addParticle($position->add(0, 1, 0), new PortalParticle());
+                          $world->addParticle($position->add(0, 0, 1), new PortalParticle());
+		}
+                        if($this->main->getConfig()->get("redstone-particle") === true) {
+                          $world->addParticle($position, new RedstoneParticle(3));
+                          $world->addParticle($position, new RedstoneParticle(3));
+                          $world->addParticle($position->add(1, 0, 0), new RedstoneParticle(3));
+                          $world->addParticle($position->add(0, 1, 0), new RedstoneParticle(3));
+                          $world->addParticle($position->add(0, 0, 1), new RedstoneParticle(3));
+		}
+                        if($this->main->getConfig()->get("snow-particle") === true) {
+                          $world->addParticle($position, new SnowballPoofParticle());
+                          $world->addParticle($position, new SnowballPoofParticle());
+                          $world->addParticle($position->add(1, 0, 0), new SnowballPoofParticle());
+                          $world->addParticle($position->add(0, 1, 0), new SnowballPoofParticle());
+                          $world->addParticle($position->add(0, 0, 1), new SnowballPoofParticle());
 		}
             }
         }
