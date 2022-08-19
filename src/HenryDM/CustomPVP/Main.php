@@ -19,7 +19,7 @@ use HenryDM\CustomPVP\Events\SoupPvP;
 
 class Main extends PluginBase {
 	
-	private static $instance;
+	private static Main $instance;
 	
 	public function onEnable() : void {
 	# Event loading
@@ -29,6 +29,7 @@ class Main extends PluginBase {
 	$this->getServer()->getPluginManager()->registerEvents(new HealthRestore($this), $this);
 	$this->getServer()->getPluginManager()->registerEvents(new SoupPvP($this), $this);
 	$this->saveResource("config.yml");
+        $this->cfg = new Config($this->getDataFolder() . "config.yml");
 	self::$instance = $this;
       }
 	
