@@ -21,8 +21,6 @@ use HenryDM\CustomPVP\Events\SoupPvP;
 class Main extends PluginBase {
 	
 	private static Main $instance;
-        
-        public Config $cfg;
 	
 	public function onEnable() : void {
 	$this->getServer()->getPluginManager()->registerEvents(new Cooldown($this), $this);
@@ -32,7 +30,6 @@ class Main extends PluginBase {
         $this->getServer()->getPluginManager()->registerEvents(new Particles($this), $this);
 	$this->getServer()->getPluginManager()->registerEvents(new SoupPvP($this), $this);
 	$this->saveResource("config.yml");
-        $this->cfg = new Config($this->getDataFolder() . "config.yml");
 	self::$instance = $this;
       }
 	
