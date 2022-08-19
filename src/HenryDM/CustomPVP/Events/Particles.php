@@ -22,7 +22,7 @@ class Particles implements Listener {
                  $position = $player->getPosition();
   
           
-                   if($config("particle") == true) {
+                   if($this->main->cfg->get("particle") == true) {
                     if(in_array($world->getFolderName(), $this->main->cfg->get("particle-worlds"))){
                      $world->addParticle($position, $this->main->cfg->get("particle-name")(1));
                      $world->addParticle($position, new InkParticle(1));
