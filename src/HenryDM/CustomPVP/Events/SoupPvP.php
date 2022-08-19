@@ -20,7 +20,7 @@ private $main;
     public function onInteract(PlayerInteractEvent $event) : void {
       if ($event->getAction() === PlayerInteractEvent::LEFT_CLICK_AIR || $event->getAction() === PlayerInteractEvent::LEFT_CLICK_BLOCK || $event->getAction() === PlayerInteractEvent::RIGHT_CLICK_AIR || $event->getAction() === PlayerInteractEvent::RIGHT_CLICK_BLOCK) {
       }
-
+    }
         public function onPlayerInteract(PlayerItemUseEvent $event) : void {
           if($this->main->getConfig()->get("soup-pvp") === true) {
             $player = $event->getPlayer();
