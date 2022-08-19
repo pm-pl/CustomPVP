@@ -19,6 +19,6 @@ private $main;
          	public function onDamage(EntityDamageEvent $event) : void {
              if($this->main->getConfig()->get("cooldown") === true) {
 		           $event->setAttackCooldown($event->getAttackCooldown() - $this->main->getConfig()->get("cooldown-time"));
-	      }
+	}
     }	 	
 }	
