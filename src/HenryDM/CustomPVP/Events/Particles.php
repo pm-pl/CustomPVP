@@ -8,7 +8,6 @@ use pocketmine\player\Player;
 use pocketmine\world\World;
 use pocketmine\event\PlayerDeathEvent;
 use pocketmine\world\particle\Particle;
-use pocketmine\world\particle\AngryVillagerParticle;
 use pocketmine\world\particle\BlockBreakParticle;
 use pocketmine\world\particle\BlockForceFieldParticle;
 use pocketmine\world\particle\BlockPunchParticle;
