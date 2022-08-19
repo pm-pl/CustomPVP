@@ -9,7 +9,7 @@
 kill-particles: false
 
 # If you set to true add world's when this feature work's 
-particle-worlds: ["KitPvP, Arena"] #Examples 
+particle-worlds: ["KitPvP, Arena"] # Examples 
 
 # Particles List 
 # Attention: only set to true ONE
