@@ -27,7 +27,7 @@ class Particles implements Listener {
 
                public function onDeath(EntityDeathEvent $event) { 
                  $world = $entity->getWorld();
-                 $entity = $event->getEntity();
+                 $event->getEntity(); = $entity 
                  $position = $entity->getPosition();
           
                    if($this->main->getConfig()->get("particle") == true) {
