@@ -17,7 +17,7 @@ private $main;
 	}
 
                public function onPlayerDeath(PlayerDeathEvent $event) { 
-                 $world = $player()->getWorld
+                 $world = $player()->getWorld();
                  $player = $event()->getPlayer();
                  $position = $player()->getPosition();
                  $config = $this->main->getConfig()->get();
