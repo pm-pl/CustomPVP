@@ -17,13 +17,13 @@ class Particles implements Listener {
 	}
 
                public function onPlayerDeath(PlayerDeathEvent $event) { 
-                 $world = $player->getWorld();
                  $player = $event->getPlayer();
+                 $world = $player->getWorld();
                  $position = $player->getPosition();
   
           
                    if($config("particle") == true) {
-                    if(in_array($event->getPlayer()->getWorld()->getFolderName(), $this->main->cfg->get("particle-worlds"))){
+                    if(in_array($world->getFolderName(), $this->main->cfg->get("particle-worlds"))){
                      $world->addParticle($position, $this->main->cfg->get("particle-name")(1));
                      $world->addParticle($position, new InkParticle(1));
                      $world->addParticle($position->add(1, 0, 0), new InkParticle(1));
