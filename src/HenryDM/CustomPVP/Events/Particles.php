@@ -7,7 +7,6 @@ use HenryDM\CustomPVP\Main;
 use pocketmine\player\Player;
 use pocketmine\world\Position;
 use pocketmine\event\entity\EntityDeathEvent;
-use pocketmine\world\particle\Particle;
 use pocketmine\world\particle\CriticalParticle;
 use pocketmine\world\particle\ExplodeParticle;
 use pocketmine\world\particle\FlameParticle;
@@ -21,22 +20,19 @@ use pocketmine\world\particle\SnowballPoofParticle;
 
 
 class Particles implements Listener {
-
-private $main;
  
-         public function __construct(Main $main) {
+         public function __construct(private Main $main) {
             $this->main = $main;
 	}
 
-               public function onEntityDeath(EntityDeathEvent $event) { 
-                 $world = $entity()->getWorld();
-                 $entity = $event()->getEntity();
-                 $position = $entity()->getPosition();
-                 $config = $this->main->getConfig();
+               public function onDeath(EntityDeathEvent $event) { 
+                 $world = $entity->getWorld();
+                 $entity = $event->getEntity();
+                 $position = $entity->getPosition();
           
-                   if($config("particle") == true) {
-                    if(in_array($event->getEntity()->getWorld()->getFolderName(), $this->main->getConfig()->get("particle-worlds"))){
-                      if($config("critical-particle") == true) {
+                   if($this->main->cfg()->get("particle") == true) {
+                    if(in_array($event->getEntity()->getWorld()->getFolderName(), $this->main->cfg()->get("particle-worlds"))){
+                      if($this->main->cfg()->get("critical-particle") == true) {
                          $world->addParticle($position, new CriticalParticle(1));
                          $world->addParticle($position, new CriticalParticle(1));
                          $world->addParticle($position->add(1, 0, 0), new CriticalParticle(1));
@@ -46,4 +42,4 @@ private $main;
             }
         } 
     }
-}
+}.
