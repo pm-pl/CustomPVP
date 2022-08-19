@@ -30,9 +30,9 @@ class Particles implements Listener {
                  $entity = $event->getEntity();
                  $position = $entity->getPosition();
           
-                   if($this->main->cfg()->get("particle") == true) {
-                    if(in_array($event->getEntity()->getWorld()->getFolderName(), $this->main->cfg()->get("particle-worlds"))){
-                      if($this->main->cfg()->get("critical-particle") == true) {
+                   if($this->main->getConfig()->get("particle") == true) {
+                    if(in_array($event->getEntity()->getWorld()->getFolderName(), $this->main->getConfig()->get("particle-worlds"))){
+                      if($this->main->getConfig()->get("critical-particle") == true) {
                          $world->addParticle($position, new CriticalParticle(1));
                          $world->addParticle($position, new CriticalParticle(1));
                          $world->addParticle($position->add(1, 0, 0), new CriticalParticle(1));
