@@ -24,7 +24,7 @@ class Particles implements Listener {
             $this->main = $main;
 	}
 
-              public function onDeath(EntityDeathEvent $event){
+              public function onDeath(EntityDeathEvent $event) {
                 $entity = $event()->getEntity();
                 $world, = $entity()->getWorld();
                 $position = $entity()->getPosition();
@@ -36,15 +36,7 @@ class Particles implements Listener {
                         $world->addParticle($position->add(1, 0, 0), new CriticalParticle(1));
                         $world->addParticle($position->add(0, 1, 0), new CriticalParticle(1));
                         $world->addParticle($position->add(0, 0, 1), new CriticalParticle(1));
-               }
-            }
-        } 
-    }
-
-	/**
-	 * @return Main
-	 */
-	public function getMain(): Main {
-          return $this->main;
-   }	
+             }
+         }
+    } 
 }
