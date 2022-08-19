@@ -20,5 +20,11 @@ private $main;
              if($this->main->getConfig()->get("knockback") === true) {
 		            $event->setKnockBack($this->main->getConfig()->get("knockback-level") * $event->getKnockBack());
 	      }
-    }	 	
+    }
+	/**
+	 * @return Main
+	 */
+	public function getMain(): Main {
+          return $this->main;
+	}	 	
 }	
