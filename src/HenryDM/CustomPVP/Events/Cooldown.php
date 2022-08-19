@@ -20,5 +20,11 @@ private $main;
              if($this->main->getConfig()->get("cooldown") === true) {
 		           $event->setAttackCooldown($event->getAttackCooldown() - $this->main->getConfig()->get("cooldown-time"));
 	}
-    }	 	
+    }
+	/**
+	 * @return Main
+	 */
+	public function getMain(): Main {
+		return $this->main;
+	}	 	
 }	
