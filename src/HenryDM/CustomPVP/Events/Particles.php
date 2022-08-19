@@ -13,7 +13,6 @@ use pocketmine\world\particle\FlameParticle;
 use pocketmine\world\particle\HappyVillagerParticle;
 use pocketmine\world\particle\HeartParticle;
 use pocketmine\world\particle\LavaDripParticle;
-use pocketmine\world\particle;
 use pocketmine\world\particle\PortalParticle;
 use pocketmine\world\particle\RedstoneParticle;
 use pocketmine\world\particle\SnowballPoofParticle;
@@ -25,19 +24,18 @@ class Particles implements Listener {
             $this->main = $main;
 	}
 
-               public function onDeath(EntityDeathEvent $event) { 
-                 $world = $entity()->getWorld();
-                 $player = $event->getEntity();
-                 $position = $entity()->getPosition();
-          
-                   if($this->main->getConfig()->get("particle") === true) {
-                    if(in_array($player()->getWorld()->getFolderName(), $this->main->getConfig()->get("particle-worlds"))) {
-                      if($this->main->getConfig()->get("critical-particle") === true) {
-                         $world->addParticle($position, new CriticalParticle(1));
-                         $world->addParticle($position, new CriticalParticle(1));
-                         $world->addParticle($position->add(1, 0, 0), new CriticalParticle(1));
-                         $world->addParticle($position->add(0, 1, 0), new CriticalParticle(1));
-                         $world->addParticle($position->add(0, 0, 1), new CriticalParticle(1));
+              public function onDeath(EntityDeathEvent $event){
+                $entity = $event()->getEntity();
+                $world, = $entity()->getWorld();
+                $position = $entity()->getPosition();
+                   if($this->getConfig()->get("kill-particles") === Activate) {
+                     if(in_array($player()->getWorld()->getFolderName(), $this->main->getConfig()->get("particle-worlds"))) {
+
+                        $world->addParticle($position, new CriticalParticle(1));
+                        $world->addParticle($position, new CriticalParticle(1));
+                        $world->addParticle($position->add(1, 0, 0), new CriticalParticle(1));
+                        $world->addParticle($position->add(0, 1, 0), new CriticalParticle(1));
+                        $world->addParticle($position->add(0, 0, 1), new CriticalParticle(1));
                }
             }
         } 
