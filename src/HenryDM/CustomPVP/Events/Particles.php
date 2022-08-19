@@ -11,10 +11,8 @@ use pocketmine\world\particle\Particle;
 use pocketmine\wolrd\particle\InkParticle;
 
 class Particles implements Listener {
-
-private $main;
  
-         public function __construct(Main $main) {
+        public function __construct(private Main $main) {
             $this->main = $main;
 	}
 
@@ -22,11 +20,11 @@ private $main;
                  $world = $player()->getWorld();
                  $player = $event()->getPlayer();
                  $position = $player()->getPosition();
-                 $config = $this->main->getConfig();
+  
           
                    if($config("particle") == true) {
-                    if(in_array($event->getPlayer()->getWorld()->getFolderName(), $this->main->getConfig()->get("particle-worlds"))){
-                     $world->addParticle($position, new $config->get("particle-name")(1));
+                    if(in_array($event->getPlayer()->getWorld()->getFolderName(), $this->main->cfg->get("particle-worlds"))){
+                     $world->addParticle($position, $this->main->cfg->get("particle-name")(1));
                      $world->addParticle($position, new InkParticle(1));
                      $world->addParticle($position->add(1, 0, 0), new InkParticle(1));
                      $world->addParticle($position->add(0, 1, 0), new InkParticle(1));
