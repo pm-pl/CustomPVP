@@ -42,6 +42,7 @@ private $main;
                      $world->addParticle($position->add(1, 0, 0), new AngryVillagerParticle(1));
                      $world->addParticle($position->add(0, 1, 0), new AngryVillagerParticle(1));
                      $world->addParticle($position->add(0, 0, 1), new AngryVillagerParticle(1));
+               }
             }
         } 
     }
