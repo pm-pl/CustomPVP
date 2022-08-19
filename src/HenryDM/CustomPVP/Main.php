@@ -15,6 +15,7 @@ use HenryDM\CustomPVP\Events\Cooldown;
 use HenryDM\CustomPVP\Events\KnockBack;
 use HenryDM\CustomPVP\Events\HealthRestore;
 use HenryDM\CustomPVP\Events\Message;
+use HenryDM\CustomPVP\Events\Particles;
 use HenryDM\CustomPVP\Events\SoupPvP;
 
 class Main extends PluginBase {
