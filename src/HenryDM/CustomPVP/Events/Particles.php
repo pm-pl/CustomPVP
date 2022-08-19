@@ -8,7 +8,7 @@ use pocketmine\world\World;
 use pocketmine\event\PlayerDeathEvent;
 use pocketmine\world\particle\Particle;
 
-class Particle implements Listener {
+class Particles implements Listener {
 
 private $main;
  
