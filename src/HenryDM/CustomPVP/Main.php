@@ -20,6 +20,8 @@ use HenryDM\CustomPVP\Events\SoupPvP;
 class Main extends PluginBase {
 	
 	private static Main $instance;
+        
+        public Config $cfg;
 	
 	public function onEnable() : void {
 	# Event loading
