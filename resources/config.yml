@@ -29,7 +29,9 @@ knockback: true
 # Use true to activate 
 restore-helth: true
 # Worlds
-restore-worlds: [KitPvP, Arena] # Examples
+restore-worlds: 
+  - Arena #Example
+  - KitPvP #Example
 
 # Soup PvP
 # Use true to activate
@@ -37,10 +39,11 @@ soup-pvp: true
 # Regenerate Level
 regenerate-level: 5
 # Soup ID
-soup-id: 459
+# Use 282 to Mushroom Stew and 459 the Beet Stew
+soup-id: 282
 # Soup Message
-soup-message: "§aLife successfully restored."
-
+soup-message: "§aLife successfully restored."                                                 
+                                                       
 # Leeching Mode
 # Use true to activate
 leeching-mode: true
@@ -48,3 +51,23 @@ leeching-mode: true
 leeching-worlds: [KitPvP, Arena] # Examples
 # Leeching Level
 leeching-level: 5
+
+# Kill Particles
+# Set to true for enable this feature 
+kill-particles: false
+
+# If you set to true add world's when this feature work's 
+particle-worlds: 
+  - Arena #Example
+  - KitPvP #Example 
+
+# Particles List 
+# Attention: only set to true ONE
+critical-particle: true
+explode-particle: false
+flame-particle: false
+heart-particle: false
+lava-particle: false
+nether-particle: false
+redstone-particle: false
+snow-particle: false
