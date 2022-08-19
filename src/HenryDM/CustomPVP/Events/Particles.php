@@ -26,7 +26,7 @@ class Particles implements Listener {
 
               public function onDeath(EntityDeathEvent $event) {
                 $entity = $event()->getEntity();
-                $world, = $entity()->getWorld();
+                $world = $entity()->getWorld();
                 $position = $entity()->getPosition();
                    if($this->getConfig()->get("kill-particles") === Activate) {
                      if(in_array($player()->getWorld()->getFolderName(), $this->main->getConfig()->get("particle-worlds"))) {
