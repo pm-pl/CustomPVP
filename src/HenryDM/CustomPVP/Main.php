@@ -14,7 +14,7 @@ use HenryDM\CustomPVP\EventListener;
 use HenryDM\CustomPVP\Events\Message;
 use HenryDM\CustomPVP\Events\SoupPvP;
 
-class Main extends PluginBase implements Listener {
+class Main extends PluginBase {
 	
 	private static $instance;
 	
