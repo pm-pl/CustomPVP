@@ -23,7 +23,7 @@ class LeechingMode implements Listener {
                   $event->cancel();	
                 } else { 
                    if(in_array($player()->getWorld()->getFolderName(), $this->main->getConfig()->get("leeching-worlds"))) {
-                     $player->setHealth($player->getHealth() + $this->main->getConfig()->get("regenerate-level"));
+                     $player->setHealth($player->getHealth() + $this->main->getConfig()->get("leeching-level"));
 	       }
 	    }
         }
