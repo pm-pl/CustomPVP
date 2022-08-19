@@ -6,7 +6,7 @@ use pocketmine\event\Listener;
 use HenryDM\CustomPVP\Main;
 use pocketmine\player\Player;
 use pocketmine\world\World;
-use pocketmine\event\PlayerDeathEvent;
+use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\world\particle\Particle;
 use pocketmine\wolrd\particle\InkParticle;
 
