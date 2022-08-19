@@ -2,6 +2,8 @@
 
 namespace HenryDM\CustomPVP\Events;
 
+use pocketmine\player\Player;
+use pocketmine\event\player\PlayerDeathEvent;
 use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
 use pocketmine\event\Event;
@@ -16,7 +18,7 @@ private $main;
 	public function __construct(Main $main) {
 		$this->main = $main;
 	}
-             public function onPlayerDeath(PlayerDeathEvent $event) : void{ 
+             public function onPlayerDeath(PlayerDeathEvent $event) : void { 
               if($this->main->getConfig()->get("restore-health") === true) {
                 $cause = $event->getPlayer()->getLastDamageCause();
                  if($cause instanceof EntityDamageByEntityEvent){
