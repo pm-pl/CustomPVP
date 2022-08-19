@@ -15,16 +15,13 @@ class LeechingMode implements Listener {
 	}
 
       public function onDamage(EntityDamageByEntityEvent $event) {
-       $config = $this->main->getConfig()->get();
-       $player = $event->getEntity();
-       $health = $player->getHealth(); 
-       $maxhealth = $player->getMaxHealth();
-        if($config("leeching-mode") === true) {
-          if($health() === $maxhealth()) {
+       $player = $event->getEntity(); 
+        if($this->getMain()->cfg->get("leeching-mode") === true) {
+          if($player->getHealth() == $player->getMaxHealth()) {
             $event->cancel();	 
          } else { 
-             if(in_array($player()->getWorld()->getFolderName(), $config("leeching-worlds"))) {
-               $player->setHealth($health + $config("leeching-level"));
+             if(in_array($player()->getWorld()->getFolderName(), $this->getMain()->cfg->get("leeching-worlds"))) {
+               $player->setHealth($player->getHealth + $this->getMain()->cfg->get("leeching-level"));
             }
          }
       }
