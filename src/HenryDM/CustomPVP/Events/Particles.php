@@ -42,4 +42,4 @@ class Particles implements Listener {
             }
         } 
     }
-}.
+}
