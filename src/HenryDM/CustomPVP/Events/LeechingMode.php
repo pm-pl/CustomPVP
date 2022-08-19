@@ -8,6 +8,7 @@ use pocketmine\entity\Entity;
 use pocketmine\event\Listener;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\Event;
+use pocketmine\utils\Config;
 
 class LeechingMode implements Listener { 
 
