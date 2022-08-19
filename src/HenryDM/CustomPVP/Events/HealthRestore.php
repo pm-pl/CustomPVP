@@ -16,16 +16,16 @@ private $main;
 	public function __construct(Main $main) {
 		$this->main = $main;
 	}
-    public function onPlayerDeath(PlayerDeathEvent $event) : void{ 
-      if($this->main->getConfig()->get("restore-health") === true) {
-        $cause = $event->getPlayer()->getLastDamageCause();
-        if($cause instanceof EntityDamageByEntityEvent){
-            $damager = $cause->getDamager();
-            if($damager instanceof Player){
-                if(in_array($event->getPlayer()->getWorld()->getFolderName(), $this->main->getConfig()->get("restore-worlds"))){
-                    $damager->setHealth($damager->getMaxHealth());
+           public function onPlayerDeath(PlayerDeathEvent $event) : void { 
+            if($this->main->getConfig()->get("restore-health") === true) {
+               $cause = $event->getPlayer()->getLastDamageCause();
+                if($cause instanceof EntityDamageByEntityEvent) {
+                  $damager = $cause->getDamager();
+                   if($damager instanceof Player){
+                      if(in_array($event->getPlayer()->getWorld()->getFolderName(), $this->main->getConfig()->get("restore-worlds"))){
+                        $damager->setHealth($damager->getMaxHealth());
                 }
-	           }
+             }
           }			
        }
    }	
@@ -35,4 +35,5 @@ private $main;
 	 */
 	public function getMain(): Main {
           return $this->main;
+   }
 }	
