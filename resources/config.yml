@@ -32,18 +32,19 @@ restore-helth: true
 restore-worlds: [KitPvP, Arena] # Examples
 
 # Soup PvP
+# Use true to activate
+soup-pvp: true
+# Regenerate Level
 regenerate-level: 5
 # Soup ID
 soup-id: 459
 # Soup Message
 soup-message: "§aLife successfully restored."
-# Use true to activate
-soup-pvp: true
 
 # Leeching Mode
 # Use true to activate
 leeching-mode: true
 # Worlds
 leeching-worlds: [KitPvP, Arena] # Examples
-# Regenerate Level
-regenerate-level: 5
+# Leeching Level
+leeching-level: 5
