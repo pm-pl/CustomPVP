@@ -21,7 +21,15 @@ private $main;
                  $player = $event()->getPlayer();
                  $position = $player()->getPosition();
                  $config = $this->main->getConfig()->get();
-
-
-  }
+          
+                   if($config("particle") == true) {
+                    if(in_array($event->getPlayer()->getWorld()->getFolderName(), $config("particle-worlds"))){
+                     $world->addParticle($position, new $config("particle-name")(1));
+                     $world->addParticle($position, new $config("particle-name")(1));
+                     $world->addParticle($position->add(1, 0, 0), new $config("particle-name")(1));
+                     $world->addParticle($position->add(0, 1, 0), new $config("particle-name")(1));
+                     $world->addParticle($position->add(0, 0, 1), new $config("particle-name")(1));
+            }
+        } 
+    }
 }
