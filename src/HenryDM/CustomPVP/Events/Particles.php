@@ -2,12 +2,16 @@
 
 namespace HenryDM\CustomPVP\Events;
 
+# Plugin and pocketmine event libs
 use HenryDM\CustomPVP\Main;
+use pocketmine\event\Listener;
+use pocketmine\plugin\PluginBase;
 use pocketmine\entity\Entity;
 use pocketmine\player\Player;
 use pocketmine\world\Position;
 use pocketmine\event\entity\EntityDeathEvent;
-use pocketmine\event\Listener;
+
+# Pocketmine Particles Libs
 use pocketmine\world\particle\CriticalParticle;
 use pocketmine\world\particle\ExplodeParticle;
 use pocketmine\world\particle\FlameParticle;
@@ -18,7 +22,7 @@ use pocketmine\world\particle\RedstoneParticle;
 use pocketmine\world\particle\SnowballPoofParticle;
 
 
-class Particles implements Listener {
+class Particles extends PluginBase implements Listener {
  
          public function __construct(private Main $main) {
             $this->main = $main;
