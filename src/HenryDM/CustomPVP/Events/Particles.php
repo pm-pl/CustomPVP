@@ -27,11 +27,11 @@ class Particles implements Listener {
 
                public function onDeath(EntityDeathEvent $event) { 
                  $world = $entity()->getWorld();
-                 $event->getEntity() = $entity();
+                 $player = $event->getEntity();
                  $position = $entity()->getPosition();
           
                    if($this->main->getConfig()->get("particle") == true) {
-                    if(in_array($event->getEntity()->getWorld()->getFolderName(), $this->main->getConfig()->get("particle-worlds"))){
+                    if(in_array($player()->getWorld()->getFolderName(), $this->main->getConfig()->get("particle-worlds"))) {
                       if($this->main->getConfig()->get("critical-particle") == true) {
                          $world->addParticle($position, new CriticalParticle(1));
                          $world->addParticle($position, new CriticalParticle(1));
