@@ -11,9 +11,10 @@ use pocketmine\utils\Config;
 
 # Plugin Libs
 use HenryDM\CustomPVP\EventListener;
+use HenryDM\CustomPVP\Events\Cooldown;
+use HenryDM\CustomPVP\Events\KnockBack;
 use HenryDM\CustomPVP\Events\Message;
 use HenryDM\CustomPVP\Events\SoupPvP;
-use HenryDM\CustomPVP\Events\Cooldown;
 
 class Main extends PluginBase {
 	
