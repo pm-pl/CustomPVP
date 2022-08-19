@@ -22,7 +22,7 @@ use pocketmine\world\particle\RedstoneParticle;
 use pocketmine\world\particle\SnowballPoofParticle;
 
 
-class Particles extends PluginBase implements Listener {
+class Particles implements Listener {
  
          public function __construct(private Main $main) {
             $this->main = $main;
@@ -36,76 +36,76 @@ class Particles extends PluginBase implements Listener {
                      if(in_array($world->getFolderName(), $this->main->getConfig()->get("particle-worlds"))) {
 
                         if($this->main->getConfig()->get("critical-particle") === true) {
-                          $world->addParticle($position(), new CriticalParticle(1));
-                          $world->addParticle($position(), new CriticalParticle(1));
-                          $world->addParticle($position()->add(1, 0, 0), new CriticalParticle(1));
-                          $world->addParticle($position()->add(0, 1, 0), new CriticalParticle(1));
-                          $world->addParticle($position()->add(0, 0, 1), new CriticalParticle(1));
+                          $world->addParticle($position, new CriticalParticle(1));
+                          $world->addParticle($position, new CriticalParticle(1));
+                          $world->addParticle($position->add(1, 0, 0), new CriticalParticle(1));
+                          $world->addParticle($position->add(0, 1, 0), new CriticalParticle(1));
+                          $world->addParticle($position->add(0, 0, 1), new CriticalParticle(1));
 	        }
                         if($this->main->getConfig()->get("explode-particle") === true) {
-                          $world->addParticle($position(), new ExplodeParticle(1));
-                          $world->addParticle($position(), new ExplodeParticle(1));
-                          $world->addParticle($position()->add(1, 0, 0), new ExplodeParticle(1));
-                          $world->addParticle($position()->add(0, 1, 0), new ExplodeParticle(1));
-                          $world->addParticle($position()->add(0, 0, 1), new ExplodeParticle(1));
+                          $world->addParticle($position, new ExplodeParticle(1));
+                          $world->addParticle($position, new ExplodeParticle(1));
+                          $world->addParticle($position->add(1, 0, 0), new ExplodeParticle(1));
+                          $world->addParticle($position->add(0, 1, 0), new ExplodeParticle(1));
+                          $world->addParticle($position->add(0, 0, 1), new ExplodeParticle(1));
 		}
                         if($this->main->getConfig()->get("explode-particle") === true) {
-                          $world->addParticle($position(), new ExplodeParticle(1));
-                          $world->addParticle($position(), new ExplodeParticle(1));
-                          $world->addParticle($position()->add(1, 0, 0), new ExplodeParticle(1));
-                          $world->addParticle($position()->add(0, 1, 0), new ExplodeParticle(1));
-                          $world->addParticle($position()->add(0, 0, 1), new ExplodeParticle(1));
+                          $world->addParticle($position, new ExplodeParticle(1));
+                          $world->addParticle($position, new ExplodeParticle(1));
+                          $world->addParticle($position->add(1, 0, 0), new ExplodeParticle(1));
+                          $world->addParticle($position->add(0, 1, 0), new ExplodeParticle(1));
+                          $world->addParticle($position->add(0, 0, 1), new ExplodeParticle(1));
 		}
                         if($this->main->getConfig()->get("flame-particle") === true) {
-                          $world->addParticle($position(), new FlameParticle(1));
-                          $world->addParticle($position(), new FlameParticle(1));
-                          $world->addParticle($position()->add(1, 0, 0), new FlameParticle(1));
-                          $world->addParticle($position()->add(0, 1, 0), new FlameParticle(1));
-                          $world->addParticle($position()->add(0, 0, 1), new FlameParticle(1));
+                          $world->addParticle($position, new FlameParticle(1));
+                          $world->addParticle($position, new FlameParticle(1));
+                          $world->addParticle($position->add(1, 0, 0), new FlameParticle(1));
+                          $world->addParticle($position->add(0, 1, 0), new FlameParticle(1));
+                          $world->addParticle($position->add(0, 0, 1), new FlameParticle(1));
 		}
                         if($this->main->getConfig()->get("heart-particle") === true) {
-                          $world->addParticle($position(), new HeartParticle(1));
-                          $world->addParticle($position(), new HeartParticle(1));
-                          $world->addParticle($position()->add(1, 0, 0), new HeartParticle(1));
-                          $world->addParticle($position()->add(0, 1, 0), new HeartParticle(1));
-                          $world->addParticle($position()->add(0, 0, 1), new HeartParticle(1));
+                          $world->addParticle($position, new HeartParticle(1));
+                          $world->addParticle($position, new HeartParticle(1));
+                          $world->addParticle($position->add(1, 0, 0), new HeartParticle(1));
+                          $world->addParticle($position->add(0, 1, 0), new HeartParticle(1));
+                          $world->addParticle($position->add(0, 0, 1), new HeartParticle(1));
 		}
                         if($this->main->getConfig()->get("lava-particle") === true) {
-                          $world->addParticle($position(), new LavaParticle(1));
-                          $world->addParticle($position(), new LavaParticle(1));
-                          $world->addParticle($position()->add(1, 0, 0), new LavaParticle(1));
-                          $world->addParticle($position()->add(0, 1, 0), new LavaParticle(1));
-                          $world->addParticle($position()->add(0, 0, 1), new LavaParticle(1));
+                          $world->addParticle($position, new LavaParticle(1));
+                          $world->addParticle($position, new LavaParticle(1));
+                          $world->addParticle($position->add(1, 0, 0), new LavaParticle(1));
+                          $world->addParticle($position->add(0, 1, 0), new LavaParticle(1));
+                          $world->addParticle($position->add(0, 0, 1), new LavaParticle(1));
 		}
                         if($this->main->getConfig()->get("nether-particle") === true) {
-                          $world->addParticle($position(), new PortalParticle(1));
-                          $world->addParticle($position(), new PortalParticle(1));
-                          $world->addParticle($position()->add(1, 0, 0), new PortalParticle(1));
-                          $world->addParticle($position()->add(0, 1, 0), new PortalParticle(1));
-                          $world->addParticle($position()->add(0, 0, 1), new PortalParticle(1));
+                          $world->addParticle($position, new PortalParticle(1));
+                          $world->addParticle($position, new PortalParticle(1));
+                          $world->addParticle($position->add(1, 0, 0), new PortalParticle(1));
+                          $world->addParticle($position->add(0, 1, 0), new PortalParticle(1));
+                          $world->addParticle($position->add(0, 0, 1), new PortalParticle(1));
 		}
                         if($this->main->getConfig()->get("nether-particle") === true) {
-                          $world->addParticle($position(), new PortalParticle(1));
-                          $world->addParticle($position(), new PortalParticle(1));
-                          $world->addParticle($position()->add(1, 0, 0), new PortalParticle(1));
-                          $world->addParticle($position()->add(0, 1, 0), new PortalParticle(1));
-                          $world->addParticle($position()->add(0, 0, 1), new PortalParticle(1));
+                          $world->addParticle($position, new PortalParticle(1));
+                          $world->addParticle($position, new PortalParticle(1));
+                          $world->addParticle($position->add(1, 0, 0), new PortalParticle(1));
+                          $world->addParticle($position->add(0, 1, 0), new PortalParticle(1));
+                          $world->addParticle($position->add(0, 0, 1), new PortalParticle(1));
 		}
                         if($this->main->getConfig()->get("redstone-particle") === true) {
-                          $world->addParticle($position(), new RedstoneParticle(1));
-                          $world->addParticle($position(), new RedstoneParticle(1));
-                          $world->addParticle($position()->add(1, 0, 0), new RedstoneParticle(1));
-                          $world->addParticle($position()->add(0, 1, 0), new RedstoneParticle(1));
-                          $world->addParticle($position()->add(0, 0, 1), new RedstoneParticle(1));
+                          $world->addParticle($position, new RedstoneParticle(1));
+                          $world->addParticle($position, new RedstoneParticle(1));
+                          $world->addParticle($position->add(1, 0, 0), new RedstoneParticle(1));
+                          $world->addParticle($position->add(0, 1, 0), new RedstoneParticle(1));
+                          $world->addParticle($position->add(0, 0, 1), new RedstoneParticle(1));
 		}
                         if($this->main->getConfig()->get("snow-particle") === true) {
-                          $world->addParticle($position(), new SnowballPoofParticle(1));
-                          $world->addParticle($position(), new SnowballPoofParticle(1));
-                          $world->addParticle($position()->add(1, 0, 0), new SnowballPoofParticle(1));
-                          $world->addParticle($position()->add(0, 1, 0), new SnowballPoofParticle(1));
-                          $world->addParticle($position()->add(0, 0, 1), new SnowballPoofParticle(1));
+                          $world->addParticle($position, new SnowballPoofParticle(1));
+                          $world->addParticle($position, new SnowballPoofParticle(1));
+                          $world->addParticle($position->add(1, 0, 0), new SnowballPoofParticle(1));
+                          $world->addParticle($position->add(0, 1, 0), new SnowballPoofParticle(1));
+                          $world->addParticle($position->add(0, 0, 1), new SnowballPoofParticle(1));
 		}
-             }
-         }
+            }
+        }
     } 
 }
