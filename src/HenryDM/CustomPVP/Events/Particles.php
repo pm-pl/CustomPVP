@@ -26,7 +26,7 @@ private $main;
           
                    if($config("particle") == true) {
                     if(in_array($event->getPlayer()->getWorld()->getFolderName(), $this->main->getConfig()->get("particle-worlds"))){
-                     $world->addParticle($position, new $config("particle-name")(1)));
+                     $world->addParticle($position, new $config("particle-name")(1));
                      $world->addParticle($position, new InkParticle(1));
                      $world->addParticle($position->add(1, 0, 0), new InkParticle(1));
                      $world->addParticle($position->add(0, 1, 0), new InkParticle(1));
