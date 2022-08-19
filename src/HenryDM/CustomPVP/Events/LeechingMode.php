@@ -10,22 +10,21 @@ use pocketmine\event\Event;
 
 class LeechingMode implements Listener { 
 
-private $main;
-
-	public function __construct(Main $main) {
+	public function __construct(private Main $main) {
 		$this->main = $main;
 	}
 
-      public function onEntityDamage(EntityDamageByEntityEvent $event) {
+      public function onDamage(EntityDamageByEntityEvent $event) {
+       $config = $this->main->getConfig()->get();
        $player = $event->getEntity();
        $health = $player->getHealth(); 
        $maxhealth = $player->getMaxHealth();
-        if($this->main->getConfig()->get("leeching-mode") === true) {
+        if($config("leeching-mode") === true) {
           if($health() === $maxhealth()) {
             $event->cancel();	 
          } else { 
-             if(in_array($player()->getWorld()->getFolderName(), $this->main->getConfig()->get("leeching-worlds"))) {
-               $player->setHealth($health + $this->main->getConfig()->get("leeching-level"));
+             if(in_array($player()->getWorld()->getFolderName(), $config("leeching-worlds"))) {
+               $player->setHealth($health + $config("leeching-level"));
             }
          }
       }
