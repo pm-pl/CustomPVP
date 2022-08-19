@@ -25,6 +25,6 @@ private $main;
 	 * @return Main
 	 */
 	public function getMain(): Main {
-		return $this->main;
+          return $this->main;
 	}	 	
 }	
