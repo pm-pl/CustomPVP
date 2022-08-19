@@ -42,6 +42,13 @@ class Particles implements Listener {
                           $world->addParticle($position->add(0, 1, 0), new CriticalParticle(1));
                           $world->addParticle($position->add(0, 0, 1), new CriticalParticle(1));
 	        }
+                        if($this->main->getConfig()->get("explode-particle") === true) {
+                          $world->addParticle($position, new ExplodeParticle(1));
+                          $world->addParticle($position, new ExplodeParticle(1));
+                          $world->addParticle($position->add(1, 0, 0), new ExplodeParticle(1));
+                          $world->addParticle($position->add(0, 1, 0), new ExplodeParticle(1));
+                          $world->addParticle($position->add(0, 0, 1), new ExplodeParticle(1));
+		}
             }
         }
     } 
