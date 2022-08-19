@@ -3,6 +3,7 @@
 namespace HenryDM\CustomPVP\Events;
 
 use HenryDM\CustomPVP\Main;
+use pocketmine\entity\Entity;
 use pocketmine\player\Player;
 use pocketmine\world\Position;
 use pocketmine\event\entity\EntityDeathEvent;
@@ -26,15 +27,15 @@ class Particles implements Listener {
 
               public function onDeath(EntityDeathEvent $event) {
                 $world = $entity()->getWorld();
-                $position = $entity()->getPosition();
+                $player = $event()->getEntity();
                    if($this->main->getConfig()->get("kill-particles") === true) {
                      if(in_array($player()->getWorld()->getFolderName(), $this->main->getConfig()->get("particle-worlds"))) {
 
-                        $world->addParticle($position, new CriticalParticle(1));
-                        $world->addParticle($position, new CriticalParticle(1));
-                        $world->addParticle($position->add(1, 0, 0), new CriticalParticle(1));
-                        $world->addParticle($position->add(0, 1, 0), new CriticalParticle(1));
-                        $world->addParticle($position->add(0, 0, 1), new CriticalParticle(1));
+                        $world->addParticle($entity()->getPosition(), new CriticalParticle(1));
+                        $world->addParticle($entity()->getPosition(), new CriticalParticle(1));
+                        $world->addParticle($entity()->getPosition()->add(1, 0, 0), new CriticalParticle(1));
+                        $world->addParticle($entity()->getPosition()->add(0, 1, 0), new CriticalParticle(1));
+                        $world->addParticle($entity()->getPosition()->add(0, 0, 1), new CriticalParticle(1));
              }
          }
     } 
