@@ -42,4 +42,11 @@ class Particles implements Listener {
             }
         } 
     }
+
+	/**
+	 * @return Main
+	 */
+	public function getMain(): Main {
+          return $this->main;
+   }	
 }
