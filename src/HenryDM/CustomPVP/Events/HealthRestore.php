@@ -24,16 +24,10 @@ private $main;
                     if($damager instanceof Player){
                        if(in_array($event->getPlayer()->getWorld()->getFolderName(), $this->main->getConfig()->get("restore-worlds"))){
                           $damager->setHealth($damager->getMaxHealth());
-                }
-	     }
-          }			
-       }
-   }	
-}
-	/**
-	 * @return Main
-	 */
-	public function getMain(): Main {
-          return $this->main;
+                  }
+	       }
+            }			
+         }
+      }	
    }
 }	
