@@ -29,7 +29,7 @@ knockback: true
 # Use true to activate 
 restore-helth: true
 # Worlds
-restore-worlds: [KitPvP, Arena] #Examples
+restore-worlds: [KitPvP, Arena] # Examples
 
 # Soup PvP
 regenerate-level: 5
@@ -39,3 +39,11 @@ soup-id: 459
 soup-message: "§aLife successfully restored."
 # Use true to activate
 soup-pvp: true
+
+# Leeching Mode
+# Use true to activate
+leeching-mode: true
+# Worlds
+leeching-worlds: [KitPvP, Arena] # Examples
+# Regenerate Level
+regenerate-level: 5
