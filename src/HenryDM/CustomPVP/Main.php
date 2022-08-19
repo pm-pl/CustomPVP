@@ -23,10 +23,6 @@ class Main extends PluginBase implements Listener {
 	$this->saveResource("config.yml");
 	self::$instance = $this;
       }
-
-       public function onDisable() : void{
-       $this->getConfig()->save();
-      }
 	
 	public static function getInstance() : Main {
 		return self::$instance;
