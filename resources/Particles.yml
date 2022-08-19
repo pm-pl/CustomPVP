@@ -1,0 +1,21 @@
+# Set to true for enable this feature 
+
+kill-particles: false
+
+# If you set to true add world's when this feature work's 
+
+particle-worlds: ["KitPvP, Arena"] #Examples 
+
+#=====================
+#   Particles List 
+#=====================
+# Attention: only set to true ONE
+
+critical-particle: true
+explode-particle: false
+flame-particle: false
+heart-particle: false
+lava-particle: false
+nether-particle: false
+redstone-particle: false
+snow-particle: false
