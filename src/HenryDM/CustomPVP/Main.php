@@ -13,6 +13,7 @@ use pocketmine\utils\Config;
 use HenryDM\CustomPVP\EventListener;
 use HenryDM\CustomPVP\Events\Cooldown;
 use HenryDM\CustomPVP\Events\KnockBack;
+use HenryDM\CustomPVP\Events\HealthRestore;
 use HenryDM\CustomPVP\Events\Message;
 use HenryDM\CustomPVP\Events\SoupPvP;
 
