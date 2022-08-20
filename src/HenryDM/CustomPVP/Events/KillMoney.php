@@ -24,8 +24,9 @@ class KillMoney implements Listener {
              $money = $this->getMain()->cfg->get("money-value");
              $assassin = $player->getLastDamageCause()->getDamager();
                if($this->getMain()->cfg->get("kill-money" === true) {
-                 if($event->getPlayer()->getLastDamageCause() instanceof EntityDamageByEntityEvent) {
-
+  
+               if($event->getPlayer()->getLastDamageCause() instanceof EntityDamageByEntityEvent) {
+}
 # ======================
 #  EconomyAPI Provider
 # ======================
