@@ -46,7 +46,11 @@ regenerate-level: 5
 # Use 282 to Mushroom Stew and 459 the Beet Stew
 soup-id: 282
 # Soup Message
-soup-message: "§aLife successfully restored."                                                 
+soup-message: "§aLife successfully restored."
+# Soup World's
+soup-worlds:
+  - Arena #Example
+  - SoupArena #Example                                
                                                        
 # Leeching Mode
 # Use true to activate
