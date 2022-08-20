@@ -14,6 +14,8 @@
 
 # Kill Message
 kill-message: "§c{victim} was killed by {killer}!"
+# Use true to activate
+message: true
 
 # PvP cooldown
 cooldown-time: 1.6
