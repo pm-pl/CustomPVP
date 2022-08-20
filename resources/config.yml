@@ -81,5 +81,5 @@ redstone-particle: false
 snow-particle: false
 
 # EnderPearl cooldowns
-cooldown-message: "§cYou have a cooldown of: §e{cooldown} §7seconds." # Tip: Only in this message you can use {time}"
+cooldown-message: "§cYou have a cooldown of: §e{time} §7seconds."
 cooldowns-time: 15
