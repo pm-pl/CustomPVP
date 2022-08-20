@@ -22,6 +22,7 @@ class SoupPvP implements Listener {
         if($this->getMain()->cfg->get("soup-pvp") === true) {
             $player = $event->getPlayer();
             $item = $event->getItem();
+            $world = $player->getWorld();
             $health = $player->getHealth();
             $maxhealth = $player->getMaxHealth();
             if ($player->getInventory()->getItemInHand()->getId() == $this->main->getConfig()->get("soup-id")) {
