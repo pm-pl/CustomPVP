@@ -3,12 +3,9 @@
 namespace HenryDM\CustomPVP\Events;
 
 use pocketmine\event\Listener;
-use pocketmine\entity\Entity;
-use pocketmine\player\Player;
-use pocketmine\world\Position;
+
 use pocketmine\event\entity\EntityDeathEvent;
 
-# Pocketmine Particles Libs
 use pocketmine\world\particle\CriticalParticle;
 use pocketmine\world\particle\ExplodeParticle;
 use pocketmine\world\particle\FlameParticle;
@@ -31,7 +28,7 @@ class Particles implements Listener {
         $position = $entity->getPosition();    
         if ($this->getMain()->cfg->get("kill-particles") === true) {
             if (in_array($world->getFolderName(), $this->getMain()->cfg->get("particle-worlds"))) {
-                if($this->main->getConfig()->get("critical-particle") === true) {
+                if($this->getMain()->cfg->get("critical-particle") === true) {
                     $world->addParticle($position, new CriticalParticle(1));
                     $world->addParticle($position, new CriticalParticle(1));
                     $world->addParticle($position->add(1, 0, 0), new CriticalParticle(1));
@@ -39,7 +36,7 @@ class Particles implements Listener {
                     $world->addParticle($position->add(0, 0, 1), new CriticalParticle(1));
 	        }
 
-                if($this->main->getConfig()->get("explode-particle") === true) {
+                if($this->getMain()->cfg->get("explode-particle") === true) {
                     $world->addParticle($position, new ExplodeParticle());
                     $world->addParticle($position, new ExplodeParticle());
                     $world->addParticle($position->add(1, 0, 0), new ExplodeParticle());
@@ -47,7 +44,7 @@ class Particles implements Listener {
                     $world->addParticle($position->add(0, 0, 1), new ExplodeParticle());
 	        }
 
-                if($this->main->getConfig()->get("flame-particle") === true) {
+                if($this->getMain()->cfg->get("flame-particle") === true) {
                     $world->addParticle($position, new FlameParticle());
                     $world->addParticle($position, new FlameParticle());
                     $world->addParticle($position->add(1, 0, 0), new FlameParticle());
@@ -55,7 +52,7 @@ class Particles implements Listener {
                     $world->addParticle($position->add(0, 0, 1), new FlameParticle());
 	        }
 
-                if($this->main->getConfig()->get("heart-particle") === true) {
+                if($this->getMain()->cfg->get("heart-particle") === true) {
                     $world->addParticle($position, new HeartParticle(1));
                     $world->addParticle($position, new HeartParticle(1));
                     $world->addParticle($position->add(1, 0, 0), new HeartParticle(1));
@@ -63,7 +60,7 @@ class Particles implements Listener {
                     $world->addParticle($position->add(0, 0, 1), new HeartParticle(1));
 		}
 
-                if($this->main->getConfig()->get("lava-particle") === true) {
+                if($this->getMain()->cfg->get("lava-particle") === true) {
                     $world->addParticle($position, new LavaParticle());
                     $world->addParticle($position, new LavaParticle());
                     $world->addParticle($position->add(1, 0, 0), new LavaParticle());
@@ -71,7 +68,7 @@ class Particles implements Listener {
                     $world->addParticle($position->add(0, 0, 1), new LavaParticle());
 		}
 
-                if($this->main->getConfig()->get("nether-particle") === true) {
+                if($this->getMain()->cfg->get("nether-particle") === true) {
                     $world->addParticle($position, new PortalParticle());
                     $world->addParticle($position, new PortalParticle());
                     $world->addParticle($position->add(1, 0, 0), new PortalParticle());
@@ -79,7 +76,7 @@ class Particles implements Listener {
                     $world->addParticle($position->add(0, 0, 1), new PortalParticle());
 		}
 
-                if($this->main->getConfig()->get("redstone-particle") === true) {
+                if($this->getMain()->cfg->get("redstone-particle") === true) {
                     $world->addParticle($position, new RedstoneParticle(3));
                     $world->addParticle($position, new RedstoneParticle(3));
                     $world->addParticle($position->add(1, 0, 0), new RedstoneParticle(3));
@@ -87,7 +84,7 @@ class Particles implements Listener {
                     $world->addParticle($position->add(0, 0, 1), new RedstoneParticle(3));
 		}
 
-                if($this->main->getConfig()->get("snow-particle") === true) {
+                if($this->getMain()->cfg->get("snow-particle") === true) {
                     $world->addParticle($position, new SnowballPoofParticle());
                     $world->addParticle($position, new SnowballPoofParticle());
                     $world->addParticle($position->add(1, 0, 0), new SnowballPoofParticle());
