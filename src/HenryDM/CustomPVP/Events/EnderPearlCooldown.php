@@ -23,7 +23,7 @@ class EnderPearlCooldown implements Listener {
         $this->main = $main;
     }
 
-    public function onQuit(PlayerQuitEvenet $event) {
+    public function onQuit(PlayerQuitEvent $event) {
         $player = $event->getPlayer();
         if (isset($this->cooldowns[$player->getName()])) {
             unset ($this->cooldowns[$player->getName()]);
