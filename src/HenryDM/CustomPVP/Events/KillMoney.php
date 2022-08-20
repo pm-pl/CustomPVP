@@ -2,6 +2,7 @@
 
 namespace HenryDM\CustomPVP\Main;
 
+use HenryDM\CustomPVP\Main;
 use pocketmine\Server;
 use pocketmine\utils\Config;
 use pocketmine\event\Listener;
@@ -24,9 +25,7 @@ class KillMoney implements Listener {
              $money = $this->getMain()->cfg->get("money-value");
              $assassin = $player->getLastDamageCause()->getDamager();
                if($this->getMain()->cfg->get("kill-money" === true) {
-  
                if($event->getPlayer()->getLastDamageCause() instanceof EntityDamageByEntityEvent) {
-}
 # ======================
 #  EconomyAPI Provider
 # ======================
@@ -37,4 +36,7 @@ class KillMoney implements Listener {
         }
      }
    }
+    public function getMain() : Main {
+        return $this->main;
+  }
 }                  
