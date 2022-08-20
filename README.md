@@ -34,4 +34,14 @@
 
 > 🚨 ➜ Requeriments: **PHP 8, PocketMine-MP API 4.0**
 
+## 👥 • List of Contributors
+
+➜ Petter: https://github.com/PetterLight
+
+➜ Ihsan: https://github.com/Ihsan48
+
+➜ CaioVox: https://github.com/CaioVox
+
+➜ FernanACM: https://github.com/fernanACM
+
 ---
