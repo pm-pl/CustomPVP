@@ -17,7 +17,7 @@ class LeechingMode implements Listener {
     }
 
     public function onDamage(EntityDamageByEntityEvent $event) : void {
-        if($this->main->getConfig()->get("leeching-mode") === true) {
+        if($this->getMain()->cfg->get("leeching-mode") === true) {
             $entity = $event->getEntity();
             if ($entity instanceof Player) {
                 if(in_array($entity->getWorld()->getFolderName(), $this->getMain()->cfg->get("leeching-worlds"))) {
