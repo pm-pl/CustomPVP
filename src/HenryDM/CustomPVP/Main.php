@@ -1,15 +1,14 @@
 <?php
+
 namespace HenryDM\CustomPVP;
 
-# Pocketmine Libs
 use pocketmine\plugin\PluginBase;
-use pocketmine\plugin\Plugin;
+
 use pocketmine\event\Listener;
-use pocketmine\event\Event;
+
 use pocketmine\utils\TextFormat;
 use pocketmine\utils\Config;
 
-# Plugin Libs
 use HenryDM\CustomPVP\EventListener;
 use HenryDM\CustomPVP\Events\Cooldown;
 use HenryDM\CustomPVP\Events\KnockBack;
@@ -19,13 +18,14 @@ use HenryDM\CustomPVP\Events\Message;
 use HenryDM\CustomPVP\Events\Particles;
 use HenryDM\CustomPVP\Events\SoupPvP;
 
-class Main extends PluginBase {
+class Main extends PluginBase implements Listener {
 	
-	private static Main $instance;
-        public Config $cfg;	
+    private static Main $instance;
 
-	public function onEnable() : void {
-	$this->getServer()->getPluginManager()->registerEvents(new Cooldown($this), $this);
+    public Config $cfg;	
+
+    public function onEnable() : void {
+        $this->getServer()->getPluginManager()->registerEvents(new Cooldown($this), $this);
 	$this->getServer()->getPluginManager()->registerEvents(new KnockBack($this), $this);
         $this->getServer()->getPluginManager()->registerEvents(new LeechingMode($this), $this);
         $this->getServer()->getPluginManager()->registerEvents(new HealthRestore($this), $this);
@@ -34,10 +34,13 @@ class Main extends PluginBase {
 	$this->getServer()->getPluginManager()->registerEvents(new SoupPvP($this), $this);
 	$this->saveResource("config.yml");
         $this->cfg = new Config($this->getDataFolder() . "config.yml");
-	self::$instance = $this;
-      }
+    }
+
+    public function onLoad() : void {
+        self::$instance = $this;
+    }
 	
-	public static function getInstance() : Main {
-		return self::$instance;
-	}
+    public static function getInstance() : Main {
+        return self::$instance;
+    }
 }
