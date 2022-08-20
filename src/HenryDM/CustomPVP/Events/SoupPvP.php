@@ -2,6 +2,8 @@
 
 namespace HenryDM\CustomPVP\Events;
 
+use pocketmine\world\World;
+
 use pocketmine\event\Listener;
 
 use pocketmine\event\player\PlayerItemUseEvent;
@@ -26,9 +28,10 @@ class SoupPvP implements Listener {
                 if ($health == $maxhealth) {
                     $event->cancel();	
                 } else {
-                    $player->setHealth($health + $this->getMain()->cfg->get("regenerate-level"));
-		    $player->sendActionBarMessage($this->getMain()->cfg->get("soup-message"));
-                    $player->getInventory()->removeItem(ItemFactory::getInstance()->get($item->getId(), 0, 1));
+                     if (in_array($world->getFolderName(), $this->getMain()->cfg->get("soup-worlds"))) {
+                      $player->setHealth($health + $this->getMain()->cfg->get("regenerate-level"));
+		      $player->sendActionBarMessage($this->getMain()->cfg->get("soup-message"));
+                      $player->getInventory()->removeItem(ItemFactory::getInstance()->get($item->getId(), 0, 1));
 	       }
 	    }
         }
