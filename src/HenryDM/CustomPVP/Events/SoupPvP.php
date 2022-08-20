@@ -32,7 +32,8 @@ class SoupPvP implements Listener {
                       $player->setHealth($health + $this->getMain()->cfg->get("regenerate-level"));
 		      $player->sendActionBarMessage($this->getMain()->cfg->get("soup-message"));
                       $player->getInventory()->removeItem(ItemFactory::getInstance()->get($item->getId(), 0, 1));
-	       }
+	            } 
+                }
 	    }
         }
     }
