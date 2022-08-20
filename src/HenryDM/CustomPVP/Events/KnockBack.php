@@ -6,6 +6,8 @@ use pocketmine\event\Listener;
 
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 
+use HenryDM\CustomPVP\Main;
+
 class KnockBack implements Listener {
 
     public function __construct(private Main $main) {
