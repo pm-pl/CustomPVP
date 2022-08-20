@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace HenryDM\CustomPVP\Events;
@@ -22,7 +23,7 @@ class Message implements Listener {
     }
 
     public function onDeath(PlayerDeathEvent $event) : void {
-        if($this->main->getConfig()->get("message") === true) {		
+        if($this->getMain()->cfg->get("message") === true) {		
             $player = $event->getPlayer();
             $cause = $player->getLastDamageCause();
             if($player instanceof Player) {
@@ -31,7 +32,7 @@ class Message implements Listener {
                         if($cause instanceof EntityDamageByEntityEvent) {
                             $damager = $cause->getDamager();
                             if($damager instanceof Player) {
-                                $message = str_replace(["{victim}", "{killer}"], [$event->getPlayer()->getName(), $damager->getName()], $this->main->getConfig()->get("kill-message"));
+                                $message = str_replace(["{victim}", "{killer}"], [$event->getPlayer()->getName(), $damager->getName()], $this->getMain()->cfg->get("kill-message"));
                                 $event->setDeathMessage($message);
                             }
                         }
@@ -39,5 +40,9 @@ class Message implements Listener {
 	        }
             } 
         } 
+    }
+
+    public function getMain() : Main {
+        return $this->main;
     }
 }
