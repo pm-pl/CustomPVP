@@ -4,15 +4,13 @@ declare(strict_types=1);
 namespace HenryDM\CustomPVP\Events;
 
 use pocketmine\player\Player;
+
 use pocketmine\event\Listener;
-use pocketmine\event\Event;
-use pocketmine\utils\TextFormat;
-use pocketmine\utils\Config;
-use pocketmine\event\entity\EntityDamageEvent;
-use pocketmine\event\entity\EntityDamageByEntityEvent;
+
 use pocketmine\event\player\PlayerDeathEvent;
-use pocketmine\world\World;
+
 use HenryDM\CustomPVP\Main;
+
 use function str_replace;
 
 class Message implements Listener {
