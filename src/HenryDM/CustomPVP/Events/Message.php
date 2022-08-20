@@ -7,6 +7,8 @@ use pocketmine\player\Player;
 
 use pocketmine\event\Listener;
 
+use pocketmine\event\entity\EntityDamageEvent;
+use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\player\PlayerDeathEvent;
 
 use HenryDM\CustomPVP\Main;
