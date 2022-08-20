@@ -37,8 +37,8 @@ class EnderPearlCooldown implements Listener {
         if ($item instanceof EnderPearl) {
             if (isset($this->cooldowns[$player->getName()]) and time() - $this->cooldowns[$player->getName()] < $this->getMain()->cfg->get("cooldowns-time")) {
                 $event->cancel();
-                $time = $this->getMain->cfg->get("cooldowns-time") - (time() - $this->cooldowns[$player->getName()]);
-                $player->sendMessage(str_replace("{time}", $time, $this->getMain->cfg->get("cooldown-message")));
+                $time = $this->main->cfg->get("cooldowns-time") - (time() - $this->cooldowns[$player->getName()]);
+                $player->sendMessage(str_replace("{time}", $time, $this->main->cfg->get("cooldown-message")));
             } else {
                 $this->cooldowns[$player->getName()] = (time() - $this->getMain()->cfg->get("cooldowns-time"));
             }
