@@ -15,6 +15,8 @@ use pocketmine\world\particle\PortalParticle;
 use pocketmine\world\particle\RedstoneParticle;
 use pocketmine\world\particle\SnowballPoofParticle;
 
+use HenryDM\CustomPVP\Main;
+
 
 class Particles implements Listener {
 
