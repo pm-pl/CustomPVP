@@ -19,8 +19,8 @@ class HealthRestore implements Listener {
 
     public function onPlayerDeath(PlayerDeathEvent $event) : void { 
         if($this->main->getConfig()->get("restore-health") === true) {
-        $player = $event->getPlayer();
-        $cause = $player->getLastDamageCause();
+            $player = $event->getPlayer();
+            $cause = $player->getLastDamageCause();
             if($cause instanceof EntityDamageByEntityEvent) {
                 $damager = $cause->getDamager();
                 if($damager instanceof Player) {
