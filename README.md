@@ -30,4 +30,6 @@
 
 > 📰 ➜ Poggit: https://poggit.pmmp.io/p/CustomPVP
 
+> 🚨 ➜ Requeriments: **PHP 8, PocketMine-MP API 4.0**
+
 ---
