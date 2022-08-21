@@ -19,38 +19,30 @@ class KillMoney implements Listener {
         $this->main = $main;
     }
 
-           public function onPlayerDeath(PlayerDeathEvent $event) : void {
-             $player = $event->getPlayer();
-             $world = $event->getPlayer()->getWorld()->getFolderName();
-             $money = $this->getMain()->cfg->get("money-value");
-             $assassin = $player->getLastDamageCause()->getDamager();
-               if($this->getMain()->cfg->get("kill-money") === true) {
-                if($event->getPlayer()->getLastDamageCause() instanceof EntityDamageByEntityEvent) {
-                 if(in_array($entity->getWorld()->getFolderName(), $this->getMain()->cfg->get("money-worlds"))) {
-
-# ======================
-#  EconomyAPI Provider
-# ======================
-
-                      if($this->getMain()->cfg->get("EconomyAPI") === true) {
+    public function onPlayerDeath(PlayerDeathEvent $event) : void {
+        $player = $event->getPlayer();
+        $world = $player->getWorld();
+        $worldName = $world->getFolderName();
+        $money = $this->getMain()->cfg->get("money-value");
+        $damager = $player->getLastDamageCause()->getDamager();
+        if($this->getMain()->cfg->get("kill-money") === true) {
+            if($event->getPlayer()->getLastDamageCause() instanceof EntityDamageByEntityEvent) , $this->getMain()->cfg->get("money-worlds"))) {
+                if(in_array($worldName, $this->getMain()->cfg->get("money-worlds"))) {
+                    if($this->getMain()->cfg->get("economy-provider") === "EconomyAPI") {
                         EconomyAPI::getInstance()->myMoney($player);
-                        EconomyAPI::getInstance()->addMoney($assassin, $money);
+                        EconomyAPI::getInstance()->addMoney($damager, $money);
                     }
 
-# ======================
-#   Bedrock Provider
-# ======================
-
-                      if($this->getMain()->cfg->get("BedrockEconomy") === true) {
+                    if($this->getMain()->cfg->get("economy-provider") === "BedrockEconomy") {
                         BedrockEconomyAPI::legacy()->getPlayerBalance($player);
                         BedrockEconomyAPI::legacy()->addToPlayerBalance($assassin, $money);
-                    }
-                }
+                     }
+                 }
              }
-          }
-       }
+         }
      }
+
     public function getMain() : Main {
         return $this->main;
-  }
+    }
 }                  
