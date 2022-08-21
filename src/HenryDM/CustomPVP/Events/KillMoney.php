@@ -33,8 +33,8 @@ class KillMoney implements Listener {
 # ======================
 
                       if($this->getMain()->cfg->get("EconomyAPI") === true) {
-                        EconomyAPI::getInstance()->MyMoney($player);
-                        EconomyAPI::getInstance()->AddMoney($assassin $money);
+                        EconomyAPI::getInstance()->myMoney($player);
+                        EconomyAPI::getInstance()->addMoney($assassin, $money);
                     }
 
 # ======================
@@ -43,7 +43,7 @@ class KillMoney implements Listener {
 
                       if($this->getMain()->cfg->get("BedrockEconomy") === true) {
                         BedrockEconomyAPI::legacy()->getPlayerBalance($player);
-                        BedrockEconomyAPI::legacy()->addToPlayerBalance($assassin $money);
+                        BedrockEconomyAPI::legacy()->addToPlayerBalance($assassin, $money);
                     }
                 }
              }
