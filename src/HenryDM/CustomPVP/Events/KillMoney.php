@@ -4,7 +4,7 @@ namespace HenryDM\CustomPVP\Main;
 
 use HenryDM\CustomPVP\Main;
 use pocketmine\Server;
-use pocketmine\utils\Config;
+
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
 use onebone\economyapi\EconomyAPI;
