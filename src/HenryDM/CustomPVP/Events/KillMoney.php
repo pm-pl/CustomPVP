@@ -26,7 +26,7 @@ class KillMoney implements Listener {
         $money = $this->getMain()->cfg->get("money-value");
         $damager = $player->getLastDamageCause()->getDamager();
         if($this->getMain()->cfg->get("kill-money") === true) {
-            if($event->getPlayer()->getLastDamageCause() instanceof EntityDamageByEntityEvent) , $this->getMain()->cfg->get("money-worlds"))) {
+            if($damager instanceof Player) {
                 if(in_array($worldName, $this->getMain()->cfg->get("money-worlds"))) {
                     if($this->getMain()->cfg->get("economy-provider") === "EconomyAPI") {
                         EconomyAPI::getInstance()->myMoney($player);
