@@ -35,7 +35,7 @@ class KillMoney implements Listener {
 
                     if($this->getMain()->cfg->get("economy-provider") === "BedrockEconomy") {
                         BedrockEconomyAPI::legacy()->getPlayerBalance($player);
-                        BedrockEconomyAPI::legacy()->addToPlayerBalance($assassin, $money);
+                        BedrockEconomyAPI::legacy()->addToPlayerBalance($damager, $money);
                      }
                  }
              }
