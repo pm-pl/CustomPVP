@@ -1,23 +1,23 @@
-<?php
+// <?php
 
-namespace HenryDM\CustomPVP\Events;
+// namespace HenryDM\CustomPVP\Events;
 
-use pocketmine\player\Player;
+// use pocketmine\player\Player;
 
-use pocketmine\event\Listener;
+// use pocketmine\event\Listener;
 
-use pocketmine\event\player\PlayerInteractEvent;
-use pocketmine\event\player\PlayerQuitEvent;
+// use pocketmine\event\player\PlayerInteractEvent;
+// use pocketmine\event\player\PlayerQuitEvent;
 
-use pocketmine\item\EnderPearl;
+// use pocketmine\item\EnderPearl;
 
-use HenryDM\CustomPVP\Main;
+// use HenryDM\CustomPVP\Main;
 
-use function time;
+// use function time;
 
-class EnderPearlCooldown implements Listener {
+// class EnderPearlCooldown implements Listener {
 
-    private array $cooldowns = [];
+//    private array $cooldowns = [];
 
 //     public function __construct(private Main $main) {
 //         $this->main = $main;
