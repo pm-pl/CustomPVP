@@ -17,7 +17,7 @@ use HenryDM\CustomPVP\Events\HealthRestore;
 use HenryDM\CustomPVP\Events\Message;
 use HenryDM\CustomPVP\Events\Particles;
 use HenryDM\CustomPVP\Events\SoupPvP;
-use HenryDM\CustomPVP\Events\EnderPearlCooldown;
+//use HenryDM\CustomPVP\Events\EnderPearlCooldown;
 
 class Main extends PluginBase implements Listener {
 	
