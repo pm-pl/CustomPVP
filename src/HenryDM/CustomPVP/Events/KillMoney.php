@@ -50,7 +50,7 @@ class KillMoney implements Listener {
 # =========================
 
                    if($config("provider") === "XP") {
-                     $xp->addXp($assassin, $xpvalue)
+                     $xp->addXp($assassin, $xpvalue);
              }
 
               public function getMain() : Main {
