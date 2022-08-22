@@ -33,7 +33,7 @@ class KillMoney implements Listener {
 #    EconomyAPI Provider
 # =========================
  
-                  if($config("provider") === "EconomyAPI") {
+                  if($config("EconomyAPI") === "true") {
                     EconomyAPI::getInstance()->myMoney($player);
                     EconomyAPI::getInstance()->addMoney($assassin, $money);
             }
@@ -41,7 +41,7 @@ class KillMoney implements Listener {
 #  BedrockEconomy Provider
 # =========================
 
-                  if($config("provider") === "BedrockEconomy") {
+                  if($config("BedrockEconomy") === "true") {
                      BedrockEconomyAPI::legacy()->getPlayerBalance($player);
                      BedrockEconomyAPI::legacy()->addToPlayerBalance($assassin, $money);
             }
@@ -49,7 +49,7 @@ class KillMoney implements Listener {
 #    Player XP Provider
 # =========================
 
-                   if($config("provider") === "XP") {
+                   if($config("XP") === "true") {
                      $xp->addXp($assassin, $xpvalue);
              }
            }
