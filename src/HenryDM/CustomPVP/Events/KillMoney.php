@@ -34,8 +34,8 @@ class KillMoney implements Listener {
 # =========================
  
                   if($config("provider") === "EconomyAPI") {
-                    EconomyAPI:getInstance()->myMoney($player);
-                    EconomyAPI:getInstance()->AddMoney($assassin, $money);
+                    EconomyAPI::getInstance()->myMoney($player);
+                    EconomyAPI::getInstance()->AddMoney($assassin, $money);
             }
 # =========================
 #  BedrockEconomy Provider
