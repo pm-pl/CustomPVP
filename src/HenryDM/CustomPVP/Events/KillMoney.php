@@ -32,18 +32,10 @@ class KillMoney implements Listener {
             if($damager instanceof Player) {
                 if(in_array($worldName, $this->getMain()->cfg->get("money-worlds"))) {
 
-#========================
-#  EconomyAPI Provider
-#========================
-
                     if($this->getMain()->cfg->get("economy-provider") === "EconomyAPI") {
                         EconomyAPI::getInstance()->myMoney($player);
                         EconomyAPI::getInstance()->addMoney($killer, $money);
                     }
-
-#========================
-# BedrockEconomy Provider
-#========================
 
                     if($this->getMain()->cfg->get("economy-provider") === "BedrockEconomy") {
                         BedrockEconomyAPI::legacy()->getPlayerBalance($player);
