@@ -28,34 +28,23 @@ class KillMoney implements Listener {
              $assassin->getLastDamageCause->getDamager();
              if(in_array($world, $config("money-worlds"))) {
                 if($player->getLastDamageCause instanceof EntityDamageByEntityEvent) {
-      
-// =========================
-//    EconomyAPI Provider
-// =========================
  
                   if($config("EconomyAPI") === true) {
                     EconomyAPI::getInstance()->myMoney($player);
                     EconomyAPI::getInstance()->addMoney($assassin, $money);
-            }
-// =========================
-//  BedrockEconomy Provider
-// =========================
 
                   if($config("BedrockEconomy") === true) {
                      BedrockEconomyAPI::legacy()->getPlayerBalance($player);
                      BedrockEconomyAPI::legacy()->addToPlayerBalance($assassin, $money);
-            }
-// =========================
-//   Player XP Provider
-// =========================
 
                    if($config("XP") === true) {
                      $xp->addXp($assassin, $xpvalue);
-             }
+                 }
+              }
            }
         }
      }
-              public function getMain() : Main {
+  }            public function getMain() : Main {
               return $this->main;
    }
 }
