@@ -1,6 +1,6 @@
 <?php
 
-namespace HenryDM\CustomPVP\Main;
+namespace HenryDM\CustomPVP\Events;
 
 use HenryDM\CustomPVP\Main;
 use pocketmine\Server;
@@ -28,6 +28,7 @@ class KillMoney implements Listener {
         if($this->getMain()->cfg->get("kill-money") === true) {
             if($damager instanceof Player) {
                 if(in_array($worldName, $this->getMain()->cfg->get("money-worlds"))) {
+
                     if($this->getMain()->cfg->get("economy-provider") === "EconomyAPI") {
                         EconomyAPI::getInstance()->myMoney($player);
                         EconomyAPI::getInstance()->addMoney($damager, $money);
