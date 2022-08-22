@@ -52,11 +52,10 @@ class KillMoney implements Listener {
                    if($config("provider") === "XP") {
                      $xp->addXp($assassin, $xpvalue);
              }
-
+           }
+        }
+     }
               public function getMain() : Main {
               return $this->main;
-        }
-      }
-    }
-  }
+   }
 }
