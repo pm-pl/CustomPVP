@@ -7,7 +7,10 @@ use pocketmine\Server;
 
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
+
 use onebone\economyapi\EconomyAPI;
+use cooldogedev\BedrockEconomy\api\BedrockEconomyAPI;
+
 use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\world\World;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
@@ -24,19 +27,27 @@ class KillMoney implements Listener {
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
         $money = $this->getMain()->cfg->get("money-value");
-        $damager = $player->getLastDamageCause()->getDamager();
+        $killer = $player->getLastDamageCause()->getDamager();
         if($this->getMain()->cfg->get("kill-money") === true) {
             if($damager instanceof Player) {
                 if(in_array($worldName, $this->getMain()->cfg->get("money-worlds"))) {
 
+#========================
+#  EconomyAPI Provider
+#========================
+
                     if($this->getMain()->cfg->get("economy-provider") === "EconomyAPI") {
                         EconomyAPI::getInstance()->myMoney($player);
-                        EconomyAPI::getInstance()->addMoney($damager, $money);
+                        EconomyAPI::getInstance()->addMoney($killer, $money);
                     }
+
+#========================
+# BedrockEconomy Provider
+#========================
 
                     if($this->getMain()->cfg->get("economy-provider") === "BedrockEconomy") {
                         BedrockEconomyAPI::legacy()->getPlayerBalance($player);
-                        BedrockEconomyAPI::legacy()->addToPlayerBalance($damager, $money);
+                        BedrockEconomyAPI::legacy()->addToPlayerBalance($killer, $money);
                      }
                  }
              }
