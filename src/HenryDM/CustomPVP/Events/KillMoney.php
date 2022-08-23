@@ -29,8 +29,8 @@ class KillMoney implements Listener {
         $amount = $this->getMain()->cfg->get("killmoney-price");
         if ($this->getMain()->cfg->get("killmoney-enable") === true) {
             if (in_array($worldName, $this->getMain()->cfg->get("killmoney-world"))) {
-                if ($event instanceof EntityDamageByEntityEvent) {
-                    $damager = $event->getDamager();
+                if ($damageCause instanceof EntityDamageByEntityEvent) {
+                    $damager = $damageCause->getDamager();
                     if ($damager instanceof Player) {
                         libEco::addMoney($damager, $amount);
                     }
