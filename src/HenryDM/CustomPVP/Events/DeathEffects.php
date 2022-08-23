@@ -30,7 +30,7 @@ class DeathEffects implements Listener {
                    $damager = $damageCause->getDamager();
                     if($damager instanceof Player) {
                         if(in_array($worldName(), $this->getMain()->cfg->get("effect-worlds"))) {
-                            $player->addEffect(new EffectInstance(Effect::getEffect(Effect::$this->getMain()->cfg->get("effect-name")), $this->getMain()->cfg->get("efffect-duration")* 1, 1, true));             
+                            $player->getEffects()->add(new EffectInstance(EffectIdMap::getInstance()->fromId($id), $values["duration"], $values["level"], $values["particles"]));             
                     
                         }                        
                     }
