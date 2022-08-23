@@ -7,15 +7,15 @@ use pocketmine\event\Listener;
 
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
-use pocketmine\player\Player;
+use pocketmine\entity\Entity;
 use pocketmine\world\World;
 
 class AntiFlight implements Listener {
 
     public function onDamage(EntityDamageByEntityEvent $event) { 
-        $player = $event->getPlayer();
+        $entity = $event->getEntity();
         $damager = $event->getDamager();
-        $world = $event->$player->getWorld();
+        $world = $event->$entity->getWorld();
         if($this->getMain()->cfg->get("Anti-Flight") === true) {
             if (in_array($world->getFolderName(), $this->getMain()->cfg->get("antiflight-worlds"))) {
             $damager->setFlying(false);
