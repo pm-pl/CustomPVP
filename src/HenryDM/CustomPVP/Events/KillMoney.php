@@ -9,9 +9,11 @@ use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerDeathEvent;
 
 use pocketmine\event\entity\EntityDamageByEntityEvent;
+# LibEco
+use davidglitch04\libEco\libEco;
 
 use HenryDM\CustomPVP\Main;
-use HenryDM\CustomPVP\Utils\EconomyManager;
+
 
 class KillMoney implements Listener {
 
@@ -25,11 +27,15 @@ class KillMoney implements Listener {
         $worldName = $world->getFolderName();
         $damageCause = $player->getLastDamageCause();
         $damager = $damageCause->getDamager();
+        $amount = $this->getMain()->cfg->get("killmoney-price");
         if ($this->getMain()->cfg->get("killmoney-enable") === true) {
             if (in_array($worldName, $this->getMain()->cfg->get("killmoney-world"))) {
                 if ($damageCause instanceof EntityDamageByEntityEvent) {
                     if ($damager instanceof Player) {
-                        EconomyManager::addMoney($this->getMain()->cfg->get("killmoney-price"), $player);
+
+
+                        libEco::addMoney($player, $amount);
+                        
                     }
                 }
             }
