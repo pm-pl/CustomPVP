@@ -33,7 +33,7 @@ class KillReward implements Listener {
                         foreach ($this->getMain()->cfg->get("killrewards-items", []) as $item) {
                             $reward = ItemFactory::getInstance()->get($item["id"], $item["damage"], $item["count"]);
                             $reward->setCustomName($item["name"]);
-                            $damager->getInventory->setItem($item["slots"], $reward);
+                            $damager->getInventory()->setItem($item["slots"], $reward);
                         }
                     }
                 }
