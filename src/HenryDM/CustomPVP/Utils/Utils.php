@@ -3,7 +3,6 @@
 namespace HenryDM\CustomPVP\Utils;
 
 use pocketmine\player\Player;
-
 use pocketmine\network\mcpe\protocol\PlaySoundPacket;
 
 class Utils {
