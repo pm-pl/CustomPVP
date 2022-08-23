@@ -17,17 +17,20 @@ class AntiFlight implements Listener {
     }
 
     public function onDamage(EntityDamageByEntityEvent $event) : void { 
+      if($event instanceof EntityDamageByEntityEvent){
         $entity = $event->getEntity();
         $damaged = $event->getDamager();
         $world = $event->$entity->getWorld();
-        if($this->getMain()->cfg->get("Anti-Flight") === true) {
-            if (in_array($world->getFolderName(), $this->getMain()->cfg->get("antiflight-worlds"))) {
-               $damaged->setFlying(false);
-               $damaged->setAllowFlight(false);
-            }
+        if($event instanceof EntityDamageByEntityEvent) {
+          if($this->getMain()->cfg->get("Anti-Flight") === true) {
+            if(in_array($world->getFolderName(), $this->getMain()->cfg->get("antiflight-worlds"))) {
+                $damaged->setFlying(false);
+                $damaged->setAllowFlight(false);
+              }
+           }
         }
-    }
-    
+     } 
+
       public function getMain() : Main {
           return $this->main;
     }	 
