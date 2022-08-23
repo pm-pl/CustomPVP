@@ -5,4 +5,4 @@ version: 2.0.0-dev
 author: HenryDM
 description: Simple Plugin To Customize PvP In Your Server
 website: https://github.com/Henry12960
-soft-depend: [BedrockEconomy, EconomyAPI]
+softdepends: [BedrockEconomy, EconomyAPI]
