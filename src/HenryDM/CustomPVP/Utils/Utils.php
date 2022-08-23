@@ -7,7 +7,7 @@ use pocketmine\network\mcpe\protocol\PlaySoundPacket;
 
 class Utils {
 
-    public function playSound(Player $player, string $soundName = " ", float $volume = 0, float $pitch = 0) {
+    public static function playSound(Player $player, string $soundName = " ", float $volume = 0, float $pitch = 0) {
         $pk = new PlaySoundPacket();
         $pk->x = $player->getPosition()->getX();
         $pk->x = $player->getPosition()->getY();
