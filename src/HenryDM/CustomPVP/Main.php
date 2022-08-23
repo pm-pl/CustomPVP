@@ -19,6 +19,7 @@ use HenryDM\CustomPVP\Events\Particles;
 use HenryDM\CustomPVP\Events\SoupPvP;
 use HenryDM\CustomPVP\Events\KillMoney;
 use HenryDM\CustomPVP\Events\KillReward;
+use HenryDM\CustkomPVP\Events\KillSound;
 
 class Main extends PluginBase implements Listener {
 	
@@ -35,6 +36,7 @@ class Main extends PluginBase implements Listener {
         $this->getServer()->getPluginManager()->registerEvents(new SoupPvP($this), $this);
         $this->getServer()->getPluginManager()->registerEvents(new KillMoney($this), $this);
         $this->getServer()->getPluginManager()->registerEvents(new KillReward($this), $this);
+        $this->getServer()->getPluginManager()->registerEvents(new KillSound($this), $this);
         $this->saveResource("config.yml");
         $this->cfg = new Config($this->getDataFolder() . "config.yml");
     }
