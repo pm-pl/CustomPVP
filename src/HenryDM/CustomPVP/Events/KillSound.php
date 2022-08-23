@@ -12,6 +12,7 @@ use pocketmine\item\ItemFactory;
 use pocketmine\world\World;
 use pocketmine\world\sound\Sound;
 use pocketmine\world\sound\AnvilUseSound;
+use Pocketmine\world\sound\GhastSound;
 
 class KillSound implements Listener {
 
