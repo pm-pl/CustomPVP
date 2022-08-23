@@ -1,4 +1,4 @@
-#   _____          _                  _______      _______  
+Oi#   _____          _                  _______      _______  
 #  / ____|        | |                |  __ \ \    / /  __ \ 
 # | |    _   _ ___| |_ ___  _ __ ___ | |__) \ \  / /| |__) |
 # | |   | | | / __| __/ _ \| '_ ` _ \|  ___/ \ \/ / |  ___/ 
@@ -69,6 +69,10 @@ particle-worlds:
   - Arena #Example
   - KitPvP #Example 
 
+# Kill Sound
+# Set to true enable this Features
+kill-sound: false
+
 # KillMoney
 
 # Set to false if you want to disable the KillMoney feature
@@ -97,3 +101,8 @@ lava-particle: false
 nether-particle: false
 redstone-particle: false
 snow-particle: false
+
+# Sounds List
+# Attention: only set to true ONE
+
+anvil-sound: false
