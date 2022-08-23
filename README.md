@@ -27,6 +27,10 @@
 > 🎶 ➜ Custom Kill Sound
 
 > 💰 ➜ Advanced Kill Money
+
+> 🪂 ➜ Simple Anti PvP Flight
+
+> 🏆 ➜ Custom Kill Item Reward
 ---
 ## 🎯 • Requeriments and Info's
 
