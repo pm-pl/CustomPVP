@@ -75,8 +75,8 @@ kill-sound: false
 
 # If you set to true add world's when this feature work's
 killsound-worlds: 
-   - Arena #Example
-   - KitPvP #Example
+  - Arena #Example
+  - KitPvP #Example
 
 # KillMoney
 
@@ -94,6 +94,21 @@ killmoney-price: 1000
 # KillMoney Reduce feature
 # Set to true to make players money reduce when killed
 killmoney-reduce: true
+
+# KillDeath Sound
+# Set to false if you want to disable the KillMoney feature
+# Default: true
+
+killsound-enable: true
+
+# If you set to true add worlds where this feature works
+killsound-worlds:
+  - pvp # Example
+  - survival # Example
+
+# KillDeath Sound Name
+
+killsound-soundname: "random.explode"
 
 # AntiFlight
 
@@ -118,9 +133,3 @@ lava-particle: false
 nether-particle: false
 redstone-particle: false
 snow-particle: false
-
-# Sounds List
-# Attention: only set to true ONE
-
-anvil-sound: false
-ghast-sound: false
