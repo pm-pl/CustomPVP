@@ -27,13 +27,13 @@ class KillReward implements Listener {
         $damageCause = $player->getLastDamageCause();
         if ($this->getMain()->cfg->getNested("killrewards-enable", true)) {
             if (in_array($worldName, $this->getMain()->cfg->get("killrewards-worlds"))) {
-                if ($damageCause instanceof EntityDamagByEntityEvent) {
+                if ($damageCause instanceof EntityDamageByEntityEvent) {
                     $damager = $damageCause->getDamager();
                     if ($damager instanceof Player) {
                         foreach ($this->getMain()->cfg->get("killrewards-items", []) as $item) {
                             $reward = ItemFactory::getInstance()->get($item["id"], $item["damage"], $item["count"]);
                             $reward->setCustomName($item["name"]);
-                            $player->getInventory->setItem($item["slots"], $reward);
+                            $damager->getInventory->setItem($item["slots"], $reward);
                         }
                     }
                 }
