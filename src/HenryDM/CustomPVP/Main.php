@@ -10,6 +10,7 @@ use pocketmine\utils\TextFormat;
 use pocketmine\utils\Config;
 
 use HenryDM\CustomPVP\EventListener;
+use HenryDM\CustomPVP\Events\AntiFlight;
 use HenryDM\CustomPVP\Events\Cooldown;
 use HenryDM\CustomPVP\Events\KnockBack;
 use HenryDM\CustomPVP\Events\LeechingMode;
@@ -27,6 +28,7 @@ class Main extends PluginBase implements Listener {
     public Config $cfg;	
 
     public function onEnable() : void {
+        $this->getServer()->getPluginManager()->registerEvents(new AntiFlight($this), $this);
         $this->getServer()->getPluginManager()->registerEvents(new Cooldown($this), $this);
         $this->getServer()->getPluginManager()->registerEvents(new KnockBack($this), $this);
         $this->getServer()->getPluginManager()->registerEvents(new LeechingMode($this), $this);
