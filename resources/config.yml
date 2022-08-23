@@ -6,7 +6,7 @@
 #  \_____\__,_|___/\__\___/|_| |_| |_|_|       \/   |_|     
 #                                                                                                                     
 # A advanced plugin to customize pvp on your server 
-# Any bugs that come up please report on github: https://github.com/Henry12960
+# Any bugs that come up please report on github: https://github.com/Henry12960/CustomPVP/issues
 # Give suggestions: https://github.com/Henry12960/CustomPVP/issues/2
 # Plugin Wiki: https://github.com/Henry12960/CustomPVP/wiki
 
@@ -74,7 +74,7 @@ particle-worlds:
 # Set to false if you want to disable the KillMoney feature
 killmoney-enable: true
 
-# If you set to true add world's when this feature work's 
+# If you set to true add worlds where this feature works
 killmoney-world:
   - world # Example
   - survival # Example
@@ -85,6 +85,18 @@ killmoney-price: 1000
 # KillMoney Reduce feature
 # Set to true to make players money reduce when killed
 killmoney-reduce: true
+
+# AntiFlight
+
+# Set to false if you want to disable the AntiFlight Feature
+
+anti-flight: true
+
+# If you set to true add world's where this feature works 
+
+antiflight-worlds: 
+  - world # Example
+  - arena # Example
 
 # Particles List 
 # Attention: only set to true ONE
