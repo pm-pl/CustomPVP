@@ -19,15 +19,13 @@ class KillReward implements Listener {
 
     public function onDeath(PlayerDeathEvent $event) { 
         $player = $event->getPlayer();
-        $item = $event->getItem();
-        $config = $this->getMain()->cfg->get();
         $world = $player->getWorld();
         $damageCause = $player->getLastDamageCause();
         if ($config("kill-reward") === true) {
                 if ($damageCause instanceof EntityDamageByEntityEvent) {
                     if ($damager instanceof Player) {
-                        if ($player->getInventory()->getItemInHand()->getId() == $config("reward-id")) {
-                            if (in_array($world->getFolderName(), $config("rewards-worlds"))) {
+                        if ($player->getInventory()->getItemInHand()->getId() === $this->getMain()->cfg->get("reward-id")) {
+                            if (in_array($world->getFolderName(), $this->getMain()->cfg->get("rewards-worlds"))) {
                                 $player->getInventory()->addItem(ItemFactory::getInstance()->get($item->getId(), 0, 1));
 
                             }     
