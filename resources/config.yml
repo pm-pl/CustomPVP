@@ -50,8 +50,7 @@ soup-message: "§aLife successfully restored."
 # Soup World's
 soup-worlds:
   - Arena #Example
-  - SoupArena #Example                                
-                                                       
+  - SoupArena #Example
 # Leeching Mode
 # Use true to activate
 leeching-mode: true
@@ -69,18 +68,9 @@ particle-worlds:
   - Arena #Example
   - KitPvP #Example 
 
-# Kill Sound
-# Set to true enable this Features
-kill-sound: false
-
-# If you set to true add world's when this feature work's
-killsound-worlds: 
-  - Arena #Example
-  - KitPvP #Example
-
 # KillMoney
-
 # Set to false if you want to disable the KillMoney feature
+# Default: true
 killmoney-enable: true
 
 # If you set to true add worlds where this feature works
@@ -109,6 +99,27 @@ killsound-worlds:
 # KillDeath Sound Name
 
 killsound-soundname: "random.explode"
+
+# KillReward
+# Set to false if you want to disable the KillMoney feature
+# Default: true
+killrewards-enable: true
+
+# If you set to true add worlds where this feature works
+killrewards-worlds:
+  - pvp
+  - survival
+
+# Reward Item
+
+killrewards-items:
+
+  - slots: 0
+    id: 265
+    damage: 0
+    count: 1
+    name: KillReward
+
 
 # AntiFlight
 

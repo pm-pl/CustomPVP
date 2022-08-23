@@ -2,14 +2,17 @@
 
 namespace HenryDM\CustomPVP\Events;
 
-use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
 
 use pocketmine\event\player\PlayerDeathEvent;
+
 use pocketmine\event\entity\EntityDamageByEntityEvent;
+
 use pocketmine\player\Player;
+
 use pocketmine\item\ItemFactory;
-use pocketmine\world\World;
+
+use HenryDM\CustomPVP\Main;
 
 class KillReward implements Listener {
 
@@ -20,20 +23,23 @@ class KillReward implements Listener {
     public function onDeath(PlayerDeathEvent $event) { 
         $player = $event->getPlayer();
         $world = $player->getWorld();
+        $worldName = $world->getFolderName();
         $damageCause = $player->getLastDamageCause();
-        if ($this->getMain()->cfg->get("kill-reward") === true) {
-                if ($damageCause instanceof EntityDamageByEntityEvent) {
+        if ($this->getMain()->cfg->getNested("killrewards-enable", true)) {
+            if (in_array($worldName, $this->getMain()->cfg->get("killrewards-worlds"))) {
+                if ($damageCause instanceof EntityDamagByEntityEvent) {
                     $damager = $damageCause->getDamager();
                     if ($damager instanceof Player) {
-                        // if ($player->getInventory()->getItemInHand()->getId() === $this->getMain()->cfg->get("reward-id")) {
-                        if (in_array($world->getFolderName(), $this->getMain()->cfg->get("rewards-worlds"))) {
-                            $player->getInventory()->addItem(ItemFactory::getInstance()->get($item->getId(), 0, 1));
-                        }     
-                        // }   
+                        foreach ($this->getMain()->cfg->get("killrewards-items", []) as $item) {
+                            $reward = ItemFactory::getInstance()->get($item["id"], $item["damage"], $item["count"]);
+                            $reward->setCustomName($item["name"]);
+                            $player->getInventory->setItem($item["slots"], $reward);
+                        }
                     }
                 }
-            }  
-        }
+            }
+        }  
+    }
 
     public function getMain() : Main {
         return $this->main;
