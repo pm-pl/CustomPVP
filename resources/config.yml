@@ -1,4 +1,4 @@
-Oi#   _____          _                  _______      _______  
+#   _____          _                  _______      _______  
 #  / ____|        | |                |  __ \ \    / /  __ \ 
 # | |    _   _ ___| |_ ___  _ __ ___ | |__) \ \  / /| |__) |
 # | |   | | | / __| __/ _ \| '_ ` _ \|  ___/ \ \/ / |  ___/ 
@@ -73,6 +73,11 @@ particle-worlds:
 # Set to true enable this Features
 kill-sound: false
 
+# If you set to true add world's when this feature work's
+killsound-worlds: 
+   - Arena #Example
+   - KitPvP #Example
+
 # KillMoney
 
 # Set to false if you want to disable the KillMoney feature
@@ -118,3 +123,4 @@ snow-particle: false
 # Attention: only set to true ONE
 
 anvil-sound: false
+ghast-sound: false
