@@ -15,7 +15,7 @@ class EconomyManager {
         $this->main = $main;
     }
 
-    public function addMoney(int $value = 0, Player $player) {
+    public static function addMoney(int $value = 0, Player $player) {
         if ($this->getMain()->cfg->get("economy-provider") === "EconomyAPI" || $this->getMain()->cfg->get("economy-provider") === "economyapi") {
             EconomyAPI::getInstance()->addMoney($player, (int) $value);
         } else if ($this->getMain()->cfg->get("economy-provider") === "BedrockEconomy" || $this->getMain()->cfg->get("economy-provider") === "bedrockeconomy") {
