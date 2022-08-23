@@ -33,6 +33,11 @@ class KillMoney implements Listener {
                     $damager = $damageCause->getDamager();
                     if ($damager instanceof Player) {
                         libEco::addMoney($damager, $amount);
+                        if ($this->getMain()->cfg->get("killmoney-reduce") === true) {
+                            libEco::reduceMoney($player, $amount, static function(bool $succsess) : void{
+                                // NOTHING
+                            });
+                        }
                     }
                 }
             }
