@@ -69,6 +69,15 @@ particle-worlds:
   - Arena #Example
   - KitPvP #Example 
 
+# Kill Sound
+# Set to true enable this Features
+kill-sound: false
+
+# If you set to true add world's when this feature work's
+killsound-worlds: 
+   - Arena #Example
+   - KitPvP #Example
+
 # KillMoney
 
 # Set to false if you want to disable the KillMoney feature
@@ -109,3 +118,9 @@ lava-particle: false
 nether-particle: false
 redstone-particle: false
 snow-particle: false
+
+# Sounds List
+# Attention: only set to true ONE
+
+anvil-sound: false
+ghast-sound: false
