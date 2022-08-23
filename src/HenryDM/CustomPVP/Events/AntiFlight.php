@@ -12,6 +12,10 @@ use pocketmine\world\World;
 
 class AntiFlight implements Listener {
 
+  public function __construct(private Main $main) {
+      $this->main = $main;
+    }
+
     public function onDamage(EntityDamageByEntityEvent $event) { 
         $entity = $event->getEntity();
         $damager = $event->getDamager();
@@ -22,4 +26,8 @@ class AntiFlight implements Listener {
             }
         }
     }
+    
+      public function getMain() : Main {
+          return $this->main;
+    }	 
 }
