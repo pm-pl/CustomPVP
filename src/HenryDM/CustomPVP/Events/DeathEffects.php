@@ -24,13 +24,13 @@ class DeathEffects implements Listener {
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
         $damageCause = $player->getLastDamageCause();
-        $damager = $damageCause->getDamager();
         if($player instanceof Player) {
             if($this->getMain()->cfg->get("death-effects") === true) { 
-                if ($damageCause instanceof EntityDamageByEntityEvent) {
-                    if ($damager instanceof Player) {
+                if($damageCause instanceof EntityDamageByEntityEvent) {
+                   $damager = $damageCause->getDamager();
+                    if($damager instanceof Player) {
                         if(in_array($worldName(), $this->getMain()->cfg->get("effect-worlds"))) {
-                            $player->getEffects()->add(new EffectInstance(Effect::getEffect(Effect::$this->getMain()->cfg->get("effect-name")), $this->getMain()->cfg->get("efffect-duration")* 1, 1, true));             
+                            $player->addEffect(new EffectInstance(Effect::getEffect(Effect::$this->getMain()->cfg->get("effect-name")), $this->getMain()->cfg->get("efffect-duration")* 1, 1, true));             
                     
                         }                        
                     }
