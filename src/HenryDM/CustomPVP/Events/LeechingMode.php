@@ -22,7 +22,7 @@ class LeechingMode implements Listener {
             if ($entity instanceof Player) {
                 if(in_array($entity->getWorld()->getFolderName(), $this->getMain()->cfg->get("leeching-worlds"))) {
                     $entity->setHealth($entity->getHealth() + $this->getMain()->cfg->get("leeching-level"));
-	        }
+                }
             }
         }
     }
