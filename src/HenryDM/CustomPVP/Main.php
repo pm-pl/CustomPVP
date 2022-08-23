@@ -23,7 +23,6 @@ use HenryDM\CustomPVP\Events\KillReward;
 class Main extends PluginBase implements Listener {
 	
     private static Main $instance;
-
     public Config $cfg;	
 
     public function onEnable() : void {
