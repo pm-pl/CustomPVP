@@ -12,6 +12,7 @@ use pocketmine\utils\Config;
 use HenryDM\CustomPVP\EventListener;
 use HenryDM\CustomPVP\Events\AntiFlightPvp;
 use HenryDM\CustomPVP\Events\Cooldown;
+use HenryDM\CustomPVP\Events\DeathEffects;
 use HenryDM\CustomPVP\Events\KnockBack;
 use HenryDM\CustomPVP\Events\LeechingMode;
 use HenryDM\CustomPVP\Events\HealthRestore;
@@ -30,6 +31,7 @@ class Main extends PluginBase implements Listener {
     public function onEnable() : void {
         $this->getServer()->getPluginManager()->registerEvents(new AntiFlightPvp($this), $this);
         $this->getServer()->getPluginManager()->registerEvents(new Cooldown($this), $this);
+        $this->getServer()->getPluginManager()->registerEvents(new DeathEffects($this), $this);
         $this->getServer()->getPluginManager()->registerEvents(new KnockBack($this), $this);
         $this->getServer()->getPluginManager()->registerEvents(new LeechingMode($this), $this);
         $this->getServer()->getPluginManager()->registerEvents(new HealthRestore($this), $this);

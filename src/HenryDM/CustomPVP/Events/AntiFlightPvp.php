@@ -29,11 +29,12 @@ class AntiFlightPvp implements Listener {
                 $damaged->setFlying(false);
                 $damaged->setAllowFlight(false);
 
-               }
+              }
             }
-         }          
-      }
-    }   
+          }          
+        }
+      }   
+      
     public function getMain() : Main {
         return $this->main;
     }	 
