@@ -69,8 +69,26 @@ particle-worlds:
   - Arena #Example
   - KitPvP #Example 
 
+# KillMoney
+
+# Set to false if you want to disable the KillMoney feature
+killmoney-enable: true
+
+# If you set to true add world's when this feature work's 
+killmoney-world:
+  - world # Example
+  - survival # Example
+
+# KillMoney Price
+killmoney-price: 1000
+
+# KillMoney Reduce feature
+# Set to true to make players money reduce when killed
+killmoney-reduce: true
+
 # Particles List 
 # Attention: only set to true ONE
+
 critical-particle: true
 explode-particle: false
 flame-particle: false
@@ -79,7 +97,3 @@ lava-particle: false
 nether-particle: false
 redstone-particle: false
 snow-particle: false
-
-# EnderPearl cooldowns
-cooldown-message: "§cYou have a cooldown of: §e{time} §7seconds."
-cooldowns-time: 15

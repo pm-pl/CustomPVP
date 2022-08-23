@@ -17,6 +17,7 @@ use HenryDM\CustomPVP\Events\HealthRestore;
 use HenryDM\CustomPVP\Events\Message;
 use HenryDM\CustomPVP\Events\Particles;
 use HenryDM\CustomPVP\Events\SoupPvP;
+use HenryDM\CustomPVP\Events\KillMoney;
 
 class Main extends PluginBase implements Listener {
 	
@@ -26,13 +27,14 @@ class Main extends PluginBase implements Listener {
 
     public function onEnable() : void {
         $this->getServer()->getPluginManager()->registerEvents(new Cooldown($this), $this);
-	$this->getServer()->getPluginManager()->registerEvents(new KnockBack($this), $this);
+	    $this->getServer()->getPluginManager()->registerEvents(new KnockBack($this), $this);
         $this->getServer()->getPluginManager()->registerEvents(new LeechingMode($this), $this);
         $this->getServer()->getPluginManager()->registerEvents(new HealthRestore($this), $this);
-	$this->getServer()->getPluginManager()->registerEvents(new Message($this), $this);
+	    $this->getServer()->getPluginManager()->registerEvents(new Message($this), $this);
         $this->getServer()->getPluginManager()->registerEvents(new Particles($this), $this);
-	$this->getServer()->getPluginManager()->registerEvents(new SoupPvP($this), $this);
-	$this->saveResource("config.yml");
+	    $this->getServer()->getPluginManager()->registerEvents(new SoupPvP($this), $this);
+        $this->getServer()->getPluginManager()->registerEvents(new KillMoney($this), $this);
+	    $this->saveResource("config.yml");
         $this->cfg = new Config($this->getDataFolder() . "config.yml");
     }
 
