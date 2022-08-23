@@ -24,7 +24,7 @@ class KillSound implements Listener {
         $world = $player->getWorld();
         $damageCause = $player->getLastDamageCause();
         if ($this->getMain()->cfg->get("kill-sound") === true) {
-        if (in_array($world->getFolderName(), $this->getMain()->cfg->get("particle-worlds"))) {
+        if (in_array($world->getFolderName(), $this->getMain()->cfg->get("killsound-worlds"))) {
         if($this->getMain()->cfg->get("anvil-sound") === true) {
                     $world->addSound($position, new AnvilUseSound(1));
                     $world->addSound($position, new AnvilUseSound(1));
