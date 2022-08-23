@@ -20,7 +20,7 @@ use HenryDM\CustomPVP\Events\Particles;
 use HenryDM\CustomPVP\Events\SoupPvP;
 use HenryDM\CustomPVP\Events\KillMoney;
 use HenryDM\CustomPVP\Events\KillReward;
-use HenryDM\CustkomPVP\Events\KillSound;
+use HenryDM\CustomPVP\Events\KillSound;
 
 class Main extends PluginBase implements Listener {
 	

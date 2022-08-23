@@ -10,6 +10,7 @@ use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 
 use HenryDM\CustomPVP\Main;
+use HneryDM\CustomPVP\Utils;
 
 class KillSound implements Listener {
 
