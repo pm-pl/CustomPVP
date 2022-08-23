@@ -60,7 +60,7 @@ class Particles implements Listener {
                     $world->addParticle($position->add(1, 0, 0), new HeartParticle(1));
                     $world->addParticle($position->add(0, 1, 0), new HeartParticle(1));
                     $world->addParticle($position->add(0, 0, 1), new HeartParticle(1));
-		}
+		    }
 
                 if($this->getMain()->cfg->get("lava-particle") === true) {
                     $world->addParticle($position, new LavaParticle());
@@ -68,7 +68,7 @@ class Particles implements Listener {
                     $world->addParticle($position->add(1, 0, 0), new LavaParticle());
                     $world->addParticle($position->add(0, 1, 0), new LavaParticle());
                     $world->addParticle($position->add(0, 0, 1), new LavaParticle());
-		}
+	 	    }
 
                 if($this->getMain()->cfg->get("nether-particle") === true) {
                     $world->addParticle($position, new PortalParticle());
@@ -76,7 +76,7 @@ class Particles implements Listener {
                     $world->addParticle($position->add(1, 0, 0), new PortalParticle());
                     $world->addParticle($position->add(0, 1, 0), new PortalParticle());
                     $world->addParticle($position->add(0, 0, 1), new PortalParticle());
-		}
+		    }
 
                 if($this->getMain()->cfg->get("redstone-particle") === true) {
                     $world->addParticle($position, new RedstoneParticle(3));
@@ -84,7 +84,7 @@ class Particles implements Listener {
                     $world->addParticle($position->add(1, 0, 0), new RedstoneParticle(3));
                     $world->addParticle($position->add(0, 1, 0), new RedstoneParticle(3));
                     $world->addParticle($position->add(0, 0, 1), new RedstoneParticle(3));
-		}
+	    	}
 
                 if($this->getMain()->cfg->get("snow-particle") === true) {
                     $world->addParticle($position, new SnowballPoofParticle());
