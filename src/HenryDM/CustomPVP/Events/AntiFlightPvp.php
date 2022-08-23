@@ -11,7 +11,7 @@ use pocketmine\entity\Entity;
 use pocketmine\player\Player;
 use pocketmine\world\World;
 
-class AntiFlight implements Listener {
+class AntiFlightPvp implements Listener {
 
   public function __construct(private Main $main) {
       $this->main = $main;
