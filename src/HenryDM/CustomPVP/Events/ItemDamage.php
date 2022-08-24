@@ -26,14 +26,14 @@ class ItemDamage implements Listener {
              $damaged = $event->getDamager();
              if($damaged instanceof Player) {
                 if($this->getMain()->cfg->get("Item-damage") === true) {
-                  if(in_array($worldName, $this->getMain->cfg->get("damage-worlds"))) {
+                  if(in_array($worldName, $this->getMain()->cfg->get("damage-worlds"))) {
 
 # ================
 #   Wooden Sword 
 # ================
 
                     if($damaged->getInventory()->getItemInHand()->getId() == Item::WOODEN_SWORD) {
-                       $event->setDamage($this->getMain->cfg->get("wooden-sword"));
+                       $event->setDamage($this->getMain()->cfg->get("wooden-sword"));
 
             }
 
@@ -42,7 +42,7 @@ class ItemDamage implements Listener {
 # ================
 
                     if($damaged->getInventory()->getItemInHand()->getId() == Item::STONE_SWORD) {
-                       $event->setDamage($this->getMain->cfg->get("stone-sword"));
+                       $event->setDamage($this->getMain()->cfg->get("stone-sword"));
 
             }
 
@@ -51,7 +51,7 @@ class ItemDamage implements Listener {
 # ================
 
                     if($damaged->getInventory()->getItemInHand()->getId() == Item::IRON_SWORD) {
-                       $event->setDamage($this->getMain->cfg->get("wooden-sword"));
+                       $event->setDamage($this->getMain()->cfg->get("wooden-sword"));
 
             }
 
@@ -59,7 +59,7 @@ class ItemDamage implements Listener {
 #   Golden Sword 
 # ================
                     if($damaged->getInventory()->getItemInHand()->getId() == Item::GOLDEN_SWORD) {
-                       $event->setDamage($this->getMain->cfg->get("wooden-sword"));
+                       $event->setDamage($this->getMain()Main->cfg->get("wooden-sword"));
 
             }
 
@@ -67,7 +67,7 @@ class ItemDamage implements Listener {
 #  Diamond Sword 
 # ================
                     if($damaged->getInventory()->getItemInHand()->getId() == Item::DIAMOND_SWORD) {
-                       $event->setDamage($this->getMain->cfg->get("wooden-sword"));
+                       $event->setDamage($this->getMain()->cfg->get("wooden-sword"));
 
             }
 
@@ -76,7 +76,7 @@ class ItemDamage implements Listener {
 # ================
 
                     if($damaged->getInventory()->getItemInHand()->getId() == Item::WOODEN_AXE) {
-                       $event->setDamage($this->getMain->cfg->get("wooden-axe"));
+                       $event->setDamage($this->getMain()->cfg->get("wooden-axe"));
 
             }
 
@@ -84,7 +84,7 @@ class ItemDamage implements Listener {
 #    Stone Axe
 # ================
                     if($damaged->getInventory()->getItemInHand()->getId() == Item::STONE_AXE) {
-                       $event->setDamage($this->getMain->cfg->get("stone-axe"));
+                       $event->setDamage($this->getMain()->cfg->get("stone-axe"));
 
             }
 
@@ -93,7 +93,7 @@ class ItemDamage implements Listener {
 # ================
 
                     if($damaged->getInventory()->getItemInHand()->getId() == Item::IRON_AXE) {
-                       $event->setDamage($this->getMain->cfg->get("iron-axe"));
+                       $event->setDamage($this->getMain()->cfg->get("iron-axe"));
 
             }
 
@@ -102,7 +102,7 @@ class ItemDamage implements Listener {
 # ================
 
                     if($damaged->getInventory()->getItemInHand()->getId() == Item::DIAMOND_AXE) {
-                       $event->setDamage($this->getMain->cfg->get("diamond-axe"));
+                       $event->setDamage($this->getMain()->cfg->get("diamond-axe"));
 
             }
           }
