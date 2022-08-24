@@ -22,8 +22,8 @@ class AntiFlightPvp implements Listener {
         $world = $entity->getWorld();
         $worldName = $world->getFolderName();
         if (!$damaged instanceof Player) return;
-        if ($this->getMain()->cfg->get("antipvpflight", true)) {
-            if (in_array($worldName, $this->getMain()->cfg->get("antiflight-worlds"))) {
+        if ($this->getMain()->cfg->getNested("antipvpflight", true)) {
+            if (in_array($worldName, $this->getMain()->cfg->getNested("antiflight-worlds", []))) {
                 $damaged->setFlying(false);
                 $damaged->setAllowFlight(false);
             }
