@@ -34,7 +34,7 @@ class ItemDamage implements Listener {
  # =================
 
                     if(($item = $damaged->getInventory()->getItemInHand()->getId()) === ItemFactory::getInstance()->get(268, 0, 1)){
-                       $item->setDamage(4);
+                       $item->setDamage($this->getMain()->cfg->get("wooden-sword"));
 
             }
           }
