@@ -9,19 +9,23 @@ use pocketmine\event\entity\EntityDamageByEntityEvent;
 
 use HenryDM\CustomPVP\Main;
 
-class Cooldown implements Listener {
+class Cooldown implements Listener
+{
 
-    public function __construct(private Main $main) {
-        $this->main = $main;
+    public function __construct(private Main $main)
+    {
+
     }
 
-    public function onDamage(EntityDamageEvent $event) : void {
-        if($this->getMain()->cfg->get("cooldown") === true) {
+    public function onDamage(EntityDamageEvent $event): void
+    {
+        if ($this->getMain()->cfg->get("cooldown") === true) {
             $event->setAttackCooldown($event->getAttackCooldown() - $this->getMain()->cfg->get("cooldown-time"));
-	}
+        }
     }
 
-    public function getMain() : Main {
+    public function getMain(): Main
+    {
         return $this->main;
-    }	 	
+    }
 }	

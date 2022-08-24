@@ -10,8 +10,8 @@ class Utils {
     public static function playSound(Player $player, string $soundName = " ", float $volume = 0, float $pitch = 0) {
         $pk = new PlaySoundPacket();
         $pk->x = $player->getPosition()->getX();
-        $pk->x = $player->getPosition()->getY();
-        $pk->x = $player->getPosition()->getZ();
+        $pk->y = $player->getPosition()->getY();
+        $pk->z = $player->getPosition()->getZ();
         $pk->soundName = $soundName;
         $pk->volume = $volume;
         $pk->pitch = $pitch;

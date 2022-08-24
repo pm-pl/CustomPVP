@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace HenryDM\CustomPVP\Events;
 
@@ -14,13 +14,15 @@ use pocketmine\item\ItemFactory;
 
 use HenryDM\CustomPVP\Main;
 
-class KillReward implements Listener {
+class KillReward implements Listener
+{
 
-    public function __construct(private Main $main) {
-        $this->main = $main;
+    public function __construct(private Main $main)
+    {
     }
 
-    public function onDeath(PlayerDeathEvent $event) { 
+    public function onDeath(PlayerDeathEvent $event)
+    {
         $player = $event->getPlayer();
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
@@ -38,10 +40,11 @@ class KillReward implements Listener {
                     }
                 }
             }
-        }  
+        }
     }
 
-    public function getMain() : Main {
+    public function getMain(): Main
+    {
         return $this->main;
     }
 }    
