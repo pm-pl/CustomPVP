@@ -3,10 +3,12 @@
 namespace HenryDM\CustomPVP;
 
 use pocketmine\plugin\PluginBase;
+
 use pocketmine\event\Listener;
 use pocketmine\utils\Config;
+
 use HenryDM\CustomPVP\Events\AntiFlightPvp;
-use HenryDM\CustomPVP\Events\Cooldown;
+use HenryDM\CustomPVP\Events\AttackCooldown;
 use HenryDM\CustomPVP\Events\KnockBack;
 use HenryDM\CustomPVP\Events\LeechingMode;
 use HenryDM\CustomPVP\Events\HealthRestore;
@@ -31,7 +33,7 @@ class Main extends PluginBase implements Listener {
 
         $events = [
             AntiFlightPvp::class,
-            Cooldown::class,
+            AttackCooldown::class,
             // DeathEffects::class, Does not currently work
             KnockBack::class,
             LeechingMode::class,
