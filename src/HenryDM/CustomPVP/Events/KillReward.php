@@ -14,21 +14,19 @@ use pocketmine\item\ItemFactory;
 
 use HenryDM\CustomPVP\Main;
 
-class KillReward implements Listener
-{
+class KillReward implements Listener {
 
-    public function __construct(private Main $main)
-    {
+    public function __construct(private Main $main) {
+        $this->main = $main;
     }
 
-    public function onDeath(PlayerDeathEvent $event)
-    {
+    public function onDeath(PlayerDeathEvent $event) {
         $player = $event->getPlayer();
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
         $damageCause = $player->getLastDamageCause();
         if ($this->getMain()->cfg->getNested("killrewards-enable", true)) {
-            if (in_array($worldName, $this->getMain()->cfg->get("killrewards-worlds"))) {
+            if (in_array($worldName, $this->getMain()->cfg->get("killrewards-worlds", []))) {
                 if ($damageCause instanceof EntityDamageByEntityEvent) {
                     $damager = $damageCause->getDamager();
                     if ($damager instanceof Player) {
@@ -43,8 +41,7 @@ class KillReward implements Listener
         }
     }
 
-    public function getMain(): Main
-    {
+    public function getMain() : Main {
         return $this->main;
     }
 }    
