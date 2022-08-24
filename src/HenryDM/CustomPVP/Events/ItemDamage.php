@@ -34,77 +34,8 @@ class ItemDamage implements Listener {
  #   Wooden Sword 
  # ================
 
-                    if($damaged->getInventory()->getItemInHand()->getId() == Item::WOODEN_SWORD) {
+                    if($damaged->getInventory()->getItemInHand()->getId() == ItemFactory:getInstance()->get("WOODEN_SWORD") {
                        $event->setDamage($this->getMain()->cfg->get("wooden-sword"));
-
-            }
-
- # ================
- #   Stone Sword 
- # ================
-
-                    if($damaged->getInventory()->getItemInHand()->getId() == Item::STONE_SWORD) {
-                       $event->setDamage($this->getMain()->cfg->get("stone-sword"));
-
-            }
-
- # ================
- #   Iron Sword 
- # ================
-
-                    if($damaged->getInventory()->getItemInHand()->getId() == Item::IRON_SWORD) {
-                       $event->setDamage($this->getMain()->cfg->get("wooden-sword"));
-
-            }
-
- # ================
- #   Golden Sword 
- # ================
-                    if($damaged->getInventory()->getItemInHand()->getId() == Item::GOLDEN_SWORD) {
-                       $event->setDamage($this->getMain()->cfg->get("wooden-sword"));
-
-            }
-
- # ================
- #  Diamond Sword 
- # ================
-                    if($damaged->getInventory()->getItemInHand()->getId() == Item::DIAMOND_SWORD) {
-                       $event->setDamage($this->getMain()->cfg->get("wooden-sword"));
-
-            }
-
- # ================
- #    Wooden Axe
- # ================
-
-                    if($damaged->getInventory()->getItemInHand()->getId() == Item::WOODEN_AXE) {
-                       $event->setDamage($this->getMain()->cfg->get("wooden-axe"));
-
-            }
-
- # ================
- #    Stone Axe
- # ================
-                    if($damaged->getInventory()->getItemInHand()->getId() == Item::STONE_AXE) {
-                       $event->setDamage($this->getMain()->cfg->get("stone-axe"));
-
-            }
-
- # ================
- #     Iron Axe
- # ================
-
-                    if($damaged->getInventory()->getItemInHand()->getId() == Item::IRON_AXE) {
-                       $event->setDamage($this->getMain()->cfg->get("iron-axe"));
-
-            }
-
- # ================
- #   Diamond Axe
- # ================
-
-                    if($damaged->getInventory()->getItemInHand()->getId() == Item::DIAMOND_AXE) {
-                       $event->setDamage($this->getMain()->cfg->get("diamond-axe"));
 
             }
           }
