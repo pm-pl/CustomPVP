@@ -14,7 +14,7 @@ use pocketmine\world\World;
 class AntiFlightPvp implements Listener {
 
     public function __construct(private Main $main) {
-        $thus->main = $main;
+        $this->main = $main;
     }
 
     public function onDamage(EntityDamageByEntityEvent $event) : void {
