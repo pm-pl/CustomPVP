@@ -11,16 +11,13 @@ use pocketmine\entity\Entity;
 use pocketmine\player\Player;
 use pocketmine\world\World;
 
-class
-AntiFlightPvp implements Listener
-{
+class AntiFlightPvp implements Listener {
 
-    public function __construct(private Main $main)
-    {
+    public function __construct(private Main $main) {
+        $thus->main = $main;
     }
 
-    public function onDamage(EntityDamageByEntityEvent $event): void
-    {
+    public function onDamage(EntityDamageByEntityEvent $event) : void {
         $entity = $event->getEntity();
         $damaged = $event->getDamager();
         $world = $event->$entity->getWorld();
@@ -34,8 +31,7 @@ AntiFlightPvp implements Listener
         }
     }
 
-    public function getMain(): Main
-    {
+    public function getMain() : Main {
         return $this->main;
     }
 }
