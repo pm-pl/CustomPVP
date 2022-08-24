@@ -34,7 +34,7 @@ class ItemDamage implements Listener {
  #   Wooden Sword 
  # ================
 
-                    if($damaged->getInventory()->getItemInHand()->getId() == ItemFactory::getInstance()->get::WOODEN_SWORD {
+                    if($damaged->getInventory()->getItemInHand()->getId() == ItemFactory::getInstance()->get(268, 0, 1)){
                        $event->setDamage(4);
 
             }
