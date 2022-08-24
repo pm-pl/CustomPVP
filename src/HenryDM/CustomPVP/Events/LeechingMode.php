@@ -2,7 +2,7 @@
 
 namespace HenryDM\CustomPVP\Events;
 
-use HenryDM\CustomPVP\Main
+use HenryDM\CustomPVP\Main;
 use pocketmine\player\Player;
 use pocketmine\event\Listener;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
