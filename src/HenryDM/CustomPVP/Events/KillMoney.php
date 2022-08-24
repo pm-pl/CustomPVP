@@ -2,18 +2,15 @@
 
 namespace HenryDM\CustomPVP\Events;
 
+# pocketmine Lib
+use HenryDM\CustomPVP\Main;
 use pocketmine\player\Player;
-
 use pocketmine\event\Listener;
-
 use pocketmine\event\player\PlayerDeathEvent;
-
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 
 # LibEco
 use davidglitch04\libEco\libEco;
-
-use HenryDM\CustomPVP\Main;
 
 
 class KillMoney implements Listener

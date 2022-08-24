@@ -2,10 +2,10 @@
 
 namespace HenryDM\CustomPVP\Events;
 
+use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
 
 use pocketmine\event\entity\EntityDeathEvent;
-
 use pocketmine\world\particle\CriticalParticle;
 use pocketmine\world\particle\ExplodeParticle;
 use pocketmine\world\particle\FlameParticle;
@@ -15,7 +15,6 @@ use pocketmine\world\particle\PortalParticle;
 use pocketmine\world\particle\RedstoneParticle;
 use pocketmine\world\particle\SnowballPoofParticle;
 
-use HenryDM\CustomPVP\Main;
 
 
 class Particles implements Listener

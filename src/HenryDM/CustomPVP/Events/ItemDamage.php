@@ -108,4 +108,9 @@ class ItemDamage implements Listener {
       }
     }
   }
+
+  public function getMain() : Main {
+   return $this->main;
+   
+  }
 }

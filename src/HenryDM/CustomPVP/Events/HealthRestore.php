@@ -2,14 +2,11 @@
 
 namespace HenryDM\CustomPVP\Events;
 
+use HenryDM\CustomPVP\Main;
 use pocketmine\player\Player;
-
 use pocketmine\event\Listener;
-
 use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
-
-use HenryDM\CustomPVP\Main;
 
 class HealthRestore implements Listener
 {

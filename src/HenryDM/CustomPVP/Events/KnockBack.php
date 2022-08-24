@@ -2,10 +2,9 @@
 
 namespace HenryDM\CustomPVP\Events;
 
+use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
-
 use pocketmine\event\entity\EntityDamageByEntityEvent;
-
 use HenryDM\CustomPVP\Main;
 
 class KnockBack implements Listener {
