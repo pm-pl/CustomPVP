@@ -9,7 +9,6 @@ use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\world\World;
 use pocketmine\player\Player;
-use pocketmine\item\Item;
 use pocketmine\item\Sword;
 use pocketmine\item\Axe;
 use pocketmine\item\ItemFactory;
@@ -34,8 +33,8 @@ class ItemDamage implements Listener {
  #   Wooden Sword 
  # ================
 
-                    if($damaged->getInventory()->getItemInHand()->getId() === ItemFactory::getInstance()->get(268, 0, 1)){
-                       $event->setDamage(4);
+                    if(($item = $damaged->getInventory()->getItemInHand()->getId()) === ItemFactory::getInstance()->get(268, 0, 1)){
+                       $item->setDamage(4);
 
             }
           }
