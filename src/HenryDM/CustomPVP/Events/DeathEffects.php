@@ -13,33 +13,36 @@ use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\player\Player;
 use pocketmine\world\World;
 
-class DeathEffects implements Listener { 
+class DeathEffects implements Listener
+{
 
-    public function __construct(private Main $main) {
-        $this->main = $main;
+    public function __construct(private Main $main)
+    {
     }
-      
-    public function onPlayerDeath(PlayerDeathEvent $event) { 
+
+    public function onPlayerDeath(PlayerDeathEvent $event)
+    {
         $player = $event->getPlayer();
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
         $damageCause = $player->getLastDamageCause();
-        if($player instanceof Player) {
-            if($this->getMain()->cfg->get("death-effects") === true) { 
-                if($damageCause instanceof EntityDamageByEntityEvent) {
-                   $damager = $damageCause->getDamager();
-                    if($damager instanceof Player) {
-                        if(in_array($worldName(), $this->getMain()->cfg->get("effect-worlds"))) {
-                            $player->getEffects()->add(new EffectInstance(EffectIdMap::getInstance()->fromId($id), $values["duration"], $values["level"], $values["particles"]));             
-                    
-                        }                        
+
+        if ($this->getMain()->cfg->get("death-effects") === true) {
+            if ($damageCause instanceof EntityDamageByEntityEvent) {
+                $damager = $damageCause->getDamager();
+                if ($damager instanceof Player) {
+                    if (in_array($worldName(), $this->getMain()->cfg->get("effect-worlds"))) {
+                        $player->getEffects()->add(new EffectInstance(EffectIdMap::getInstance()->fromId($id), $values["duration"], $values["level"], $values["particles"]));
+
                     }
                 }
             }
+
         }
     }
-    
-    public function getMain() : Main {
+
+    public function getMain(): Main
+    {
         return $this->main;
     }
 }

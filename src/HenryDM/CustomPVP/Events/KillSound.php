@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace HenryDM\CustomPVP\Events;
 
@@ -12,13 +12,16 @@ use pocketmine\event\entity\EntityDamageByEntityEvent;
 use HenryDM\CustomPVP\Main;
 use HenryDM\CustomPVP\Utils\Utils;
 
-class KillSound implements Listener {
+class KillSound implements Listener
+{
 
-    public function __construct(private Main $main) {
-        $this->main = $main;
+    public function __construct(private Main $main)
+    {
+
     }
 
-    public function onDeath(PlayerDeathEvent $event) { 
+    public function onDeath(PlayerDeathEvent $event)
+    {
         $player = $event->getPlayer();
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
@@ -35,7 +38,8 @@ class KillSound implements Listener {
         }
     }
 
-    public function getMain() : Main {
+    public function getMain(): Main
+    {
         return $this->main;
     }
 }    

@@ -3,16 +3,10 @@
 namespace HenryDM\CustomPVP;
 
 use pocketmine\plugin\PluginBase;
-
 use pocketmine\event\Listener;
-
-use pocketmine\utils\TextFormat;
 use pocketmine\utils\Config;
-
-use HenryDM\CustomPVP\EventListener;
 use HenryDM\CustomPVP\Events\AntiFlightPvp;
 use HenryDM\CustomPVP\Events\Cooldown;
-use HenryDM\CustomPVP\Events\DeathEffects;
 use HenryDM\CustomPVP\Events\KnockBack;
 use HenryDM\CustomPVP\Events\LeechingMode;
 use HenryDM\CustomPVP\Events\HealthRestore;
@@ -24,31 +18,41 @@ use HenryDM\CustomPVP\Events\KillReward;
 use HenryDM\CustomPVP\Events\KillSound;
 
 class Main extends PluginBase implements Listener {
-	
+
+    /*** @var Main */
     private static Main $instance;
-    public Config $cfg;	
+
+    /*** @var Config */
+    public Config $cfg;
 
     public function onEnable() : void {
-        $this->getServer()->getPluginManager()->registerEvents(new AntiFlightPvp($this), $this);
-        $this->getServer()->getPluginManager()->registerEvents(new Cooldown($this), $this);
-        $this->getServer()->getPluginManager()->registerEvents(new DeathEffects($this), $this);
-        $this->getServer()->getPluginManager()->registerEvents(new KnockBack($this), $this);
-        $this->getServer()->getPluginManager()->registerEvents(new LeechingMode($this), $this);
-        $this->getServer()->getPluginManager()->registerEvents(new HealthRestore($this), $this);
-        $this->getServer()->getPluginManager()->registerEvents(new Message($this), $this);
-        $this->getServer()->getPluginManager()->registerEvents(new Particles($this), $this);
-        $this->getServer()->getPluginManager()->registerEvents(new SoupPvP($this), $this);
-        $this->getServer()->getPluginManager()->registerEvents(new KillMoney($this), $this);
-        $this->getServer()->getPluginManager()->registerEvents(new KillReward($this), $this);
-        $this->getServer()->getPluginManager()->registerEvents(new KillSound($this), $this);
-        $this->saveResource("config.yml");
-        $this->cfg = new Config($this->getDataFolder() . "config.yml");
+        $this->saveDefaultConfig();
+        $this->cfg = $this->getConfig();
+
+        $events = [
+            AntiFlightPvp::class,
+            Cooldown::class,
+            // DeathEffects::class, Does not currently work
+            KnockBack::class,
+            LeechingMode::class,
+            HealthRestore::class,
+            Message::class,
+            Particles::class,
+            Particles::class,
+            SoupPvP::class,
+            KillMoney::class,
+            KillReward::class,
+            KillSound::class
+        ];
+        foreach($events as $e) {
+            $this->getServer()->getPluginManager()->registerEvents(new $e($this), $this);
+        }
     }
 
     public function onLoad() : void {
         self::$instance = $this;
     }
-	
+
     public static function getInstance() : Main {
         return self::$instance;
     }

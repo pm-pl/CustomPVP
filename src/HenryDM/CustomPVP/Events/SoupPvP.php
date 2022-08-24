@@ -9,14 +9,16 @@ use pocketmine\world\World;
 use pocketmine\event\player\PlayerItemUseEvent;
 use pocketmine\item\ItemFactory;
 
-class SoupPvP implements Listener {
+class SoupPvP implements Listener
+{
 
-    public function __construct(private Main $main) {
-        $this->main = $main;
+    public function __construct(private Main $main)
+    {
     }
 
-    public function onPlayerInteract(PlayerItemUseEvent $event) : void {
-        if($this->getMain()->cfg->get("soup-pvp") === true) {
+    public function onPlayerInteract(PlayerItemUseEvent $event): void
+    {
+        if ($this->getMain()->cfg->get("soup-pvp") === true) {
             $player = $event->getPlayer();
             $item = $event->getItem();
             $world = $player->getWorld();
@@ -24,20 +26,21 @@ class SoupPvP implements Listener {
             $maxhealth = $player->getMaxHealth();
             if ($player->getInventory()->getItemInHand()->getId() == $this->main->getConfig()->get("soup-id")) {
                 if ($health == $maxhealth) {
-                    $event->cancel();	
+                    $event->cancel();
                 } else {
                     if (in_array($world->getFolderName(), $this->getMain()->cfg->get("soup-worlds"))) {
                         $player->setHealth($health + $this->getMain()->cfg->get("regenerate-level"));
-		                $player->sendActionBarMessage($this->getMain()->cfg->get("soup-message"));
+                        $player->sendActionBarMessage($this->getMain()->cfg->get("soup-message"));
                         $player->getInventory()->removeItem(ItemFactory::getInstance()->get($item->getId(), 0, 1));
-	                } 
+                    }
                 }
-	        }
+            }
         }
     }
 
 
-    public function getMain() : Main {
+    public function getMain(): Main
+    {
         return $this->main;
     }
 }
