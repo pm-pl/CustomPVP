@@ -9,6 +9,8 @@ use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\world\World;
 use pocketmine\player\Player;
+use pocketmine\item\Item;
+use pocketmine\item\ItemFactory;
 
 class ItemDamage implements Listener {
 
