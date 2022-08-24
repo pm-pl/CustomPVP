@@ -36,7 +36,6 @@ restore-helth: true
 restore-worlds: 
   - Arena #Example
   - KitPvP #Example
-
 # Soup PvP
 # Use true to activate
 soup-pvp: true
@@ -144,3 +143,51 @@ lava-particle: false
 nether-particle: false
 redstone-particle: false
 snow-particle: false
+
+# Death Effects
+# Use "true" or "false" to enable/disable this mode
+death-effects: true
+# Worlds where this mode is supported
+effect-worlds:
+  - "world" # Examnple
+  - "ZonePvP" #Example
+# Effect
+effect:
+  id: 1 # Speed effect
+  duration: 30 # Duration effect
+  level: 1 # Maximum level 4
+  particle: true # Particle effect
+# Here's a list of all available effects with their IDs
+
+# ABSORPTION = 22
+# BLINDNESS = 15
+# CONDUIT_POWER = 26
+# CONFUSION = 9
+# DAMAGE_RESISTANCE = 11
+# FATAL_POISON = 25
+# FATIGUE = 4
+# FIRE_RESISTANCE = 12
+# HARMING = 7
+# HASTE = 3
+# HEALING = 6
+# HEALTH_BOOST = 21
+# HUNGER = 17
+# INSTANT_DAMAGE = 7
+# INSTANT_HEALTH = 6
+# INVISIBILITY = 14
+# JUMP = 8
+# JUMP_BOOST = 8
+# LEVITATION = 24
+# MINING_FATIGUE = 4
+# NAUSEA = 9
+# NIGHT_VISION = 16
+# POISON = 19
+# REGENERATION = 10
+# RESISTANCE = 11
+# SATURATION = 23
+# SLOWNESS = 2
+# SPEED = 1
+# STRENGTH = 5
+# WATER_BREATHING = 13
+# WEAKNESS = 18
+# WITHER = 20
