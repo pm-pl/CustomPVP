@@ -29,9 +29,9 @@ class ItemDamage implements Listener {
                 if($this->getMain()->cfg->get("Item-damage") === true) {
                   if(in_array($worldName, $this->getMain()->cfg->get("damage-worlds"))) {
 
- # ================
+ # =================
  #   Wooden Sword 
- # ================
+ # =================
 
                     if(($item = $damaged->getInventory()->getItemInHand()->getId()) === ItemFactory::getInstance()->get(268, 0, 1)){
                        $item->setDamage(4);
