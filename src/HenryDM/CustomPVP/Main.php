@@ -3,7 +3,6 @@
 namespace HenryDM\CustomPVP;
 
 use pocketmine\plugin\PluginBase;
-
 use pocketmine\event\Listener;
 use pocketmine\utils\Config;
 
