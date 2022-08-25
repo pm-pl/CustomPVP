@@ -16,7 +16,7 @@ use pocketmine\item\ItemFactory;
 class ItemDamage implements Listener {
 
     public function __construct(private Main $main) {
-   
+      $this->main = $main;
     }
    
        public function onDamage(EntityDamageByEntityEvent $event) {
@@ -34,7 +34,7 @@ class ItemDamage implements Listener {
  # =================
 
                     if(($item = $damaged->getInventory()->getItemInHand()->getId()) === ItemFactory::getInstance()->get(268, 0, 1)){
-                       $item->setDamage($this->getMain()->cfg->get("wooden-sword"));
+                      $item->setDamage($this->getMain()->cfg->get("wooden-sword"));
 
             }
           }

@@ -8,16 +8,13 @@ use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 
-class HealthRestore implements Listener
-{
+class HealthRestore implements Listener {
 
-    public function __construct(private Main $main)
-    {
-
+    public function __construct(private Main $main) {
+        $this->main = $main;
     }
 
-    public function onPlayerDeath(PlayerDeathEvent $event): void
-    {
+    public function onPlayerDeath(PlayerDeathEvent $event) : void {
         if ($this->getMain()->cfg->get("restore-health") === true) {
             $player = $event->getPlayer();
             $cause = $player->getLastDamageCause();
@@ -32,8 +29,7 @@ class HealthRestore implements Listener
         }
     }
 
-    public function getMain(): Main
-    {
+    public function getMain() : Main {
         return $this->main;
     }
 }
