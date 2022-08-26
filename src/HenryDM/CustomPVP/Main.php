@@ -36,7 +36,7 @@ class Main extends PluginBase implements Listener {
         $events = [
             AntiFlightPvp::class,
             AttackCooldown::class,
-            // DeathEffects::class, Does not currently work
+            DeathEffects::class,
             KnockBack::class,
             DeathKick::class,
             LeechingMode::class,
