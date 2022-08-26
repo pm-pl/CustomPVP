@@ -6,7 +6,6 @@ use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
 
 use pocketmine\player\Player;
-use pocketmine\event\Listener;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\item\ItemFactory;
 
