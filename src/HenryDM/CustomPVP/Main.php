@@ -36,7 +36,7 @@ class Main extends PluginBase implements Listener {
             AttackCooldown::class,
             // DeathEffects::class, Does not currently work
             KnockBack::class,
-            DeathKick::class
+            DeathKick::class,
             LeechingMode::class,
             HealthRestore::class,
             Message::class,

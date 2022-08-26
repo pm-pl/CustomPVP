@@ -19,9 +19,9 @@ class DeathKick implements Listener {
         $player = $event->getPlayer();
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
-        if($this->getMain->cfg->get("death-kick") === true) {
-            if (in_array($worldname, $this->getMain()->cfg->get("kick-worlds"))) {
-                $player->kick($this->getMain->cfg->get("kick-message");                
+        if($this->getMain()->cfg->get("death-kick") === true) {
+            if (in_array($player->getWorld()->getFolderName(), $this->getMain()->cfg->get("kick-worlds"))) {
+                $player->kick($this->getMain()->cfg->get("kick-message");                
             }
         }
     }
