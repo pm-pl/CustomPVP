@@ -71,6 +71,11 @@ kick-worlds:
 # You can use Minecraft Color codes
 kick-message: "Oof! You Death"
 
+# PingKick
+pingkick-enable: true
+
+pingkick-max: 400
+
 # Kill Particles
 # Set to true for enable this feature 
 kill-particles: false
