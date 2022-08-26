@@ -13,11 +13,10 @@ use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\player\Player;
 use pocketmine\world\World;
 
-class DeathEffects implements Listener
-{
+class DeathEffects implements Listener {
 
-    public function __construct(private Main $main)
-    {
+    public function __construct(private Main $main) {
+        $this->main = $main;
     }
 
     public function onPlayerDeath(PlayerDeathEvent $event)

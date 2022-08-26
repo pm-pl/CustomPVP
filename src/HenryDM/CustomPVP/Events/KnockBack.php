@@ -9,7 +9,7 @@ use pocketmine\event\entity\EntityDamageByEntityEvent;
 class KnockBack implements Listener {
 
     public function __construct(private Main $main) {
-
+        $this->main = $main;
     }
 
     public function onEntity(EntityDamageByEntityEvent $event) : void {	

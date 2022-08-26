@@ -9,15 +9,13 @@ use pocketmine\world\World;
 use pocketmine\event\player\PlayerItemUseEvent;
 use pocketmine\item\ItemFactory;
 
-class SoupPvP implements Listener
-{
+class SoupPvP implements Listener {
 
-    public function __construct(private Main $main)
-    {
+    public function __construct(private Main $main) {
+        $this->main = $main;
     }
 
-    public function onPlayerInteract(PlayerItemUseEvent $event): void
-    {
+    public function onPlayerInteract(PlayerItemUseEvent $event) : void {
         if ($this->getMain()->cfg->get("soup-pvp") === true) {
             $player = $event->getPlayer();
             $item = $event->getItem();
@@ -39,8 +37,7 @@ class SoupPvP implements Listener
     }
 
 
-    public function getMain(): Main
-    {
+    public function getMain() : Main {
         return $this->main;
     }
 }

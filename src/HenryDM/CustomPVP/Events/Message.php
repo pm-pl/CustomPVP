@@ -14,16 +14,13 @@ use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\player\PlayerDeathEvent;
 
 
-class Message implements Listener
-{
+class Message implements Listener {
 
-    public function __construct(private Main $main)
-    {
-
+    public function __construct(private Main $main) {
+        $this->main = $main;
     }
 
-    public function onDeath(PlayerDeathEvent $event): void
-    {
+    public function onDeath(PlayerDeathEvent $event) : void {
         if ($this->getMain()->cfg->get("message") === true) {
             $player = $event->getPlayer();
             $cause = $player->getLastDamageCause();
@@ -40,8 +37,7 @@ class Message implements Listener
         }
     }
 
-    public function getMain(): Main
-    {
+    public function getMain() : Main {
         return $this->main;
     }
 }

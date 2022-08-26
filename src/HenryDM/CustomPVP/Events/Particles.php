@@ -17,16 +17,13 @@ use pocketmine\world\particle\SnowballPoofParticle;
 
 
 
-class Particles implements Listener
-{
+class Particles implements Listener {
 
-    public function __construct(private Main $main)
-    {
-
+    public function __construct(private Main $main) {
+        $this->main = $main;
     }
 
-    public function onDeath(EntityDeathEvent $event)
-    {
+    public function onDeath(EntityDeathEvent $event) : void {
         $entity = $event->getEntity();
         $world = $entity->getWorld();
         $position = $entity->getPosition();
@@ -99,8 +96,7 @@ class Particles implements Listener
         }
     }
 
-    public function getMain(): Main
-    {
+    public function getMain() : Main {
         return $this->main;
     }
 }

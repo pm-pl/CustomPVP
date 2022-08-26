@@ -7,16 +7,13 @@ use pocketmine\player\Player;
 use pocketmine\event\Listener;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 
-class LeechingMode implements Listener
-{
+class LeechingMode implements Listener {
 
-    public function __construct(private Main $main)
-    {
-
+    public function __construct(private Main $main) {
+        $this->main = $main;
     }
 
-    public function onDamage(EntityDamageByEntityEvent $event): void
-    {
+    public function onDamage(EntityDamageByEntityEvent $event) : void {
         if ($this->getMain()->cfg->get("leeching-mode") === true) {
             $entity = $event->getEntity();
             if ($entity instanceof Player) {
@@ -27,8 +24,7 @@ class LeechingMode implements Listener
         }
     }
 
-    public function getMain(): Main
-    {
+    public function getMain() : Main {
         return $this->main;
     }
 }
