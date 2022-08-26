@@ -19,12 +19,12 @@ class AntiFlightPvp implements Listener {
 
     public function onDamage(EntityDamageEvent $event) : void {
         $entity = $event->getEntity();
-        $damager = $event->getDamager();
         $world = $entity->getWorld();
         $worldName = $world->getFolderName();
         if ($this->getMain()->cfg->getNested("antipvpflight", true)) {
             if (in_array($worldName, $this->getMain()->cfg->getNested("antiflight-worlds", []))) {
                 if ($event instanceof EntityDamageByEntityEvent) {
+                    $damager = $event->getDamager();
                     if (!$damager instanceof Player) return;
                     if ($damager->isCreative()) return;
                     if ($damager->getAllowFlight() === true) {
