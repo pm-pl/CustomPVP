@@ -58,6 +58,19 @@ leeching-worlds: [KitPvP, Arena] # Examples
 # Leeching Level
 leeching-level: 5
 
+# Death Kick
+# Set to true to enable this feature
+death-kick: false 
+
+# If you set to true add Worl's when this feature Work's
+kick-worlds:
+  - KickArena #Example
+  - ArenaKick #Example
+
+# If you set to true add on Kick Message
+# You can use Minecraft Color codes
+kick-message: "Oof! You Death"
+
 # Kill Particles
 # Set to true for enable this feature 
 kill-particles: false

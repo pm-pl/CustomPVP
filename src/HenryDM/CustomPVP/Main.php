@@ -8,6 +8,7 @@ use pocketmine\utils\Config;
 
 use HenryDM\CustomPVP\Events\AntiFlightPvp;
 use HenryDM\CustomPVP\Events\AttackCooldown;
+use HenryDM\CustomPVP\Events\DeathKick;
 use HenryDM\CustomPVP\Events\KnockBack;
 use HenryDM\CustomPVP\Events\LeechingMode;
 use HenryDM\CustomPVP\Events\HealthRestore;
@@ -35,6 +36,7 @@ class Main extends PluginBase implements Listener {
             AttackCooldown::class,
             // DeathEffects::class, Does not currently work
             KnockBack::class,
+            DeathKick::class
             LeechingMode::class,
             HealthRestore::class,
             Message::class,
