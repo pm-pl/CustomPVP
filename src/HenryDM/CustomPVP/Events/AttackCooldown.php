@@ -13,8 +13,13 @@ class AttackCooldown implements Listener {
     }
 
     public function onDamage(EntityDamageEvent $event) : void {
-        if ($this->getMain()->cfg->getNested("attack-cooldown", true)) {
-            $event->setAttackCooldown($event->getAttackCooldown() - $this->getMain()->cfg->getNested("cooldown-time"));
+        $entity = $event->getEntity();
+        $world = $entity->getWorld();
+        $worldName = $world->getFolderName();
+        if ($this->getMain()->cfg->getNested("attackcooldown", true)) {
+            if (in_array($worldName, $this->getMain()->cfg->getNested("attackcooldown-world", []))) {
+                $event->setAttackCooldown($event->getAttackCooldown() - $this->getMain()->cfg->getNested("cooldown-time"));
+            }
         }
     }
 

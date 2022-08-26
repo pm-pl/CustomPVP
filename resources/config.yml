@@ -122,10 +122,9 @@ killrewards-items:
 
 # AntiFlight
 
-# Set to false if you want to disable the AntiFlight Feature
-
-anti-flight: true
-
+# Set to false if you want to disable the AntiPvpFlight feature
+# Default: true
+antipvpflight: true
 # If you set to true add world's where this feature works 
 
 antiflight-worlds: 

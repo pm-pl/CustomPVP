@@ -2,10 +2,14 @@
 
 namespace HenryDM\CustomPVP\Events;
 
-use HenryDM\CustomPVP\Main;
 use pocketmine\player\Player;
+
 use pocketmine\event\Listener;
+
+use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
+
+use HenryDM\CustomPVP\Main;
 
 class AntiFlightPvp implements Listener {
 
@@ -13,16 +17,19 @@ class AntiFlightPvp implements Listener {
         $this->main = $main;
     }
 
-    public function onDamage(EntityDamageByEntityEvent $event) : void {
+    public function onDamage(EntityDamageEvent $event) : void {
         $entity = $event->getEntity();
-        $damaged = $event->getDamager();
+        $damager = $event->getDamager();
         $world = $entity->getWorld();
         $worldName = $world->getFolderName();
-        if (!$damaged instanceof Player) return;
         if ($this->getMain()->cfg->getNested("antipvpflight", true)) {
             if (in_array($worldName, $this->getMain()->cfg->getNested("antiflight-worlds", []))) {
-                $damaged->setFlying(false);
-                $damaged->setAllowFlight(false);
+                if (!$damaged instanceof Player) return;
+                if ($player->isCreative()) return;
+                if ($player->getAllowFlight(true)) {
+                    $damaged->setFlying(false);
+                    $damaged->setAllowFlight(false);
+                }
             }
         }
     }
