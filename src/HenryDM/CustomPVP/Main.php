@@ -8,6 +8,7 @@ use pocketmine\utils\Config;
 
 use HenryDM\CustomPVP\Events\AntiFlightPvp;
 use HenryDM\CustomPVP\Events\AttackCooldown;
+use HenryDM\CustomPVP\Events\DeathEffects;
 use HenryDM\CustomPVP\Events\DeathKick;
 use HenryDM\CustomPVP\Events\KnockBack;
 use HenryDM\CustomPVP\Events\LeechingMode;
