@@ -3,7 +3,7 @@
 namespace HenryDM\CustomPVP\Events;
 
 use HenryDM\CustomPVP\Main;
-use pocektmine\event\Listener;
+use pocketmine\event\Listener;
 
 use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\player\Player;
