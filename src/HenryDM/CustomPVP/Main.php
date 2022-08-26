@@ -52,7 +52,7 @@ class Main extends PluginBase implements Listener {
         foreach($events as $e) {
             $this->getServer()->getPluginManager()->registerEvents(new $e($this), $this);
         }
-        $this->getServer()->getScheduler()->schedulerRepeatingTask(new PingTask($this), 20);
+        $this->getScheduler()->schedulerRepeatingTask(new PingTask($this), 20);
     }
 
     public function onLoad() : void {
