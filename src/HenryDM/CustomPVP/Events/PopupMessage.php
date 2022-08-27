@@ -52,7 +52,9 @@ class PopupMessage implements Listener {
 
             $cause = $player->getLastDamageCause();
             
-            $worlName = $player->getWorld()->getFolderName();
+            $world = $player->getWorld();
+
+        $worldName = $world->getFolderName();
 
             if (in_array($worldName, $this->getMain()->cfg->getNested("killsound-worlds"))) {
 
