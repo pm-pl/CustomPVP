@@ -26,6 +26,8 @@ use pocketmine\event\entity\EntityDamageByEntityEvent;
 
 use pocketmine\event\player\PlayerDeathEvent;
 
+use pocketmine\world\World;
+
 
 
 
@@ -49,6 +51,8 @@ class PopupMessage implements Listener {
             $player = $event->getPlayer();
 
             $cause = $player->getLastDamageCause();
+            
+            $worlName = $player->getWorld()->getFolderName();
 
             if (in_array($worldName, $this->getMain()->cfg->getNested("killsound-worlds"))) {
 
