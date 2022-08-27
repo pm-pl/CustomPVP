@@ -56,7 +56,7 @@ class PopupMessage implements Listener {
 
             if (in_array($worldName, $this->getMain()->cfg->getNested("killsound-worlds"))) {
 
-            if ($cause->getCause() == EntityDamageEvent::CAUSE_ENTITY_ATTACK) {
+            if ($cause->getCause() == EntityDamageEventByEntity::CAUSE_ENTITY_ATTACK) {
 
                 if ($cause instanceof EntityDamageByEntityEvent) {
 
