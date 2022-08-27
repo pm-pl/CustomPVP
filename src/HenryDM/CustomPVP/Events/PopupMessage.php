@@ -31,7 +31,7 @@ class PopupMessage implements Listener {
                         $damager = $cause->getDamager();
                         if($damager instanceof Player){
                             $message = str_replace(["{victim}", "{killer}"], [$event->getPlayer()->getName(), $damager->getName()], $this->getMain()->cfg->get("kill-popup-message"));
-                             $eplayer->sendPopup($message);
+                             $player->sendPopup($message);
                         }
                     }
                 }
