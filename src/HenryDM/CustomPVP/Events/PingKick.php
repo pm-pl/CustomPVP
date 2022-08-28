@@ -16,7 +16,8 @@ class PingKick implements Listener {
     }
 
     public function onDamage(EntityDamageEvent $event) {
-        $entity = $event->getPlayer();
+       foreach ($this->plugin->getServer()->getOnlinePlayers() as $player) {
+        $entity = $event->getEntity();
         $world = $entity->getWorld();
         $worldName = $world->getFolderName();
         if ($this->getMain()->cfg->get("ping-kick", true)) {
@@ -26,6 +27,8 @@ class PingKick implements Listener {
                     if (!$damager instanceof Player) return;
                        if ($player->getNetworkSession()->getPing() >= $this->getMain()->cfg->get("ping-kick-max")) {
                         $player->kick($$this->getMain()->cfg->get("ping-kick-message"));   
+                       
+                       }
                     }
                 }
             }
