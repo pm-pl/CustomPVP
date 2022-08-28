@@ -42,7 +42,7 @@ class Main extends PluginBase implements Listener {
             DeathEffects::class,
             DeathKick::class,
             HealthRestore::class,
-            ItemDamage::class,
+            # ItemDamage::class,
             KillMoney::class,
             KillParticles::class,
             KillReward::class,

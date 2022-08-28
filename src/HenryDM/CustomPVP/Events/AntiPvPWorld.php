@@ -23,8 +23,7 @@ class AntiPvPWorld implements Listener {
             if ($event instanceof EntityDamageByEntityEvent) {
                 $damager = $event->getDamager();
                 if (!$damager instanceof Player) return;
-                   if (in_array($player->getWorld()->getFolderName(), $this->getMain()->cfg->get("blocked-pvp-worlds"))) {
-                    $damager->sendActionBarMessage($this->getMain()->get("blocked-pvp-message"));
+                   if (in_array($worldName, $this->getMain()->cfg->get("blocked-pvp-worlds"))) {
                     $event->cancel();        
             
                 }

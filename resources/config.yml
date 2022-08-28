@@ -29,7 +29,6 @@ antiflight-worlds:
 # Info: This feature allow you to disable pvp on certains worlds!
 
 anti-pvp: false 
-blocked-pvp-messages: "§cPvp is disabled for this world!"
 
 block-pvp-worlds: 
   - Lobby # Example 
