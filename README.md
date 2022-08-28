@@ -10,27 +10,36 @@
 ---
 ## ⭐ • Plugin Features
 
-> ⏰ ➔ PvP Cooldown
+> 🪂 ➔ Simple AntiPvp Flight
 
-> 💖 ➜ Health Restore
+> 🛑 ➔ Custom World PvP Blocker
 
-> 🌕 ➜ Custom KnockBack 
+> ⏰ ➔ Simple PvP Attack Cooldown
 
-> 💌 ➜ Custom PvP Messages
+> 💉 ➔ Custom Death Effects
 
-> 🥣 ➜ Advanced SoupPvP
+> ❌ ➔ Basic PvP Death Kick
 
-> ✨ ➜ Kill Particles
+> 💖 ➔ Advanced PvP HealthRestore
 
-> 🚀 ➜ Custom Leeching Mode 
+> 💲 ➔ Super PvP Kill Money
 
-> 🎶 ➜ Custom Kill Sound
+> ✨ ➔ Simple Kill Particles
 
-> 💰 ➜ Advanced Kill Money
+> 🏆 ➔ Advanced Kill Rewards
 
-> 🪂 ➜ Simple Anti PvP Flight
+> 🎶 ➔ Custom PvP Kill Sounds
 
-> 🏆 ➜ Custom Kill Item Reward
+> 📏 ➔ Modify Pvp Knockback
+
+> 🚀 ➔ New Leeching Mode
+
+> 💌 ➔ Custom Pvp Messages
+
+> 🔴 ➔ Advanced PvP PingKick
+
+> 🥣 ➔ Super New Soup PvP
+
 ---
 ## 🎯 • Requeriments and Info's
 
