@@ -1,3 +1,4 @@
+---
 #   _____          _                  _______      _______  
 #  / ____|        | |                |  __ \ \    / /  __ \ 
 # | |    _   _ ___| |_ ___  _ __ ___ | |__) \ \  / /| |__) |
@@ -9,202 +10,190 @@
 # Any bugs that come up please report on github: https://github.com/Henry12960/CustomPVP/issues
 # Give suggestions: https://github.com/Henry12960/CustomPVP/issues/2
 # Plugin Wiki: https://github.com/Henry12960/CustomPVP/wiki
+# Minecraft Sounds Wiki: https://minecraft.fandom.com/wiki/Sounds.json/Bedrock_Edition_values
+# All Add-ons are disable, set to "true" to enable!
 
-# Settings:
+# =====================
+#    AntiFlight PvP
+# =====================
+# Info: This feature allow you to disable players fly on pvp!
 
-# Kill Message
-kill-message: "§c{victim} was killed by {killer}!"
-# Use true to activate
-message: true
-
-# PvP cooldown
-cooldown-time: 1.6
-# Use true to activate
-cooldown: true
-# Info: time in milliseconds for the player to hit another player again
-
-# PvP knockback
-knockback-level: 0.50
-# Use true to activate
-knockback: true
-# Info: DO NOT SWITCH TO MORE THAN 5.0 SUBJECT TO BUGS!
-
-# Restore Health on Kill player
-# Use true to activate 
-restore-helth: true
-# Worlds
-restore-worlds: 
-  - Arena #Example
-  - KitPvP #Example
-# Soup PvP
-# Use true to activate
-soup-pvp: true
-# Regenerate Level
-regenerate-level: 5
-# Soup ID
-# Use 282 to Mushroom Stew and 459 the Beet Stew
-soup-id: 282
-# Soup Message
-soup-message: "§aLife successfully restored."
-# Soup World's
-soup-worlds:
-  - Arena #Example
-  - SoupArena #Example
-# Leeching Mode
-# Use true to activate
-leeching-mode: true
-# Worlds
-leeching-worlds: [KitPvP, Arena] # Examples
-# Leeching Level
-leeching-level: 5
-
-# Death Kick
-# Set to true to enable this feature
-death-kick: false 
-
-# If you set to true add Worl's when this feature Work's
-kick-worlds:
-  - KickArena #Example
-  - ArenaKick #Example
-
-# If you set to true add on Kick Message
-# You can use Minecraft Color codes
-kick-message: "Oof! You Death"
-
-# PingKick
-pingkick-enable: true
-
-pingkick-max: 400
-
-# Kill Particles
-# Set to true for enable this feature 
-kill-particles: false
-
-# If you set to true add world's when this feature work's 
-particle-worlds: 
-  - Arena #Example
-  - KitPvP #Example 
-
-# KillMoney
-# Set to false if you want to disable the KillMoney feature
-# Default: true
-killmoney-enable: true
-
-# If you set to true add worlds where this feature works
-killmoney-world:
-  - world # Example
-  - survival # Example
-
-# KillMoney Price
-killmoney-price: 1000
-
-# KillMoney Reduce feature
-# Set to true to make players money reduce when killed
-killmoney-reduce: true
-
-# KillDeath Sound
-# Set to false if you want to disable the KillMoney feature
-# Default: true
-
-killsound-enable: true
-
-# If you set to true add worlds where this feature works
-killsound-worlds:
-  - pvp # Example
-  - survival # Example
-
-# KillDeath Sound Name
-
-killsound-soundname: "random.explode"
-
-# KillReward
-# Set to false if you want to disable the KillMoney feature
-# Default: true
-killrewards-enable: true
-
-# If you set to true add worlds where this feature works
-killrewards-worlds:
-  - pvp
-  - survival
-
-# Reward Item
-
-killrewards-items:
-
-  - slots: 0
-    id: 265
-    damage: 0
-    count: 1
-    name: KillReward
-
-
-# AntiFlight
-
-# Set to false if you want to disable the AntiPvpFlight feature
-# Default: true
-antipvpflight: true
-# If you set to true add world's where this feature works 
+anti-flight: false 
 
 antiflight-worlds: 
-  - world # Example
-  - arena # Example
+  - AntiFlightArena # Example
 
-# Particles List 
-# Attention: only set to true ONE
+# =====================
+#    AntiPvP Worlds
+# =====================
+# Info: This feature allow you to disable pvp on certains worlds!
+
+anti-pvp: false 
+blocked-pvp-messages: "§cPvp is disabled for this world!"
+
+block-pvp-worlds: 
+  - Lobby # Example 
+  
+# =====================
+#    Attack Cooldown
+# =====================
+# Info: This feature allow you to set pvp cooldown!
+
+attack-cooldown: false 
+
+cooldown-worlds:
+  - CooldownArena # Example
+
+# =====================
+#     Death Effects
+# =====================
+# Info: This feature allow you to add Player's death effects
+
+death-effects: false 
+
+effects-worlds: 
+  - EffectArena - Example
+
+effect:
+  id: 1 # Add here effect id
+  duration: 30 # Add here effect duration
+  level: 1 # Add here effect level
+  particles: false # Set to true to show particles effects
+
+# =====================
+#      Death Kick
+# =====================
+# Info: This feature allows you to kick the player when he dies
+
+death-kick: false 
+death-kick-message: "§cOof! You Death"
+
+death-kick-worlds: 
+  - KickArena # Example
+
+# =====================
+#    HealthRestore
+# =====================
+# Info: This feature allow you to recover all heart on kill player  
+
+heath-restore: false 
+
+restore-worlds:
+  - HealthArena # Example
+
+# =====================
+#      KillMoney
+# =====================
+# Info: This feature allows you to give money to the player when killing another
+
+kill-money: false 
+money-reduce: false # if active when player dies he will lose money
+money-value: 10 
+
+money-worlds: 
+  - MoneyArena # Example
+
+# =====================
+#    Kill Particles
+# =====================
+# Info: This feature allows you to add particles on kill players (liked Hypixel)
+
+kill-particles: false 
+
+particles-worlds: 
+  - ParticleArena # Example
 
 critical-particle: true
 explode-particle: false
 flame-particle: false
 heart-particle: false
 lava-particle: false
-nether-particle: false
+portal-particle: false
 redstone-particle: false
 snow-particle: false
 
-# Death Effects
-# Use "true" or "false" to enable/disable this mode
-death-effects: true
-# Worlds where this mode is supported
-effect-worlds:
-  - "world" # Examnple
-  - "ZonePvP" #Example
-# Effect
-effect:
-  id: 1 # Speed effect
-  duration: 30 # Duration effect
-  level: 1 # Maximum level 4
-  particle: true # Particle effect
-# Here's a list of all available effects with their IDs
+# =====================
+#      KillReward
+# =====================
+# Info: This feature allows you to give rewards (items) when killing players
 
-# ABSORPTION = 22
-# BLINDNESS = 15
-# CONDUIT_POWER = 26
-# CONFUSION = 9
-# DAMAGE_RESISTANCE = 11
-# FATAL_POISON = 25
-# FATIGUE = 4
-# FIRE_RESISTANCE = 12
-# HARMING = 7
-# HASTE = 3
-# HEALING = 6
-# HEALTH_BOOST = 21
-# HUNGER = 17
-# INSTANT_DAMAGE = 7
-# INSTANT_HEALTH = 6
-# INVISIBILITY = 14
-# JUMP = 8
-# JUMP_BOOST = 8
-# LEVITATION = 24
-# MINING_FATIGUE = 4
-# NAUSEA = 9
-# NIGHT_VISION = 16
-# POISON = 19
-# REGENERATION = 10
-# RESISTANCE = 11
-# SATURATION = 23
-# SLOWNESS = 2
-# SPEED = 1
-# STRENGTH = 5
-# WATER_BREATHING = 13
-# WEAKNESS = 18
-# WITHER = 20
+kill-rewards: false 
+
+rewards-worlds: 
+  - RewardsArena # Example
+  
+rewards-items:
+
+  - slots: 0 # Item slot
+    id: 265 # Item ID
+    damage: 0 # Item damage
+    count: 1 # Item value
+    name: KillReward # Item name
+
+# =====================
+#      KillSound
+# =====================
+# Info: This feature allows you to add sounds when killing players
+
+kill-sound: false 
+sound-name: "random.explode" # Example
+
+sound-worlds:
+  - SoundArena # Example
+
+# =====================
+#    PvP KnockBack
+# =====================
+# Info: This feature allows you to modify pvp Knockback
+
+pvp-knockback: false
+knockback-level: 0.50
+
+knockback-worlds: 
+  - KnobackArena # Example
+
+# =====================
+#    Leeching Mode
+# =====================
+# Info: This feature allows you to add custom leeching mode (Check Plugin Wiki)
+
+leeching-mode: false 
+leeching-level: 3 # Max = 10
+
+leeching-worlds: 
+  - LeechingArena
+
+# =====================
+#     PvP Messages
+# =====================
+# Info: This feature allows you to custom pvp messages
+# Info 2: Use {killer} to add Killer Name and {victim} to add victim name
+
+pvp-messages: false 
+kill-message: "§c[-] §6{victim} §cwas killed by §6{killer}" # Example
+
+# =====================
+#       Ping Kick
+# =====================
+# Info: This feature allows you to remove lag Player's from the server
+
+ping-kick: false 
+ping-kick-max: 500 
+ping-kick-message: "§cSorry but your ping was so high"
+
+ping-kick-worlds:
+  - PingKickArena - Example
+
+# =====================
+#      Soup PvP
+# =====================
+# Info: This feature allows you to add Soup PvP in your server
+
+soup-pvp: false 
+soup-id: 282
+soup-level: 5
+soup-message: "§a+5 Hearts" 
+
+soup-worlds: 
+  - SoupPvP # Example
+...

@@ -17,7 +17,7 @@ use pocketmine\world\particle\SnowballPoofParticle;
 
 
 
-class Particles implements Listener {
+class KillParticles implements Listener {
 
     public function __construct(private Main $main) {
         $this->main = $main;
@@ -69,7 +69,7 @@ class Particles implements Listener {
                     $world->addParticle($position->add(0, 0, 1), new LavaParticle());
                 }
 
-                if ($this->getMain()->cfg->get("nether-particle") === true) {
+                if ($this->getMain()->cfg->get("portal-particle") === true) {
                     $world->addParticle($position, new PortalParticle());
                     $world->addParticle($position, new PortalParticle());
                     $world->addParticle($position->add(1, 0, 0), new PortalParticle());

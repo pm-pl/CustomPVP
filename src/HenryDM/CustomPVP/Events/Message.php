@@ -21,7 +21,7 @@ class Message implements Listener {
     }
 
     public function onDeath(PlayerDeathEvent $event) : void {
-        if ($this->getMain()->cfg->get("message") === true) {
+        if ($this->getMain()->cfg->get("pvp-messages") === true) {
             $player = $event->getPlayer();
             $cause = $player->getLastDamageCause();
 

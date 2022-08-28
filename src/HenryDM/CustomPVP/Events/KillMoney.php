@@ -24,16 +24,15 @@ class KillMoney implements Listener {
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
         $damageCause = $player->getLastDamageCause();
-        $amount = $this->getMain()->cfg->get("killmoney-price");
-        if ($this->getMain()->cfg->get("killmoney-enable") === true) {
-            if (in_array($worldName, $this->getMain()->cfg->get("killmoney-world"))) {
+        $amount = $this->getMain()->cfg->get("money-value");
+        if ($this->getMain()->cfg->get("kill-money") === true) {
+            if (in_array($worldName, $this->getMain()->cfg->get("money-worlds"))) {
                 if ($damageCause instanceof EntityDamageByEntityEvent) {
                     $damager = $damageCause->getDamager();
                     if ($damager instanceof Player) {
                         libEco::addMoney($damager, $amount);
-                        if ($this->getMain()->cfg->get("killmoney-reduce") === true) {
-                            libEco::reduceMoney($player, $amount, static function (bool $succsess): void {
-                                // NOTHING
+                        if ($this->getMain()->cfg->get("money-reduce") === true) {
+                            libEco::reduceMoney($player, $amount, static function (bool $success): void {
                             });
                         }
                     }

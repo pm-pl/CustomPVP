@@ -20,12 +20,12 @@ class KillSound implements Listener {
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
         $damageCause = $player->getLastDamageCause();
-        if ($this->getMain()->cfg->getNested("killsound-enable", true)) {
-            if (in_array($worldName, $this->getMain()->cfg->getNested("killsound-worlds"))) {
+        if ($this->getMain()->cfg->getNested("kill-sound", true)) {
+            if (in_array($worldName, $this->getMain()->cfg->getNested("sound-worlds"))) {
                 if ($damageCause instanceof EntityDamageByEntityEvent) {
                     $damager = $damageCause->getDamager();
                     if ($damager instanceof Player) {
-                        Utils::playSound($player, $this->getMain()->cfg->getNested("killsound-soundname"), 1, 1);
+                        Utils::playSound($player, $this->getMain()->cfg->getNested("sound-name"), 1, 1);
                     }
                 }
             }

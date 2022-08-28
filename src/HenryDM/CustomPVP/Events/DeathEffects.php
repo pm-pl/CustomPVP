@@ -29,14 +29,14 @@ class DeathEffects implements Listener {
         $id = $this->getMain()->cfg->getNested("effect.id");
         $duration = $this->getMain()->cfg->getNested("effect.duration");
         $level = $this->getMain()->cfg->getNested("effect.level");
-        $particle = $this->getMain()->cfg->getNested("effect.particle");
+        $particles = $this->getMain()->cfg->getNested("effect.particle");
 
         if ($this->getMain()->cfg->get("death-effects") === true) {
             if ($damageCause instanceof EntityDamageByEntityEvent) {
                 $damager = $damageCause->getDamager();
                 if ($damager instanceof Player) {
                     if (in_array($worldName(), $this->getMain()->cfg->get("effect-worlds"))) {
-                        $player->getEffects()->add(new EffectInstance(EffectIdMap::getInstance()->fromId($id), $duration, $level, $particle));
+                        $player->getEffects()->add(new EffectInstance(EffectIdMap::getInstance()->fromId($id), $duration, $level, $particles));
 
                     }
                 }

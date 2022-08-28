@@ -5,33 +5,30 @@ namespace HenryDM\CustomPVP\Events;
 use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
 
-use pocketmine\player\Player;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 
-class AntiFlightPvp implements Listener {
+class PingKick implements Listener {
 
     public function __construct(private Main $main) {
         $this->main = $main;
     }
 
-    public function onDamage(EntityDamageEvent $event) : void {
+    public function onDamage(EntityDamageEvent $event) {
         $entity = $event->getEntity();
         $world = $entity->getWorld();
         $worldName = $world->getFolderName();
-        if ($this->getMain()->cfg->getNested("anti-flight", true)) {
-            if (in_array($worldName, $this->getMain()->cfg->getNested("antiflight-worlds", []))) {
+        if ($this->getMain()->cfg->get("ping-kick", === true)) {
+            if (in_array($player->getWorld()->getFolderName(), $this->getMain()->cfg->get("ping-kick-worlds"))) {
                 if ($event instanceof EntityDamageByEntityEvent) {
                     $damager = $event->getDamager();
                     if (!$damager instanceof Player) return;
-                    if ($damager->isCreative()) return;
-                    if ($damager->getAllowFlight() === true) {
-                        $damager->setFlying(false);
-                        $damager->setAllowFlight(false);
-                }
+                       if ($player->getNetworkSession()->getPing() >= $this->getMain()->cfg->get("ping-kick-max")) {
+                        $player->kick($$this->getMain()->cfg->get("ping-kick-message"));   
+                    }
                 }
             }
-        }
+        }                    
     }
 
     public function getMain() : Main {

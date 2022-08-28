@@ -16,7 +16,7 @@ class ItemDamage implements Listener {
     }
 
     public function onDamage(EntityDamageEvent $event) : void {
-        // SOON
+        // COMING SOON
     }
 
     public function getMain() : Main {

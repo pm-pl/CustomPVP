@@ -16,8 +16,8 @@ class AttackCooldown implements Listener {
         $entity = $event->getEntity();
         $world = $entity->getWorld();
         $worldName = $world->getFolderName();
-        if ($this->getMain()->cfg->getNested("attackcooldown", true)) {
-            if (in_array($worldName, $this->getMain()->cfg->getNested("attackcooldown-world", []))) {
+        if ($this->getMain()->cfg->getNested("attack-cooldown", true)) {
+            if (in_array($worldName, $this->getMain()->cfg->getNested("cooldown-worlds", []))) {
                 $event->setAttackCooldown($event->getAttackCooldown() - $this->getMain()->cfg->getNested("cooldown-time"));
             }
         }
