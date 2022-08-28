@@ -16,8 +16,7 @@ class PingKick implements Listener {
     }
 
     public function onDamage(EntityDamageEvent $event) {
-        $player = $event->getPlayer();
-        $entity = $event->getEntity();
+        $entity = $event->getPlayer();
         $world = $entity->getWorld();
         $worldName = $world->getFolderName();
         if ($this->getMain()->cfg->get("ping-kick", true)) {
