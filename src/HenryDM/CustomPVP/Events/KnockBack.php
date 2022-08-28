@@ -18,9 +18,9 @@ class KnockBack implements Listener {
         if($this->getMain()->cfg->get("pvp-knockback") === true) {
             if(in_array($worldName, $this->getMain()->cfg->get("knockback-worlds"))) {
             $event->setKnockBack($this->getMain()->cfg->get("knockback-level") * $event->getKnockBack());
-        }
+          }
+       }
     }
-
     public function getMain() : Main {
         return $this->main;
     }	 	
