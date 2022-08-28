@@ -12,7 +12,7 @@ use HenryDM\CustomPVP\Events\AttackCooldown;
 use HenryDM\CustomPVP\Events\DeathEffects;
 use HenryDM\CustomPVP\Events\DeathKick;
 use HenryDM\CustomPVP\Events\HealthRestore;
-// use HenryDM\CustomPVP\Events\ItemDamage;
+# use HenryDM\CustomPVP\Events\ItemDamage;
 use HenryDM\CustomPVP\Events\KillMoney;
 use HenryDM\CustomPVP\Events\KillParticles;
 use HenryDM\CustomPVP\Events\KillReward;
@@ -56,7 +56,6 @@ class Main extends PluginBase implements Listener {
         foreach($events as $e) {
             $this->getServer()->getPluginManager()->registerEvents(new $e($this), $this);
         }
-        $this->getScheduler()->scheduleRepeatingTask(new PingTask($this), 20);
     }
 
     public function onLoad() : void {

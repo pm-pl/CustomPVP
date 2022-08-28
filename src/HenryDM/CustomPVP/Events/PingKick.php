@@ -7,6 +7,7 @@ use pocketmine\event\Listener;
 
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
+use pocketmine\player\Player;
 
 class PingKick implements Listener {
 
