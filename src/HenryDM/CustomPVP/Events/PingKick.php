@@ -17,7 +17,7 @@ class PingKick implements Listener {
     }
 
     public function onDamage(EntityDamageEvent $event) {
-        foreach (Server::getInstance()->getOnlinePlayers() as $player) {
+        foreach (Server::getInstance()->getServer()->getOnlinePlayers() as $player) {
         $entity = $event->getEntity();
         $world = $entity->getWorld();
         $worldName = $world->getFolderName();
