@@ -7,6 +7,7 @@ use pocketmine\event\Listener;
 
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
+use pocketmine\player\Player;
 
 class AntiPvPWorld implements Listener {
 
@@ -29,5 +30,9 @@ class AntiPvPWorld implements Listener {
                 }
             }
         }
+    }
+
+    public function getMain() : Main {
+        return $this->main;
     }
 }
