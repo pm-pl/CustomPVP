@@ -6,6 +6,8 @@
 | **22/08/2022** | **2.0.0** | **4.7.1** |
 | **29/08/2022** | **3.0.0** | **4.7.1** |
 
+ • By HenryDM --> This plugin is getting bigger and more customized, I can't stop... I'm having more and more ideas, so I'm also organizing all the code
+
 <a href="https://poggit.pmmp.io/p/CustomPVP"><img src="https://poggit.pmmp.io/shield.state/CustomPVP"></a>
 
 ---
