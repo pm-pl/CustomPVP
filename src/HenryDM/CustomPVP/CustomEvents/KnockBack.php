@@ -1,11 +1,10 @@
 <?php
 
-namespace HenryDM\CustomPVP\Events;
+namespace HenryDM\CustomPVP\CustomEvents;
 
 use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
-use pocketmine\world\World;
 
 class KnockBack implements Listener {
 

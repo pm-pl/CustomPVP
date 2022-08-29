@@ -1,6 +1,6 @@
 <?php
 
-namespace HenryDM\CustomPVP\Events;
+namespace HenryDM\CustomPVP\CustomEvents;
 
 use HenryDM\CustomPVP\Main;
 use pocketmine\player\Player;

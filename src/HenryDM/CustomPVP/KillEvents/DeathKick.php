@@ -1,13 +1,12 @@
 <?php
 
-namespace HenryDM\CustomPVP\Events;
+namespace HenryDM\CustomPVP\KillEvents;
 
 use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
 
 use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\player\Player;
-use pocketmine\world\World;
 
 class DeathKick implements Listener {
 

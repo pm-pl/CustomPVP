@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace HenryDM\CustomPVP\Events;
+namespace HenryDM\CustomPVP\CustomEvents;
 
 use HenryDM\CustomPVP\Main;
 use function str_replace;

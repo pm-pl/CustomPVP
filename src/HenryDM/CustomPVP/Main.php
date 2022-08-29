@@ -6,22 +6,30 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\utils\Config;
 
-use HenryDM\CustomPVP\Events\AntiFlightPvp;
-use HenryDM\CustomPVP\Events\AntiPvPWorld;
-use HenryDM\CustomPVP\Events\AttackCooldown;
-use HenryDM\CustomPVP\Events\DeathEffects;
-use HenryDM\CustomPVP\Events\DeathKick;
-use HenryDM\CustomPVP\Events\HealthRestore;
-# use HenryDM\CustomPVP\Events\ItemDamage;
-use HenryDM\CustomPVP\Events\KillMoney;
-use HenryDM\CustomPVP\Events\KillParticles;
-use HenryDM\CustomPVP\Events\KillReward;
-use HenryDM\CustomPVP\Events\KillSound;
-use HenryDM\CustomPVP\Events\KnockBack;
-use HenryDM\CustomPVP\Events\LeechingMode;
-use HenryDM\CustomPVP\Events\Message;
-use HenryDM\CustomPVP\Events\PingKick;
-use HenryDM\CustomPVP\Events\SoupPvP;
+# Custom Events Libs
+use HenryDM\CustomPVP\CustomEvents\AttackCooldown;
+use HenryDM\CustomPVP\CustomEvents\HealthRestore;
+use HenryDM\CustomPVP\CustomEvents\ItemDamage;
+use HenryDM\CustomPVP\CustomEvents\KnockBack;
+use HenryDM\CustomPVP\CustomEvents\LeechingMode;
+use HenryDM\CustomPVP\CustomEvents\Message;
+use HenryDM\CustomPVP\CustomEvents\SoupPvP;
+
+# Kill Events Libs
+use HenryDM\CustomPVP\KillEvents\DeathEffects;
+use HenryDM\CustomPVP\KillEvents\DeathKick;
+use HenryDM\CustomPVP\KillEvents\KillMoney;
+use HenryDM\CustomPVP\KillEvents\KillParticles;
+use HenryDM\CustomPVP\KillEvents\KillReward;
+use HenryDM\CustomPVP\KillEvents\KillSound;
+
+# Moderation Events Libs
+
+use HenryDM\CustomPVP\ModerationEvents\AntiFlightPvp;
+use HenryDM\CustomPVP\ModerationEvents\AntiPvPDrop;
+use HenryDM\CustomPVP\ModerationEvents\AntiPvPWorld;
+use HenryDM\CustomPVP\ModerationEvents\AntiSprint;
+use HenryDM\CustomPVP\ModerationEvents\PingKick;
 
 class Main extends PluginBase implements Listener {
 
@@ -37,7 +45,9 @@ class Main extends PluginBase implements Listener {
 
         $events = [
             AntiFlightPvp::class,
+            AntiPvPDrop::class,
             AntiPvPWorld::class,
+            AntiSprint::class,
             AttackCooldown::class,
             DeathEffects::class,
             DeathKick::class,

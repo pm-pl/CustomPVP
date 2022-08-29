@@ -1,6 +1,6 @@
 <?php
 
-namespace HenryDM\CustomPVP\Events;
+namespace HenryDM\CustomPVP\KillEvents;
 
 use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
@@ -11,7 +11,6 @@ use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\player\Player;
-use pocketmine\world\World;
 
 class DeathEffects implements Listener {
 

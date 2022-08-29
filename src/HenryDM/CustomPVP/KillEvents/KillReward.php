@@ -1,39 +1,34 @@
 <?php
 
-namespace HenryDM\CustomPVP\Events;
+namespace HenryDM\CustomPVP\KillEvents;
 
-# pocketmine Lib
 use HenryDM\CustomPVP\Main;
-use pocketmine\player\Player;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
+use pocketmine\player\Player;
+use pocketmine\item\ItemFactory;
 
-# LibEco
-use davidglitch04\libEco\libEco;
-
-
-class KillMoney implements Listener {
+class KillReward implements Listener {
 
     public function __construct(private Main $main) {
         $this->main = $main;
     }
 
-    public function onDeath(PlayerDeathEvent $event) : void {
+    public function onDeath(PlayerDeathEvent $event) {
         $player = $event->getPlayer();
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
         $damageCause = $player->getLastDamageCause();
-        $amount = $this->getMain()->cfg->get("money-value");
-        if ($this->getMain()->cfg->get("kill-money") === true) {
-            if (in_array($worldName, $this->getMain()->cfg->get("money-worlds"))) {
+        if ($this->getMain()->cfg->getNested("kill-rewards", true)) {
+            if (in_array($worldName, $this->getMain()->cfg->get("rewards-worlds", []))) {
                 if ($damageCause instanceof EntityDamageByEntityEvent) {
                     $damager = $damageCause->getDamager();
                     if ($damager instanceof Player) {
-                        libEco::addMoney($damager, $amount);
-                        if ($this->getMain()->cfg->get("money-reduce") === true) {
-                            libEco::reduceMoney($player, $amount, static function (bool $success): void {
-                            });
+                        foreach ($this->getMain()->cfg->get("rewards-items", []) as $item) {
+                            $reward = ItemFactory::getInstance()->get($item["id"], $item["damage"], $item["count"]);
+                            $reward->setCustomName($item["name"]);
+                            $damager->getInventory()->setItem($item["slots"], $reward);
                         }
                     }
                 }
@@ -44,4 +39,4 @@ class KillMoney implements Listener {
     public function getMain() : Main {
         return $this->main;
     }
-}
+}    
