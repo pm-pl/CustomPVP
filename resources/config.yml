@@ -48,7 +48,7 @@ block-pvp-worlds:
 # =====================
 #     Anti Sprint
 # =====================
-# Info: This feature allow you to disable item drop on certains worlds!
+# Info: This feature allow you to disable player sprint on certains worlds!
 
 anti-sprint: false 
 anti-sprint-alert: false
@@ -66,6 +66,16 @@ attack-cooldown: false
 
 cooldown-worlds:
   - CooldownArena # Example
+
+# =====================
+#     Death Clear
+# =====================
+# Info: This feature allow you to clear player's inventory if he dies!
+
+death-clear: false
+
+death-clear-worlds: 
+  - ClearArena # Example
 
 # =====================
 #     Death Effects
@@ -103,6 +113,17 @@ heath-restore: false
 
 restore-worlds:
   - HealthArena # Example
+
+# =====================
+#      Kill EXP
+# =====================
+# Info: This feature allow you to add XP to player on kill another player  
+
+kill-exp: false 
+xp-amount: 2
+
+kill-exp-worlds:
+  - XPArena # Example
 
 # =====================
 #      KillMoney
@@ -159,9 +180,9 @@ rewards-items:
 # Info: This feature allows you to add sounds when killing players
 
 kill-sound: false 
-sound-name: "random.explode" # Example
+kill-sound-name: "random.explode" # Example
 
-sound-worlds:
+kill-sound-worlds:
   - SoundArena # Example
 
 # =====================

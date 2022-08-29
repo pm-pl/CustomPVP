@@ -9,9 +9,9 @@
 [releases]: https://github.com/Henry12960/CustomPVP/releases/latest
 [releasesImg]: https://img.shields.io/github/v/release/Henry12960/CustomPVP.svg?color=green&include_prereleases&label=RELEASE&style=for-the-badge
 [license]: https://github.com/Henry12960/CustomPVP/blob/master/LICENSE
-[licenseImg]: https://img.shields.io/github/license/Henry12960/CustomPVP.svg?style=for-the-badge
+[licenseImg]: https://img.shields.io/github/license/Henry12960/CustomPVP.svg?color=purple&style=for-the-badge
 [issues]: https://img.shields.io/github/issues/Henry12960/CustomPVP.svg?color=blue&style=for-the-badge
-[phpversion]: https://img.shields.io/badge/PHP-8.0%2B-yellow?style=for-the-badge
+[phpversion]: https://img.shields.io/badge/PHP-8.0%2B-red?style=for-the-badge
 [issueslink]: https://github.com/David-pm-pl/EpicCustomAlerts/issues
 
 [![releasesImg]][releases] [![licenseImg]][license] ![phpversion] [![issues]][issueslink] 

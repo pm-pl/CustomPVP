@@ -16,15 +16,16 @@ use HenryDM\CustomPVP\CustomEvents\Message;
 use HenryDM\CustomPVP\CustomEvents\SoupPvP;
 
 # Kill Events Libs
+use HenryDM\CustomPVP\KillEvents\DeathClear;
 use HenryDM\CustomPVP\KillEvents\DeathEffects;
 use HenryDM\CustomPVP\KillEvents\DeathKick;
+use HenryDM\CustomPVP\KillEvents\KillEXP;
 use HenryDM\CustomPVP\KillEvents\KillMoney;
 use HenryDM\CustomPVP\KillEvents\KillParticles;
 use HenryDM\CustomPVP\KillEvents\KillReward;
 use HenryDM\CustomPVP\KillEvents\KillSound;
 
 # Moderation Events Libs
-
 use HenryDM\CustomPVP\ModerationEvents\AntiFlightPvp;
 use HenryDM\CustomPVP\ModerationEvents\AntiPvPDrop;
 use HenryDM\CustomPVP\ModerationEvents\AntiPvPWorld;
@@ -44,15 +45,17 @@ class Main extends PluginBase implements Listener {
         $this->cfg = $this->getConfig();
 
         $events = [
+            # ItemDamage::class,
             AntiFlightPvp::class,
             AntiPvPDrop::class,
             AntiPvPWorld::class,
             AntiSprint::class,
             AttackCooldown::class,
+            DeathClear::class,
             DeathEffects::class,
             DeathKick::class,
             HealthRestore::class,
-            # ItemDamage::class,
+            KillEXP::class,
             KillMoney::class,
             KillParticles::class,
             KillReward::class,
