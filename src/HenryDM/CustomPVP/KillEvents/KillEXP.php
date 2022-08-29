@@ -15,7 +15,7 @@ class KillEXP implements Listener {
         $this->main = $main;
     }
     
-    public function onKill(PlayerDeathEvent $player) {
+    public function onKill(PlayerDeathEvent $event) {
         $player = $event->getPlayer();
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
@@ -31,5 +31,9 @@ class KillEXP implements Listener {
                 }
             }
         }
+    }
+
+    public function getMain(): Main{
+        return $this->main;
     }
 }
