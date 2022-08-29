@@ -18,7 +18,7 @@ class AntiSprint implements Listener {
         $player = $event->getPlayer();
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
-        if($this->getMain()->cfg()->get("anti-sprint") === true) {
+        if($this->getMain()->cfg->get("anti-sprint") === true) {
             if(in_array($worldName, $this->getMain()->cfg->get("anti-sprint-worlds"))) {
                 if ($this->getMain()->cfg->get("anti-sprint-alert") === true) {
                     if ($player->isSprinting()) {
@@ -30,7 +30,7 @@ class AntiSprint implements Listener {
             }
         }
     }
-    
+
     public function getMain() : Main {
         return $this->main;
     }
