@@ -10,6 +10,7 @@ use pocketmine\utils\Config;
 use HenryDM\CustomPVP\CustomEvents\AttackCooldown;
 use HenryDM\CustomPVP\CustomEvents\HealthRestore;
 use HenryDM\CustomPVP\CustomEvents\ItemDamage;
+use HenryDM\CustomPVP\CustomEvents\ItemCooldown;
 use HenryDM\CustomPVP\CustomEvents\KnockBack;
 use HenryDM\CustomPVP\CustomEvents\LeechingMode;
 use HenryDM\CustomPVP\CustomEvents\Message;
@@ -46,6 +47,7 @@ class Main extends PluginBase implements Listener {
 
         $events = [
             # ItemDamage::class,
+            ItemCooldown::class,
             AntiFlightPvp::class,
             AntiPvPDrop::class,
             AntiPvPWorld::class,
