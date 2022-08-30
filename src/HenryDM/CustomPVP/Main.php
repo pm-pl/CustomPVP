@@ -37,6 +37,9 @@ class Main extends PluginBase implements Listener {
 
     /*** @var Main */
     private static Main $instance;
+    /* MultiLanguage support, coming soon..
+    public const LANGUAGES = [];
+    */
 
     /*** @var Config */
     public Config $cfg;
@@ -44,6 +47,7 @@ class Main extends PluginBase implements Listener {
     public function onEnable() : void {
         $this->saveDefaultConfig();
         $this->cfg = $this->getConfig();
+        $this->loadFolder();
 
         $events = [
             # ItemDamage::class,
@@ -72,7 +76,12 @@ class Main extends PluginBase implements Listener {
             $this->getServer()->getPluginManager()->registerEvents(new $e($this), $this);
         }
     }
-
+    
+    public function loadFolder(){
+        @mkdir($this->getDataFolder() . "´players");
+        // Many more folders will be coming soon with the update: "Settings Organization"
+    }
+    
     public function onLoad() : void {
         self::$instance = $this;
     }
