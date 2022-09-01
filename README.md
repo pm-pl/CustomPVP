@@ -18,6 +18,7 @@
 
  • By HenryDM --> This plugin is getting bigger and more customized, I can't stop... I'm having more and more ideas, so I'm also organizing all the code
 
+ • Thanks for **100+** downloads, coming soon new code and new features 
 ---
 ## ⭐ • Plugin Features
 
