@@ -48,12 +48,6 @@ class Main extends PluginBase implements Listener {
         $this->saveDefaultConfig();
         $this->cfg = $this->getConfig();
         $this->loadFolder();
-        $this->saveResource("CustomEvents.yml");
-        $this->saveResource("KillEvents.yml");
-        $this->saveResource("ModerationEvents.yml");
-        new Config($this->getDataFolder() . "CustomEvents.yml");
-        new Config($this->getDataFolder() . "KillEvents.yml");
-        new Config($this->getDataFolder() . "ModerationEvents.yml");
 
         $events = [
             # ItemDamage::class,
@@ -85,9 +79,9 @@ class Main extends PluginBase implements Listener {
     
     public function loadFolder(){
         @mkdir($this->getDataFolder() . "players");
-        @mkdir($this->getDataFolder() . "CustomEvents");
-        @mkdir($this->getDataFolder() . "KillEvents");
-        @mkdir($this->getDataFolder() . "ModerationEvents");
+        @mkdir($this->getDataFolder() . "CustomEvents.yml");
+        @mkdir($this->getDataFolder() . "KillEvents.yml");
+        @mkdir($this->getDataFolder() . "ModerationEvents.yml");
     }
     
     public function onLoad() : void {
