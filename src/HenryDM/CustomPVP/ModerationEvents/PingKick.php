@@ -23,7 +23,7 @@ class PingKick implements Listener {
         $world = $entity->getWorld();
         $worldName = $world->getFolderName();
         if ($this->getMain()->cfg->get("ping-kick", true)) {
-            if (in_array($worldName, $this->getMain()->cfg->get("ping-kick-worlds"))) {
+            if(in_array($worldName, $this->getMain()->cfg->get("ping-kick-worlds"))) {
                 if ($event instanceof EntityDamageByEntityEvent) {
                     $damager = $event->getDamager();
                     if (!$damager instanceof Player) return;
