@@ -16,20 +16,16 @@
 # =====================
 # Info: This feature allow you to set pvp cooldown!
 
-attack-cooldown: false 
-
-cooldown-worlds:
-  - "CooldownArena" # Example
+attack-cooldown: false
+cooldown-worlds: ["CooldownArena", "world"] 
 
 # =====================
 #    HealthRestore
 # =====================
 # Info: This feature allow you to recover all heart on kill player  
 
-heath-restore: false 
-
-restore-worlds:
-  - "HealthArena" # Example
+heath-restore: false
+restore-worlds: ["HealthArena", "world"] 
 
 # =====================
 #    PvP KnockBack
@@ -38,20 +34,17 @@ restore-worlds:
 
 pvp-knockback: false
 knockback-level: 0.50
-
-knockback-worlds: 
-  - "KnobackArena" # Example
+knockback-worlds: ["KnobackArena", "world"] 
 
 # =====================
 #    Leeching Mode
 # =====================
 # Info: This feature allows you to add custom leeching mode (Check Plugin Wiki)
+# Max Leeching = 10 hearts
 
-leeching-mode: false 
-leeching-level: 3 # Max = 10
-
-leeching-worlds: 
-  - "LeechingArena" # Example
+leeching-mode: false
+leeching-level: 3
+leeching-worlds: ["LeechingArena", "world"]
 
 # =====================
 #     PvP Messages
@@ -59,7 +52,7 @@ leeching-worlds:
 # Info: This feature allows you to custom pvp messages
 # Info 2: Use {killer} to add Killer Name and {victim} to add victim name
 
-pvp-messages: false 
+pvp-messages: false
 kill-message: "§c[-] §6{victim} §cwas killed by §6{killer}" # Example
 
 # =====================
@@ -67,11 +60,9 @@ kill-message: "§c[-] §6{victim} §cwas killed by §6{killer}" # Example
 # =====================
 # Info: This feature allows you to add Soup PvP in your server
 
-soup-pvp: false 
+soup-pvp: false
 soup-id: 282
 soup-level: 5
 soup-message: "§a+5 Hearts" 
-
-soup-worlds: 
-  - "SoupPvP" # Example 
+soup-worlds: ["SoupPvP", "world"]
 ...
