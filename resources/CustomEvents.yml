@@ -19,7 +19,7 @@
 attack-cooldown: false 
 
 cooldown-worlds:
-  - CooldownArena # Example
+  - "CooldownArena" # Example
 
 # =====================
 #    HealthRestore
@@ -29,7 +29,7 @@ cooldown-worlds:
 heath-restore: false 
 
 restore-worlds:
-  - HealthArena # Example
+  - "HealthArena" # Example
 
 # =====================
 #    PvP KnockBack
@@ -40,7 +40,7 @@ pvp-knockback: false
 knockback-level: 0.50
 
 knockback-worlds: 
-  - KnobackArena # Example
+  - "KnobackArena" # Example
 
 # =====================
 #    Leeching Mode
@@ -51,7 +51,7 @@ leeching-mode: false
 leeching-level: 3 # Max = 10
 
 leeching-worlds: 
-  - LeechingArena
+  - "LeechingArena" # Example
 
 # =====================
 #     PvP Messages
@@ -73,5 +73,5 @@ soup-level: 5
 soup-message: "§a+5 Hearts" 
 
 soup-worlds: 
-  - SoupPvP # Example 
+  - "SoupPvP" # Example 
 ...

@@ -19,7 +19,7 @@
 death-clear: false
 
 death-clear-worlds: 
-  - ClearArena # Example
+  - "ClearArena" # Example
 
 # =====================
 #     Death Effects
@@ -29,7 +29,7 @@ death-clear-worlds:
 death-effects: false 
 
 effects-worlds: 
-  - EffectArena - Example
+  - "EffectArena" - Example
 
 effect:
   id: 1 # Add here effect id
@@ -46,7 +46,7 @@ death-kick: false
 death-kick-message: "§cOof! You Death"
 
 death-kick-worlds: 
-  - KickArena # Example
+  - "KickArena" # Example
 
 # =====================
 #      Kill EXP
@@ -57,7 +57,7 @@ kill-exp: false
 xp-amount: 2
 
 kill-exp-worlds:
-  - XPArena # Example
+  - "XPArena" # Example
 
 # =====================
 #      KillMoney
@@ -69,7 +69,7 @@ money-reduce: false # if active when player dies he will lose money
 money-value: 10 
 
 money-worlds: 
-  - MoneyArena # Example
+  - "MoneyArena" # Example
 
 # =====================
 #    Kill Particles
@@ -79,7 +79,7 @@ money-worlds:
 kill-particles: false 
 
 particles-worlds: 
-  - ParticleArena # Example
+  - "ParticleArena" # Example
 
 critical-particle: true
 explode-particle: false
@@ -98,7 +98,7 @@ snow-particle: false
 kill-rewards: false 
 
 rewards-worlds: 
-  - RewardsArena # Example
+  - "RewardsArena" # Example
   
 rewards-items:
 
@@ -117,6 +117,6 @@ kill-sound: false
 kill-sound-name: "random.explode" # Example
 
 kill-sound-worlds:
-  - SoundArena # Example
+  - "SoundArena" # Example
 
 ...    

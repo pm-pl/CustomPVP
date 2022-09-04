@@ -18,7 +18,7 @@
 anti-flight: false 
 
 antiflight-worlds: 
-  - AntiFlightArena # Example
+  - "AntiFlightArena" # Example
 
 # =====================
 #     AntiPvP Drop
@@ -30,7 +30,7 @@ anti-drop-alert: false
 anti-drop-message: "Item drop disabled in this world"
 
 anti-drop-worlds:
-  - AntiDropArena # Example
+  - "AntiDropArena" # Example
 
 # =====================
 #    AntiPvP Worlds
@@ -40,7 +40,7 @@ anti-drop-worlds:
 anti-pvp: false 
 
 block-pvp-worlds: 
-  - Lobby # Example 
+  - "Lobby" # Example 
 
 # =====================
 #     Anti Sprint
@@ -52,7 +52,7 @@ anti-sprint-alert: false
 anti-sprint-message: "Sprint disabled in this world"
 
 anti-sprint-worlds:
-  - AntiSprintArena # Example
+  - "AntiSprintArena" # Example
 
 # =====================
 #       Ping Kick
@@ -64,6 +64,6 @@ ping-kick-max: 500
 ping-kick-message: "§cSorry but your ping was so high"
 
 ping-kick-worlds:
-  - PingKickArena - Example
+  - "PingKickArena" - Example
 
 ...    
