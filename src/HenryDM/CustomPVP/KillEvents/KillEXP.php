@@ -5,6 +5,7 @@ namespace HenryDM\CustomPVP\KillEvents;
 use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
 
+use pocketmine\utils\Config;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\player\Player;

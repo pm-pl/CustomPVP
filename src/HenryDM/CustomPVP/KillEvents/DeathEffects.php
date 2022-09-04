@@ -5,6 +5,7 @@ namespace HenryDM\CustomPVP\KillEvents;
 use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
 
+use pocketmine\utils\Config;
 use pocketmine\data\bedrock\EffectIdMap;
 use pocketmine\entity\effect\EffectInstance;
 use pocketmine\event\player\PlayerDeathEvent;

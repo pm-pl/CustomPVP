@@ -10,62 +10,6 @@
 # Any bugs that come up please report on github: https://github.com/Henry12960/CustomPVP/issues
 # Give suggestions: https://github.com/Henry12960/CustomPVP/issues/2
 # Plugin Wiki: https://github.com/Henry12960/CustomPVP/wiki
-# Minecraft Sounds Wiki: https://minecraft.fandom.com/wiki/Sounds.json/Bedrock_Edition_values
-# All Add-ons are disable, set to "true" to enable!
-
-# =====================
-#    AntiFlight PvP
-# =====================
-# Info: This feature allow you to disable players fly on pvp!
-
-anti-flight: false 
-
-antiflight-worlds: 
-  - AntiFlightArena # Example
-
-# =====================
-#     AntiPvP Drop
-# =====================
-# Info: This feature allow you to disable item drop on certains worlds!
-
-anti-drop: false 
-anti-drop-alert: false
-anti-drop-message: "Item drop disabled in this world"
-
-anti-drop-worlds:
-  - AntiDropArena # Example
-
-# =====================
-#    AntiPvP Worlds
-# =====================
-# Info: This feature allow you to disable pvp on certains worlds!
-
-anti-pvp: false 
-
-block-pvp-worlds: 
-  - Lobby # Example 
-
-# =====================
-#     Anti Sprint
-# =====================
-# Info: This feature allow you to disable player sprint on certains worlds!
-
-anti-sprint: false 
-anti-sprint-alert: false
-anti-sprint-message: "Sprint disabled in this world"
-
-anti-sprint-worlds:
-  - AntiSprintArena # Example
-
-# =====================
-#    Attack Cooldown
-# =====================
-# Info: This feature allow you to set pvp cooldown!
-
-attack-cooldown: false 
-
-cooldown-worlds:
-  - CooldownArena # Example
 
 # =====================
 #     Death Clear
@@ -103,16 +47,6 @@ death-kick-message: "§cOof! You Death"
 
 death-kick-worlds: 
   - KickArena # Example
-
-# =====================
-#    HealthRestore
-# =====================
-# Info: This feature allow you to recover all heart on kill player  
-
-heath-restore: false 
-
-restore-worlds:
-  - HealthArena # Example
 
 # =====================
 #      Kill EXP
@@ -185,59 +119,4 @@ kill-sound-name: "random.explode" # Example
 kill-sound-worlds:
   - SoundArena # Example
 
-# =====================
-#    PvP KnockBack
-# =====================
-# Info: This feature allows you to modify pvp Knockback
-
-pvp-knockback: false
-knockback-level: 0.50
-
-knockback-worlds: 
-  - KnobackArena # Example
-
-# =====================
-#    Leeching Mode
-# =====================
-# Info: This feature allows you to add custom leeching mode (Check Plugin Wiki)
-
-leeching-mode: false 
-leeching-level: 3 # Max = 10
-
-leeching-worlds: 
-  - LeechingArena
-
-# =====================
-#     PvP Messages
-# =====================
-# Info: This feature allows you to custom pvp messages
-# Info 2: Use {killer} to add Killer Name and {victim} to add victim name
-
-pvp-messages: false 
-kill-message: "§c[-] §6{victim} §cwas killed by §6{killer}" # Example
-
-# =====================
-#       Ping Kick
-# =====================
-# Info: This feature allows you to remove lag Player's from the server
-
-ping-kick: false 
-ping-kick-max: 500 
-ping-kick-message: "§cSorry but your ping was so high"
-
-ping-kick-worlds:
-  - PingKickArena - Example
-
-# =====================
-#      Soup PvP
-# =====================
-# Info: This feature allows you to add Soup PvP in your server
-
-soup-pvp: false 
-soup-id: 282
-soup-level: 5
-soup-message: "§a+5 Hearts" 
-
-soup-worlds: 
-  - SoupPvP # Example
-...
+...    

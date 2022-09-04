@@ -76,12 +76,23 @@ class Main extends PluginBase implements Listener {
             $this->getServer()->getPluginManager()->registerEvents(new $e($this), $this);
         }
     }
+<<<<<<< HEAD
+    
+    public function loadFolder(){
+        @mkdir($this->getDataFolder() . "´players");
+        @mkdir($this->getDataFolder() . "´CustomEvents");
+        @mkdir($this->getDataFolder() . "´KillEvents");
+        @mkdir($this->getDataFolder() . "´ModerationEvents");
+    }
+    
+=======
     
     public function loadFolder(){
         @mkdir($this->getDataFolder() . "´players");
         // Many more folders will be coming soon with the update: "Settings Organization"
     }
     
+>>>>>>> 9de65a0e2935016e5ce5993f9edb6b115fe41811
     public function onLoad() : void {
         self::$instance = $this;
     }

@@ -4,7 +4,9 @@ namespace HenryDM\CustomPVP\CustomEvents;
 
 use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
+
 use pocketmine\event\entity\EntityDamageEvent;
+use pocketmine\utils\Config;
 
 class AttackCooldown implements Listener {
 

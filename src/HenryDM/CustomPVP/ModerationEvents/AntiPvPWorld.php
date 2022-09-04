@@ -5,6 +5,7 @@ namespace HenryDM\CustomPVP\ModerationEvents;
 use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
 
+use pocketmine\utils\Config;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\player\Player;

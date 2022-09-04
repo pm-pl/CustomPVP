@@ -5,10 +5,11 @@ declare(strict_types=1);
 namespace HenryDM\CustomPVP\CustomEvents;
 
 use HenryDM\CustomPVP\Main;
+use pocketmine\event\Listener;
 use function str_replace;
 
 use pocketmine\player\Player;
-use pocketmine\event\Listener;
+use pocketmine\utils\Config;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\player\PlayerDeathEvent;

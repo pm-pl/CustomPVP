@@ -5,6 +5,7 @@ namespace HenryDM\CustomPVP\ModerationEvents;
 use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
 
+use pocketmine\utils\Config;
 use pocketmine\event\player\PlayerToggleSprintEvent;
 use pocketmine\player\Player;
 
