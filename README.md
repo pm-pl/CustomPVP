@@ -16,13 +16,8 @@
 
 [![releasesImg]][releases] [![licenseImg]][license] ![phpversion] [![issues]][issueslink] 
 
-<<<<<<< HEAD
-=======
- • By HenryDM --> This plugin is getting bigger and more customized, I can't stop... I'm having more and more ideas, so I'm also organizing all the code
-
  • Thanks for **100+** downloads, coming soon new code and new features 
-
->>>>>>> 9de65a0e2935016e5ce5993f9edb6b115fe41811
+ 
 ---
 ## ⭐ • Plugin Features
 
