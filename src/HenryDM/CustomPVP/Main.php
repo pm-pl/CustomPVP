@@ -48,6 +48,12 @@ class Main extends PluginBase implements Listener {
         $this->saveDefaultConfig();
         $this->cfg = $this->getConfig();
         $this->loadFolder();
+        $this->saveResource("CustomEvents.yml");
+        $this->saveResource("KillEvents.yml");
+        $this->saveResource("ModerationEvents.yml");
+        new Config($this->getDataFolder() . "CustomEvents.yml");
+        new Config($this->getDataFolder() . "KillEvents.yml");
+        new Config($this->getDataFolder() . "ModerationEvents.yml");
 
         $events = [
             # ItemDamage::class,
