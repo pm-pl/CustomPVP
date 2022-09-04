@@ -78,10 +78,10 @@ class Main extends PluginBase implements Listener {
     }
     
     public function loadFolder(){
-        @mkdir($this->getDataFolder() . "´players");
-        @mkdir($this->getDataFolder() . "´CustomEvents");
-        @mkdir($this->getDataFolder() . "´KillEvents");
-        @mkdir($this->getDataFolder() . "´ModerationEvents");
+        @mkdir($this->getDataFolder() . "players");
+        @mkdir($this->getDataFolder() . "CustomEvents");
+        @mkdir($this->getDataFolder() . "KillEvents");
+        @mkdir($this->getDataFolder() . "ModerationEvents");
     }
     
     public function onLoad() : void {
