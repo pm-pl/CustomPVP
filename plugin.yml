@@ -3,7 +3,6 @@ main: HenryDM\CustomPVP\Main
 api: [4.0.0]
 version: 3.1.1-beta
 authors: [HenryDM, Ihsan48, FernanACM, PetterLight, CaioVox, Estern01, TacoError] 
-mcpe-protocol: [527, 534, 544]
 description: Advanced Plugin To Customize Your PvP Server
 softdepend: 
   - BedrockEconomy
