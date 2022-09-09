@@ -6,7 +6,6 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 
 use pocketmine\utils\Config;
-use pocketmine\utils\SingletonTrait;
 
 use HenryDM\CustomPVP\Events\SoupPvP;
 
@@ -29,10 +28,8 @@ use HenryDM\CustomPVP\Events\PingKick;
 
 class Main extends PluginBase implements Listener {
 
-    use SingletonTrait;
-
-    /*** @var Main */
-    private static Main $instance;
+    /*** @var Main|null */
+    private static Main|null $instance;
 
     const VERSION = "3.2.0";
 
@@ -75,7 +72,11 @@ class Main extends PluginBase implements Listener {
     }
 
     public function onLoad() : void {
-        self::setInstance($this);
+        self::$instance = $this;
+    }
+
+    public function getInstance() : Main {
+        return self::$instance;
     }
 
     public function getMainConfig() : Config {
