@@ -4,9 +4,10 @@ namespace HenryDM\CustomPVP;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
-use pocketmine\utils\Config;
 
-# In test Class 
+use pocketmine\utils\Config;
+use pocketmine\utils\SingletonTrait;
+
 use HenryDM\CustomPVP\Events\SoupPvP;
 
 # Normal classes
@@ -28,19 +29,19 @@ use HenryDM\CustomPVP\Events\PingKick;
 
 class Main extends PluginBase implements Listener {
 
+    use SingletonTrait;
+
     /*** @var Main */
     private static Main $instance;
+
+    const VERSION = "3.2.0";
 
     /*** @var Config */
     public Config $cfg;
 
     public function onEnable() : void {
-        $this->saveDefaultConfig();
+        $this->saveResource("config.yml");
         $this->cfg = $this->getConfig(); 
-        if ($this->cfg->get("config-version") < "3.2.0") {
-            $this->getLogger()->warning("Your configuration is outdate! Please consider update.");
-            rename($this->getDataFolder() . "config.yml", $this->getDataFolder() . "config_outdate.yml");
-        }
 
         $events = [
             AntiFlightPvp::class,
@@ -65,12 +66,16 @@ class Main extends PluginBase implements Listener {
         }
     }
 
-    public function onLoad() : void {
-        self::$instance = $this;
+    private function initConfig() : void {
+        if (empty($this->cfg->getNested("config-version"))) return;
+        if (($this->cfg->getNested("config-version")) < Main::VERSION) {
+            $this->getLogger()->warning("Your configuration is outdate! Please consider update.");
+            rename($this->getDataFolder() . "config.yml", $this->getDataFolder() . "config_outdate.yml");
+        }
     }
 
-    public static function getInstance() : Main {
-        return self::$instance;
+    public function onLoad() : void {
+        self::setInstance($this);
     }
 
     public function getMainConfig() : Config {
