@@ -58,7 +58,8 @@ cooldown-worlds:
 death-effects: false 
 
 effects-worlds: 
-  - EffectArena - Example
+  - EffectArena 
+  - Example
 
 effect:
   id: 1 # Add here effect id
@@ -155,7 +156,7 @@ sound-worlds:
 pvp-knockback: false
 knockback-level: 0.50
 
-knockback-worlds: 
+knockback-worlds:
   - KnobackArena # Example
 
 # =====================
@@ -166,7 +167,7 @@ knockback-worlds:
 leeching-mode: false
 leeching-level: 3 # Max = 10
 
-leeching-worlds: 
+leeching-worlds:
   - LeechingArena
 
 # =====================
@@ -184,21 +185,23 @@ kill-message: "§c[-] §6{victim} §cwas killed by §6{killer}" # Example
 # Info: This feature allows you to remove lag Player's from the server
 
 ping-kick: false
-ping-kick-max: 500 
+ping-kick-max: 500
 ping-kick-message: "§cSorry but your ping was so high"
 
 ping-kick-worlds:
-  - PingKickArena - Example
+  - PingKickArena 
+  - Example
 
 # =====================
 #      Soup PvP
 # =====================
 # Info: This feature allows you to add Soup PvP in your server
 
-soup-pvp: false 
+soup-pvp: false
 soup-id: 282
 soup-heart: 5
-soup-message: "§a+5 Hearts" 
+soup-message: "§a+5 Hearts"
 
-soup-worlds: ["world"]  
+soup-worlds:
+  - SoupPVP
 ...

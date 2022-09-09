@@ -15,6 +15,6 @@ class Utils {
         $pk->soundName = $soundName;
         $pk->volume = $volume;
         $pk->pitch = $pitch;
-        $player->getNetworkSession()->senddataPacket($pk);
+        $player->getNetworkSession()->sendDataPacket($pk);
     }
 }
