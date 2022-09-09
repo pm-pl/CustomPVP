@@ -8,6 +8,7 @@ use pocketmine\event\Listener;
 use pocketmine\player\Player;
 use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
+use pocketmine\event\entity\EntityDamageEvent;
 
 class KillEXP implements Listener {
 
@@ -26,7 +27,6 @@ class KillEXP implements Listener {
 # ====================================================
               if($this->getMain()->cfg->get("Kill-exp") === true) {
                if(in_array($worldName, $worlds, true)) {
-                  if($damageCause instanceof EntityDamageByEntityEvent) {
                      if($damager instanceof Player) {
                         $player->getXpManager()->addXpLevel($expvalue);
                }
