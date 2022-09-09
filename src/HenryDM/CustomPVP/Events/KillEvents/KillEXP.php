@@ -6,7 +6,7 @@ use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
 
 use pocketmine\player\Player;
-use pocketmine\event\PlayerDeathEvent;
+use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 
 class KillEXP implements Listener {
