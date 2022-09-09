@@ -35,11 +35,12 @@ class Main extends PluginBase implements Listener {
     public Config $cfg;
 
     public function onEnable() : void {
-        @mkdir($this->getDataFolder()); # In test
         $this->saveDefaultConfig();
-        $this->cfg = $this->getConfig(); # In test
-        $this->saveResource("SoupPvP.yml"); # In test
-        new Config($this->getDataFolder() . "SoupPvP.yml", Config::YAML); # In test
+        $this->cfg = $this->getConfig(); 
+        if ($this->cfg->get("config-version") < "3.2.0") {
+            $this->getLogger()->warning("Your configuration is outdate! Please consider update.");
+            rename($this->getDataFolder() . "config.yml", $this->getDataFolder() . "config_outdate.yml");
+        }
 
         $events = [
             AntiFlightPvp::class,

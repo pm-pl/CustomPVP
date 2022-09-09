@@ -16,6 +16,13 @@
 # =====================
 #    AntiFlight PvP
 # =====================
+# Info: DO NOT TOUCH
+
+config-version: 3.2.0
+
+# =====================
+#    AntiFlight PvP
+# =====================
 # Info: This feature allow you to disable players fly on pvp!
 
 anti-flight: false 
@@ -182,4 +189,16 @@ ping-kick-message: "§cSorry but your ping was so high"
 
 ping-kick-worlds:
   - PingKickArena - Example
+
+# =====================
+#      Soup PvP
+# =====================
+# Info: This feature allows you to add Soup PvP in your server
+
+soup-pvp: false 
+soup-id: 282
+soup-heart: 5
+soup-message: "§a+5 Hearts" 
+
+soup-worlds: ["world"]  
 ...
