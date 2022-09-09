@@ -17,18 +17,18 @@ class KillEXP implements Listener {
 
     public function onDeath(PlayerDeathEvent $event) {
 # ====================================================
-      $entity = $event->getEntity();
+      $player = $event->getPlayer();
       $damageCause = $player->getLastDamageCause();
       $damager = $damageCause->getDamager();
-      $worlds = $this->getMain()->cfg->get("soup-worlds", []);
+      $worlds = $this->getMain()->cfg->get("exp-worlds", []);
       $worldName = $event->getPlayer()->getWorld()->getDisplayName();
-      $xpvalue = $this->getMain()->cfg->get("xp-value");
+      $expvalue = $this->getMain()->cfg->get("exp-value");
 # ====================================================
               if($this->getMain()->cfg->get("Kill-exp") === true) {
                if(in_array($worldName, $worlds, true)) {
                   if($damageCause instanceof EntityDamageByEntityEvent) {
                      if($damager instanceof Player) {
-                        $damager->getXpManager()->addXpLevel($xpvalue);
+                        $player->getXpManager()->addXpLevel($expvalue);
                }
             }
          }
