@@ -39,6 +39,7 @@ class Main extends PluginBase implements Listener {
     public function onEnable() : void {
         $this->saveResource("config.yml");
         $this->cfg = $this->getConfig(); 
+        $this->initConfig();
 
         $events = [
             AntiFlightPvp::class,
