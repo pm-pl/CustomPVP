@@ -7,7 +7,7 @@ use pocketmine\event\Listener;
 use pocketmine\utils\Config;
 
 # In test Class 
-use HenryDM\CustomPVP\Events\SoupPvP\Soup;
+use HenryDM\CustomPVP\Events\SoupPvP;
 
 # Normal classes
 use HenryDM\CustomPVP\Events\AntiFlightPvp;
@@ -58,8 +58,8 @@ class Main extends PluginBase implements Listener {
             PingKick::class,
             SoupPvP::class
         ];
-        foreach($events as $e) {
-            $this->getServer()->getPluginManager()->registerEvents(new $e($this), $this);
+        foreach($events as $ev) {
+            $this->getServer()->getPluginManager()->registerEvents(new $ev($this), $this);
         }
     }
 
