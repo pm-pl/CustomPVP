@@ -28,7 +28,7 @@ class KillEXP implements Listener {
                if(in_array($worldName, $worlds, true)) {
                   if($damageCause instanceof EntityDamageByEntityEvent) {
                      if($damager instanceof Player) {
-                        $damager->getXpManager()->$addXpLevel($damager, $xpvalue);)
+                        $damager->getXpManager()->$addXpLevel($damager, $xpvalue);
                }
             }
          }
