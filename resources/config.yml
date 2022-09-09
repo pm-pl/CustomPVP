@@ -97,7 +97,7 @@ money-worlds:
 # =====================
 # Info: This feature allows you to add particles on kill players (liked Hypixel)
 
-kill-particles: false 
+kill-particles: false
 
 particles-worlds: 
   - ParticleArena # Example
@@ -116,7 +116,7 @@ snow-particle: false
 # =====================
 # Info: This feature allows you to give rewards (items) when killing players
 
-kill-rewards: false 
+kill-rewards: false
 
 rewards-worlds: 
   - RewardsArena # Example
@@ -134,7 +134,7 @@ rewards-items:
 # =====================
 # Info: This feature allows you to add sounds when killing players
 
-kill-sound: false 
+kill-sound: false
 sound-name: "random.explode" # Example
 
 sound-worlds:
@@ -156,7 +156,7 @@ knockback-worlds:
 # =====================
 # Info: This feature allows you to add custom leeching mode (Check Plugin Wiki)
 
-leeching-mode: false 
+leeching-mode: false
 leeching-level: 3 # Max = 10
 
 leeching-worlds: 
@@ -168,7 +168,7 @@ leeching-worlds:
 # Info: This feature allows you to custom pvp messages
 # Info 2: Use {killer} to add Killer Name and {victim} to add victim name
 
-pvp-messages: false 
+pvp-messages: false
 kill-message: "§c[-] §6{victim} §cwas killed by §6{killer}" # Example
 
 # =====================
@@ -176,7 +176,7 @@ kill-message: "§c[-] §6{victim} §cwas killed by §6{killer}" # Example
 # =====================
 # Info: This feature allows you to remove lag Player's from the server
 
-ping-kick: false 
+ping-kick: false
 ping-kick-max: 500 
 ping-kick-message: "§cSorry but your ping was so high"
 
