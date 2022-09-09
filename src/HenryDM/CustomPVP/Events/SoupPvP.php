@@ -19,7 +19,7 @@ class SoupPvP implements Listener {
         $player = $event->getPlayer();
         $item = $event->getItem();
 		$worldName = $event->getPlayer()->getWorld()->getDisplayName();
-		$worlds = $this->cfg->get("soup-worlds", []);
+		$worlds = $this->getMain()->cfg->get("soup-worlds", []);
         $health = $player->getHealth();
         $maxhealth = $player->getMaxHealth();
 # ============================================
