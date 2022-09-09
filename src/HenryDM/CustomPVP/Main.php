@@ -6,6 +6,10 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\utils\Config;
 
+# In test Class 
+use HenryDM\CustomPVP\Events\SoupPvP\Soup;
+
+# Normal classes
 use HenryDM\CustomPVP\Events\AntiFlightPvp;
 use HenryDM\CustomPVP\Events\AntiPvPWorld;
 use HenryDM\CustomPVP\Events\AttackCooldown;
@@ -21,7 +25,6 @@ use HenryDM\CustomPVP\Events\KnockBack;
 use HenryDM\CustomPVP\Events\LeechingMode;
 use HenryDM\CustomPVP\Events\Message;
 use HenryDM\CustomPVP\Events\PingKick;
-use HenryDM\CustomPVP\Events\SoupPvP;
 
 class Main extends PluginBase implements Listener {
 
@@ -33,7 +36,9 @@ class Main extends PluginBase implements Listener {
 
     public function onEnable() : void {
         $this->saveDefaultConfig();
-        $this->cfg = $this->getConfig();
+        $this->cfg = $this->getConfig()->getAll(); # In test
+        $this->saveResource("SoupPvP.yml"); # In test
+        new Config($this->getDataFolder() . "SoupPvP.yml", Config::YAML); # In test
 
         $events = [
             AntiFlightPvp::class,

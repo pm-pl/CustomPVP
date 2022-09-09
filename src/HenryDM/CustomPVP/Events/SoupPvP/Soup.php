@@ -4,31 +4,32 @@ namespace HenryDM\CustomPVP\Events;
 
 use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
-
-use pocketmine\world\World;
 use pocketmine\event\player\PlayerItemUseEvent;
 use pocketmine\item\ItemFactory;
 
-class SoupPvP implements Listener {
+class Soup implements Listener {
 
     public function __construct(private Main $main) {
         $this->main = $main;
     }
 
     public function onPlayerInteract(PlayerItemUseEvent $event) : void {
-        if ($this->getMain()->cfg->get("soup-pvp") === true) {
-            $player = $event->getPlayer();
-            $item = $event->getItem();
-            $world = $player->getWorld();
-            $health = $player->getHealth();
-            $maxhealth = $player->getMaxHealth();
+# ============================================        
+        $player = $event->getPlayer();
+        $item = $event->getItem();
+		$worldName = $event->getPlayer()->getWorld()->getDisplayName();
+		$worlds = $this->getConfig()->get("soup-worlds", []);
+        $health = $player->getHealth();
+        $maxhealth = $player->getMaxHealth();
+# ============================================
+        if ($this->getMain()->getConfig()->get("soup-pvp") === true) {
             if ($player->getInventory()->getItemInHand()->getId() == $this->main->getConfig()->get("soup-id")) {
                 if ($health == $maxhealth) {
                     $event->cancel();
                 } else {
-                    if (in_array($world->getFolderName(), $this->getMain()->cfg->get("soup-worlds"))) {
-                        $player->setHealth($health + $this->getMain()->cfg->get("soup-level"));
-                        $player->sendActionBarMessage($this->getMain()->cfg->get("soup-message"));
+                    if (in_array($worldName, $worlds, true)) {
+                        $player->setHealth($health + $this->getMain()->cfg->get("soup-heart"));
+                        $player->senPopup($this->getMain()->cfg->get("soup-message"));
                         $player->getInventory()->removeItem(ItemFactory::getInstance()->get($item->getId(), 0, 1));
                     }
                 }
