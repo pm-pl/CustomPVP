@@ -4,6 +4,7 @@ namespace HenryDM\CustomPVP\Events;
 
 use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
+
 use pocketmine\event\player\PlayerItemUseEvent;
 use pocketmine\item\ItemFactory;
 
@@ -18,7 +19,7 @@ class Soup implements Listener {
         $player = $event->getPlayer();
         $item = $event->getItem();
 		$worldName = $event->getPlayer()->getWorld()->getDisplayName();
-		$worlds = $this->getConfig()->get("soup-worlds", []);
+		$worlds = $this->cfg->get("soup-worlds", []);
         $health = $player->getHealth();
         $maxhealth = $player->getMaxHealth();
 # ============================================
@@ -29,7 +30,7 @@ class Soup implements Listener {
                 } else {
                     if (in_array($worldName, $worlds, true)) {
                         $player->setHealth($health + $this->getMain()->cfg->get("soup-heart"));
-                        $player->senPopup($this->getMain()->cfg->get("soup-message"));
+                        $player->sendPopup($this->getMain()->cfg->get("soup-message"));
                         $player->getInventory()->removeItem(ItemFactory::getInstance()->get($item->getId(), 0, 1));
                     }
                 }

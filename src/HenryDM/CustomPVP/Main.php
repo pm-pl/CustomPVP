@@ -36,7 +36,7 @@ class Main extends PluginBase implements Listener {
 
     public function onEnable() : void {
         $this->saveDefaultConfig();
-        $this->cfg = $this->getConfig()->getAll(); # In test
+        $this->cfg = $this->getConfig(); # In test
         $this->saveResource("SoupPvP.yml"); # In test
         new Config($this->getDataFolder() . "SoupPvP.yml", Config::YAML); # In test
 
