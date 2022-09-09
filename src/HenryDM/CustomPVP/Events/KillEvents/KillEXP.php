@@ -5,10 +5,15 @@ namespace HenryDM\CustomPVP\Events\KillEvents;
 use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
 
+use pocketmine\player\Player;
 use pocketmine\event\PlayerDeathEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 
 class KillEXP implements Listener {
+
+   public function __construct(private Main $main) {
+      $this->main = $main;
+  }
 
     public function onDeath(PlayerDeathEvent $event) {
 # ====================================================
@@ -19,15 +24,19 @@ class KillEXP implements Listener {
       $worldName = $event->getPlayer()->getWorld()->getDisplayName();
       $xpvalue = $this->getMain()->cfg->get("xp-value");
 # ====================================================
-              if ($this->getMain()->cfg->get("Kill-exp") === true) {
-               if (in_array($worldName, $worlds, true)) {
+              if($this->getMain()->cfg->get("Kill-exp") === true) {
+               if(in_array($worldName, $worlds, true)) {
                   if($damageCause instanceof EntityDamageByEntityEvent) {
                      if($damager instanceof Player) {
-                        $addXpLevel($damager, $xpvalue);
+                        $damager->getXpManager()->$addXpLevel($damager, $xpvalue);)
                }
             }
          }
       }
    }
+
+   public function getMain() : Main {
+      return $this->main;
+  }
 }
 
