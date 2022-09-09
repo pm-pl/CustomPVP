@@ -17,7 +17,7 @@ class KillEXP implements Listener {
 
     public function onDeath(PlayerDeathEvent $event) {
 # ====================================================
-      $player = $event->getPlayer();
+      $entity = $event->getEntity();
       $damageCause = $player->getLastDamageCause();
       $damager = $damageCause->getDamager();
       $worlds = $this->getMain()->cfg->get("soup-worlds", []);
@@ -28,7 +28,7 @@ class KillEXP implements Listener {
                if(in_array($worldName, $worlds, true)) {
                   if($damageCause instanceof EntityDamageByEntityEvent) {
                      if($damager instanceof Player) {
-                        $damager->getXpManager()->$addXpLevel($damager, $xpvalue);
+                        $damager->getXpManager()->addXpLevel($xpvalue);
                }
             }
          }
