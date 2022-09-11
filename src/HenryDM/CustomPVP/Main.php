@@ -9,10 +9,6 @@ use pocketmine\utils\Config;
 
 use HenryDM\CustomPVP\Events\SoupPvP;
 
-# In Test
-
-use HenryDM\CustomPVP\Events\KillEvents\KillEXP;
-
 # Normal classes
 use HenryDM\CustomPVP\Events\AntiFlightPvp;
 use HenryDM\CustomPVP\Events\AntiPvPWorld;
@@ -61,8 +57,7 @@ class Main extends PluginBase implements Listener {
             LeechingMode::class,
             Message::class,
             PingKick::class,
-            SoupPvP::class,
-            KillEXP::class
+            SoupPvP::class
         ];
         foreach($events as $ev) {
             $this->getServer()->getPluginManager()->registerEvents(new $ev($this), $this);
