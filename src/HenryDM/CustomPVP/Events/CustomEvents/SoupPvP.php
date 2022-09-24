@@ -26,7 +26,7 @@ class SoupPvP implements Listener {
 # ============================================
 
         if ($this->getMain()->getConfig()->get("soup-pvp") === true) {
-            if ($player->getInventory()->getItemInHand()->getId() == $this->getMain()->cfg()->getNested("soup-pvp-id")) {
+            if ($player->getInventory()->getItemInHand()->getId() == $this->getMain()->cfg->getNested("soup-pvp-id")) {
                 if ($health == $maxhealth) {
                     $event->cancel();
                 } else {
@@ -35,9 +35,9 @@ class SoupPvP implements Listener {
                                 $player->getInventory()->removeItem(ItemFactory::getInstance()->get($item->getId(), 0, 1));
                                 if($this->getMain()->cfg->getNested("soup-consume-message") === true) {
                                     if($this->getMain()->cfg->getNested("soup-consume-message-type-popup") === true) {
-                                        $player->sendPopup($this->getMain()->cfg->get("soup-message"));
+                                        $player->sendPopup($this->getMain()->cfg->getNested("soup-message"));
                                     } else {
-                                        $player->sendMessage($this->getMain()->cfg->get("soup-message"));
+                                        $player->sendMessage($this->getMain()->cfg->getNested("soup-message"));
                                     }
                                 }
                             }
