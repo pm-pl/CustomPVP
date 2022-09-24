@@ -5,6 +5,7 @@
 | **17/08/2022** | **1.0.0** | **4.7.1** |
 | **22/08/2022** | **2.0.0** | **4.7.1** |
 | **29/08/2022** | **3.0.0** | **4.7.1** |
+| **24/09/2022** | **4.0.0** | **4.9.0** |
 
 [releases]: https://github.com/Henry12960/CustomPVP/releases/latest
 [releasesImg]: https://img.shields.io/github/v/release/Henry12960/CustomPVP.svg?color=green&include_prereleases&label=RELEASE&style=for-the-badge
@@ -16,40 +17,30 @@
 
 [![releasesImg]][releases] [![licenseImg]][license] ![phpversion] [![issues]][issueslink] 
 
- • Thanks for **100+** downloads, coming soon new code and new features 
+ • Thanks for **200+** downloads, coming soon new code and new features 
  
 ---
 ## ⭐ • Plugin Features
 
-> 🪂 ➔ Simple AntiPvp Flight
-
-> 🛑 ➔ Custom World PvP Blocker
-
-> ⏰ ➔ Simple PvP Attack Cooldown
-
-> 💉 ➔ Custom Death Effects
-
-> ❌ ➔ Basic PvP Death Kick
-
-> 💖 ➔ Advanced PvP HealthRestore
-
-> 💲 ➔ Super PvP Kill Money
-
-> ✨ ➔ Simple Kill Particles
-
-> 🏆 ➔ Advanced Kill Rewards
-
-> 🎶 ➔ Custom PvP Kill Sounds
-
-> 📏 ➔ Modify Pvp Knockback
-
-> 🚀 ➔ New Leeching Mode
-
-> 💌 ➔ Custom Pvp Messages
-
-> 🔴 ➔ Advanced PvP PingKick
-
-> 🥣 ➔ Super New Soup PvP
+| **Feature** | **Version** | **Beta** | **Emoji** | 
+| --- | --- | --- | --- | 
+| **Attack Cooldown** | **1.0-stable** | **No** | ✈ | 
+| **Health Restore** | **1.0-stable** | **No** | ❤ |
+| **PvP Knockback** | **1.3-stable** | **No** | 💢 |
+| **Leeching Mode** | **2.0-beta** | **Yes** | 🚀 |
+| **Soup PvP** | **1.2-stable** | **No** | 🥣 |
+| **Death Clear** | **0.1-beta** | **Yes** | 💨 |
+| **Death Effects** | **1.5-stable** | **No** | ✨ |
+| **Death Kick** | **1.0-stable** | **No** | ❌ |
+| **Death Message** | **1.2-stable** | **No** | 💬 |
+| **Kill EXP** | **0.2-beta** | **Yes** | 🔮 |
+| **Kill Money** | **1.2-stable** | **No** | 💰 |
+| **Kill Particles** | **2.0-stable** | **No** | 🎇 |
+| **Kill Rewards** | **1.4-stable** | **No** | 🏆 |
+| **Kill Sound** | **1.0-stable** | **No** | 🎶 |
+| **Anti Flight** | **1.1-stable** | **No** | 🪂 |
+| **Anti PvP** | **1.0-stable** | **No** | ⛔ |
+| **Ping Kick** | **1.2-stable** | **No** | 🔰 |
 
 ---
 ## 🎯 • Requeriments and Info's
