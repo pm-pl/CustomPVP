@@ -1,6 +1,6 @@
 <?php
 
-namespace HenryDM\CustomPVP\Events;
+namespace HenryDM\CustomPVP\Events\DeathEvents;
 
 use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
@@ -19,23 +19,24 @@ class DeathEffects implements Listener {
         $this->main = $main;
     }
 
-    public function onPlayerDeath(PlayerDeathEvent $event)
-    {
+    public function onDeath(PlayerDeathEvent $event) : void {
+
+# =========================================================================        
         $player = $event->getPlayer();
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
         $damageCause = $player->getLastDamageCause();
-        # Effect settings
         $id = $this->getMain()->cfg->getNested("effect.id");
         $duration = $this->getMain()->cfg->getNested("effect.duration");
         $level = $this->getMain()->cfg->getNested("effect.level");
         $particles = $this->getMain()->cfg->getNested("effect.particle");
+# =========================================================================
 
-        if ($this->getMain()->cfg->get("death-effects") === true) {
+        if ($this->getMain()->cfg->getNested("death-effects") === true) {
             if ($damageCause instanceof EntityDamageByEntityEvent) {
                 $damager = $damageCause->getDamager();
                 if ($damager instanceof Player) {
-                    if (in_array($worldName(), $this->getMain()->cfg->get("effect-worlds"))) {
+                    if (in_array($worldName, $this->getMain()->cfg->getNested("effect-worlds", []))) {
                         $player->getEffects()->add(new EffectInstance(EffectIdMap::getInstance()->fromId($id), $duration, $level, $particles));
 
                     }

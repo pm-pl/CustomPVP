@@ -1,9 +1,11 @@
 name: CustomPVP
 main: HenryDM\CustomPVP\Main
 api: [4.0.0]
-version: 3.1.0
-authors: [HenryDM, Ihsan48, FernanACM, PetterLight, CaioVox, Estern01, TacoError] 
-description: Aadvanced Plugin To Customize Your PvP Server
+version: 4.0.0
+author: [Ihsan48, FernanACM, PetterLight, CaioVox, Estern01, TacoError] 
+description: Advanced Plugin to Customize your pvp server
+website: https://github.com/Henry12960
+
 softdepend: 
   - BedrockEconomy
   - EconomyAPI

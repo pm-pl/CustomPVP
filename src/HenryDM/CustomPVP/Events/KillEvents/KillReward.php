@@ -1,13 +1,14 @@
 <?php
 
-namespace HenryDM\CustomPVP\Events;
+namespace HenryDM\CustomPVP\Events\KillEvents;
 
 use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
-use pocketmine\event\player\PlayerDeathEvent;
-use pocketmine\event\entity\EntityDamageByEntityEvent;
+
 use pocketmine\player\Player;
 use pocketmine\item\ItemFactory;
+use pocketmine\event\player\PlayerDeathEvent;
+use pocketmine\event\entity\EntityDamageByEntityEvent;
 
 class KillReward implements Listener {
 
@@ -15,17 +16,21 @@ class KillReward implements Listener {
         $this->main = $main;
     }
 
-    public function onDeath(PlayerDeathEvent $event) {
+    public function onDeath(PlayerDeathEvent $event) : void {
+
+# ====================================================        
         $player = $event->getPlayer();
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
         $damageCause = $player->getLastDamageCause();
-        if ($this->getMain()->cfg->getNested("kill-rewards", true)) {
-            if (in_array($worldName, $this->getMain()->cfg->get("rewards-worlds", []))) {
+# ====================================================
+
+        if ($this->getMain()->cfg->getNested("kill-rewards") === true) {
+            if (in_array($worldName, $this->getMain()->cfg->getNested("kill-rewards-worlds", []))) {
                 if ($damageCause instanceof EntityDamageByEntityEvent) {
                     $damager = $damageCause->getDamager();
                     if ($damager instanceof Player) {
-                        foreach ($this->getMain()->cfg->get("rewards-items", []) as $item) {
+                        foreach ($this->getMain()->cfg->getNested("rewards-items", []) as $item) {
                             $reward = ItemFactory::getInstance()->get($item["id"], $item["damage"], $item["count"]);
                             $reward->setCustomName($item["name"]);
                             $damager->getInventory()->setItem($item["slots"], $reward);

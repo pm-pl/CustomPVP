@@ -1,6 +1,6 @@
 <?php
 
-namespace HenryDM\CustomPVP\Events;
+namespace HenryDM\CustomPVP\Events\ModerationEvents;
 
 use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
@@ -9,23 +9,26 @@ use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\player\Player;
 
-class AntiPvPWorld implements Listener {
+class AntiPvP implements Listener {
 
     public function __construct (private Main $main) {
         $this->main = $main;
     }
 
-    public function onDamage(EntityDamageEvent $event) {
+    public function onDamage(EntityDamageEvent $event) : void {
+
+# ==========================================        
         $entity = $event->getEntity(); 
         $world = $entity->getWorld();
         $worldName = $world->getFolderName();
-        if($this->getMain()->cfg->get("anti-pvp", true)) {
+# ==========================================  
+
+        if($this->getMain()->cfg->getNested("anti-pvp") === true) {
             if ($event instanceof EntityDamageByEntityEvent) {
                 $damager = $event->getDamager();
                 if (!$damager instanceof Player) return;
-                   if (in_array($worldName, $this->getMain()->cfg->get("blocked-pvp-worlds"))) {
+                if (in_array($worldName, $this->getMain()->cfg->getNested("anti-pvp-worlds", []))) {
                     $event->cancel();        
-            
                 }
             }
         }

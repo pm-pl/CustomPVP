@@ -1,114 +1,153 @@
 ---
-#   _____          _                  _______      _______  
-#  / ____|        | |                |  __ \ \    / /  __ \ 
-# | |    _   _ ___| |_ ___  _ __ ___ | |__) \ \  / /| |__) |
-# | |   | | | / __| __/ _ \| '_ ` _ \|  ___/ \ \/ / |  ___/ 
-# | |___| |_| \__ \ || (_) | | | | | | |      \  /  | |     
-#  \_____\__,_|___/\__\___/|_| |_| |_|_|       \/   |_|     
-#                                                                                                                     
-# A advanced plugin to customize pvp on your server 
-# Any bugs that come up please report on github: https://github.com/Henry12960/CustomPVP/issues
-# Give suggestions: https://github.com/Henry12960/CustomPVP/issues/2
-# Plugin Wiki: https://github.com/Henry12960/CustomPVP/wiki
-# Minecraft Sounds Wiki: https://minecraft.fandom.com/wiki/Sounds.json/Bedrock_Edition_values
-# All Add-ons are disable, set to "true" to enable!
+# ===================
+#     CUSTOM PVP
+# ===================
+# 1. Advanced plugin to customize your pvp server
+# 2. Plugin Wiki: https://github.com/Henry12960/CustomPVP/wiki
+# 3. You find a problem? Open a issue: https://github.com/Henry12960/CustomPVP/issues/new
+# 4. Star project for more: https://github.com/Henry12960/CustomPVP
+# 5. Rate plugin on poggit: https://poggit.pmmp.io/p/CustomPVP
+# 6. All Addons are disabled, you can enable change false to true!
+# 7. Activated all addons can cause errors and extreme ram consume, i'm not responsible for this!
+# 8. Thanks for everything! - By Henry Thierry [HenryDM]
 
-# =====================
-#    AntiFlight PvP
-# =====================
-# Info: DO NOT TOUCH
+# ===================
+#   Plugin Version
+# ===================
+# 1º Only for internal use!
 
-config-version: 3.2.0
+config-version: "4.0.0"
 
-# =====================
-#    AntiFlight PvP
-# =====================
-# Info: This feature allow you to disable players fly on pvp!
+# ===================
+#   Attack Cooldown
+# ===================
+# 1º This addon modify player attack cooldown!
+# 2º Max Cooldown = undefined  
 
-anti-flight: false 
+attack-cooldown: false
+attack-cooldown-time: 2
+attack-cooldown-worlds: ["CooldownArena", "CooldownWorld"]
 
-antiflight-worlds: 
-  - AntiFlightArena # Example
+# ===================
+#   Health Restore
+# ===================
+# 1º This addon add a event that when player die, other player restore all life
 
-# =====================
-#    AntiPvP Worlds
-# =====================
-# Info: This feature allow you to disable pvp on certains worlds!
+health-restore: false
+health-restore-worlds: ["RestoreArena", "RestoreWorld"]
 
-anti-pvp: false 
+# ===================
+#      KnockBack
+# ===================
+# 1º This addon modify player attack knockback!
+# 2º Recomended Max KnockBack = 5
 
-block-pvp-worlds: 
-  - Lobby # Example 
-  
-# =====================
-#    Attack Cooldown
-# =====================
-# Info: This feature allow you to set pvp cooldown!
+pvp-knockback: false
+pvp-knockback-level: 2
+pvp-knockback-worlds: ["KnockbackArena", "KnockbackWorld"]
 
-attack-cooldown: false 
+# ===================
+#    Leeching Mode
+# ===================
+# 1º This addon add a custom leeching mode create by HenryDM!
+# 2º If you don't know how work's this, check plugin wiki! 
+# 3º https://github.com/Henry12960/CustomPVP/wiki
+# 4º Leeching-level = hearts
 
-cooldown-worlds:
-  - CooldownArena # Example
+leeching-mode: false
+leeching-level: 5
+pvp-knockback-worlds: ["LeechingArena", "LeechingWorld"]
 
-# =====================
-#     Death Effects
-# =====================
-# Info: This feature allow you to add Player's death effects
+# ===================
+#      Soup PvP
+# ===================
+# 1º This addon add a famous soup pvp mode!
+# 2º If you set "soup-consume-message-type-popup" to true, messages are displayed in popup format, else, in message format!
+# 3º Set to true "soup-message" if you want display soup consume message
+# 4º You can use minecraft color codes in "soup-message"!
+# 5º "soup-id" = Mushroom Stew (282), you can use too Beetroot Soup id (436)
+
+soup-pvp: false
+soup-hearts: 3
+soup-id: 282
+soup-consume-message: false
+soup-message-type-popup: false
+soup-message: "§a+3 hearts"
+soup-pvp-worlds: ["SoupArena", "SoupWorld"]
+
+# ===================
+#     Death Clear
+# ===================
+# 1º This addon clear player inventory when player dies!
+# 2º "death-clear-modes" = all or armor
+
+death-clear: false
+death-clear-mode: "all"
+death-clear-worlds: ["ClearArena", "ClearWorld"]
+
+# ===================
+#    Death Effects
+# ===================
+# 1º This addon add effects to player on death
 
 death-effects: false 
-
-effects-worlds: 
-  - EffectArena 
-  - Example
+effect-worlds: ["EffectArnea", "EffectWorld"]
 
 effect:
-  id: 1 # Add here effect id
-  duration: 30 # Add here effect duration
-  level: 1 # Add here effect level
+  id: 1 # Add effect id here
+  duration: 30 # Add effect duration here
+  level: 1 # Add effect level here
   particles: false # Set to true to show particles effects
 
-# =====================
-#      Death Kick
-# =====================
-# Info: This feature allows you to kick the player when he dies
+# ===================
+#     Death Kick
+# ===================
+# 1º This addon add a event that when player dies his is kicked from server!
+# 2º You can use minecraft color codes in "death-kick-message"
 
-death-kick: false 
-death-kick-message: "§cOof! You Death"
+death-kick: false
+death-kick-message: "§cSorry! You died"
+death-kick-worlds: ["KickArena", "KickWorld"]
 
-death-kick-worlds: 
-  - KickArena # Example
+# ===================
+#    Death Message
+# ===================
+# 1º This addon add a event that change player message when his dies!
+# 2º You can use minecraft color codes in "death-message-alert"
+# 3º You can use {victim} and {killer} in "death-message-alert"
 
-# =====================
-#    HealthRestore
-# =====================
-# Info: This feature allow you to recover all heart on kill player  
+death-message: false
+death-message-alert: "§c{victim} has be killed by {killer}"
 
-heath-restore: false 
+# ===================
+#     Kill Money
+# ===================
+# 1º This addon add a popular kill money event!
+# 2º If "reduce-money" is active when player dies he will lose money!
 
-restore-worlds:
-  - HealthArena # Example
-
-# =====================
-#      KillMoney
-# =====================
-# Info: This feature allows you to give money to the player when killing another
-
-kill-money: false 
-money-reduce: false # if active when player dies he will lose money
+kill-money: false
+reduce-money: false
 money-value: 10 
+kill-money-worlds: ["MoneyArena", "MoneyWorld"]
 
-money-worlds: 
-  - MoneyArena # Example
+# ===================
+#     Kill EXP
+# ===================
+# 1º This addon add exp to player when kill another!
+# 2º Recomended Max "kill-exp-level" = 3
 
-# =====================
+kill-exp: false
+kill-exp-level: 2
+kill-exp-worlds: ["ExpArena", "ExpWorld"]
+
+# ===================
 #    Kill Particles
-# =====================
-# Info: This feature allows you to add particles on kill players (liked Hypixel)
+# ===================
+# 1º This addon add a particle when player dies!
+# 2º Only define to true one particle!
 
-kill-particles: false
-
-particles-worlds: 
-  - ParticleArena # Example
+kill-particle: false
+kill-particles-worlds: ["ParticleArena", "ParticleWorld"]
 
 critical-particle: true
 explode-particle: false
@@ -119,16 +158,15 @@ portal-particle: false
 redstone-particle: false
 snow-particle: false
 
-# =====================
-#      KillReward
-# =====================
-# Info: This feature allows you to give rewards (items) when killing players
+# ===================
+#     Kill Reward
+# ===================
+# 1º This addon add a reward when player kill another!
+# 2º Invalid item id cause plugin error!
 
 kill-rewards: false
+kill-rewards-worlds: ["RewardArena", "RewardWorld"]
 
-rewards-worlds: 
-  - RewardsArena # Example
-  
 rewards-items:
 
   - slots: 0 # Item slot
@@ -137,71 +175,41 @@ rewards-items:
     count: 1 # Item value
     name: KillReward # Item name
 
-# =====================
-#      KillSound
-# =====================
-# Info: This feature allows you to add sounds when killing players
+# ===================
+#     Kill Sound
+# ===================
+# 1º This addon add a sound when player kill another!
+# 2º Invalid sound name cause plugin error!
+# 3º Soun Wiki: https://minecraft.fandom.com/wiki/Sounds.json/Bedrock_Edition_values
 
 kill-sound: false
-sound-name: "random.explode" # Example
+kill-sound-name: "random-orb"
+kill-sound-worlds: ["SoundArena", "SoundWorld"]
 
-sound-worlds:
-  - SoundArena # Example
+# ===================
+#    Anti Flight
+# ===================
+# 1º This addon disable player fly on pvp damage!
 
-# =====================
-#    PvP KnockBack
-# =====================
-# Info: This feature allows you to modify pvp Knockback
+anti-flight: false
+anti-flight-worlds: ["AntiFlightArena", "AntiFlightWorld"]
 
-pvp-knockback: false
-knockback-level: 0.50
+# ===================
+#      Anti PvP
+# ===================
+# 1º This addon disable player pvp in certains worlds!
 
-knockback-worlds:
-  - KnobackArena # Example
+anti-pvp: false
+anti-pvp-worlds: ["AntiPvPArena", "AntiPvPWorld"]
 
-# =====================
-#    Leeching Mode
-# =====================
-# Info: This feature allows you to add custom leeching mode (Check Plugin Wiki)
-
-leeching-mode: false
-leeching-level: 3 # Max = 10
-
-leeching-worlds:
-  - LeechingArena
-
-# =====================
-#     PvP Messages
-# =====================
-# Info: This feature allows you to custom pvp messages
-# Info 2: Use {killer} to add Killer Name and {victim} to add victim name
-
-pvp-messages: false
-kill-message: "§c[-] §6{victim} §cwas killed by §6{killer}" # Example
-
-# =====================
-#       Ping Kick
-# =====================
-# Info: This feature allows you to remove lag Player's from the server
+# ===================
+#     Ping Kick
+# ===================
+# 1º This addon kick player from the server if their ping is >= "ping-kick-max-ping"
+# 2º You can use minecraft color codes in "ping-kick-message"
 
 ping-kick: false
-ping-kick-max: 500
-ping-kick-message: "§cSorry but your ping was so high"
-
-ping-kick-worlds:
-  - PingKickArena 
-  - Example
-
-# =====================
-#      Soup PvP
-# =====================
-# Info: This feature allows you to add Soup PvP in your server
-
-soup-pvp: false
-soup-id: 282
-soup-heart: 5
-soup-message: "§a+5 Hearts"
-
-soup-worlds:
-  - SoupPVP
+ping-kick-max-ping: 120
+ping-kick-message: "§eYour ping has exceeded 120ms"
+ping-kick-worlds: ["PingKickArena", "PingKickWorld"]
 ...

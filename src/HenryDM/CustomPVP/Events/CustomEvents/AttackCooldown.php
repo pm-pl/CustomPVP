@@ -1,9 +1,10 @@
 <?php
 
-namespace HenryDM\CustomPVP\Events;
+namespace HenryDM\CustomPVP\Events\CustomEvents;
 
 use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
+
 use pocketmine\event\entity\EntityDamageEvent;
 
 class AttackCooldown implements Listener {
@@ -13,12 +14,16 @@ class AttackCooldown implements Listener {
     }
 
     public function onDamage(EntityDamageEvent $event) : void {
+
+# =======================================================
         $entity = $event->getEntity();
         $world = $entity->getWorld();
         $worldName = $world->getFolderName();
-        if ($this->getMain()->cfg->getNested("attack-cooldown", true)) {
-            if (in_array($worldName, $this->getMain()->cfg->getNested("cooldown-worlds", []))) {
-                $event->setAttackCooldown($event->getAttackCooldown() - $this->getMain()->cfg->getNested("cooldown-time"));
+# =======================================================
+
+        if ($this->getMain()->cfg->getNested("attack-cooldown") === true) {
+            if (in_array($worldName, $this->getMain()->cfg->getNested("attack-cooldown-worlds", []))) {
+                $event->setAttackCooldown($event->getAttackCooldown() - $this->getMain()->cfg->getNested("attack-cooldown-time"));
             }
         }
     }

@@ -1,10 +1,11 @@
 <?php
 
-namespace HenryDM\CustomPVP\Events;
+namespace HenryDM\CustomPVP\Events\KillEvents;
 
 use HenryDM\CustomPVP\Main;
-use pocketmine\player\Player;
 use pocketmine\event\Listener;
+
+use pocketmine\player\Player;
 use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use HenryDM\CustomPVP\Utils\Utils;
@@ -16,16 +17,20 @@ class KillSound implements Listener {
     }
 
     public function onDeath(PlayerDeathEvent $event) : void {
+
+# =====================================================        
         $player = $event->getPlayer();
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
         $damageCause = $player->getLastDamageCause();
-        if ($this->getMain()->cfg->getNested("kill-sound", true)) {
-            if (in_array($worldName, $this->getMain()->cfg->getNested("sound-worlds"))) {
+# =====================================================
+
+        if ($this->getMain()->cfg->getNested("kill-sound") === true) {
+            if (in_array($worldName, $this->getMain()->cfg->getNested("kill-sound-worlds", []))) {
                 if ($damageCause instanceof EntityDamageByEntityEvent) {
                     $damager = $damageCause->getDamager();
                     if ($damager instanceof Player) {
-                        Utils::playSound($player, $this->getMain()->cfg->getNested("sound-name"), 1, 1);
+                        Utils::playSound($player, $this->getMain()->cfg->getNested("kill-sound-name"), 1, 1);
                     }
                 }
             }

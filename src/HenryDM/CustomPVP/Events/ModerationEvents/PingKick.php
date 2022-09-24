@@ -1,6 +1,6 @@
 <?php
 
-namespace HenryDM\CustomPVP\Events;
+namespace HenryDM\CustomPVP\Events\ModerationEvents;
 
 use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
@@ -17,19 +17,22 @@ class PingKick implements Listener {
     }
 
     public function onDamage(EntityDamageEvent $event) {
+
+# =========================================================================        
         foreach (Server::getInstance()->getOnlinePlayers() as $player) {
         $entity = $event->getEntity();
         $world = $entity->getWorld();
         $worldName = $world->getFolderName();
-        if ($this->getMain()->cfg->get("ping-kick", true)) {
-            if (in_array($worldName, $this->getMain()->cfg->get("ping-kick-worlds"))) {
+# =========================================================================
+
+        if ($this->getMain()->cfg->getNested("ping-kick") === true) {
+            if (in_array($worldName, $this->getMain()->cfg->getNested("ping-kick-worlds", []))) {
                 if ($event instanceof EntityDamageByEntityEvent) {
                     $damager = $event->getDamager();
                     if (!$damager instanceof Player) return;
-                       if ($player->getNetworkSession()->getPing() >= $this->getMain()->cfg->get("ping-kick-max")) {
-                        $player->kick($$this->getMain()->cfg->get("ping-kick-message"));   
-                       
-                       }
+                       if ($player->getNetworkSession()->getPing() >= $this->getMain()->cfg->getNested("ping-kick-max-ping")) {
+                           $player->kick($this->getMain()->cfg->getNested("ping-kick-message"));   
+                        }
                     }
                 }
             }

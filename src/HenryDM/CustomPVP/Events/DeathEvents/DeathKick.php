@@ -1,6 +1,6 @@
 <?php
 
-namespace HenryDM\CustomPVP\Events;
+namespace HenryDM\CustomPVP\Events\DeathEvents;
 
 use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
@@ -15,13 +15,17 @@ class DeathKick implements Listener {
         $this->main = $main;
     }
 
-    public function onDeath(PlayerDeathEvent $event) {
+    public function onDeath(PlayerDeathEvent $event) : void {
+
+# ===================================================        
         $player = $event->getPlayer();
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
-        if($this->getMain()->cfg->get("death-kick") === true) {
-            if (in_array($player->getWorld()->getFolderName(), $this->getMain()->cfg->get("death-kick-worlds"))) {
-                $player->kick($this->getMain()->cfg->get("death-kick-message"));                
+# ===================================================
+
+        if($this->getMain()->cfg->getNested("death-kick") === true) {
+            if (in_array($worldName, $this->getMain()->cfg->getNested("death-kick-worlds", []))) {
+                $player->kick($this->getMain()->cfg->getNested("death-kick-message"));                
             }
         }
     }

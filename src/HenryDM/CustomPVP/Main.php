@@ -2,36 +2,57 @@
 
 namespace HenryDM\CustomPVP;
 
+# =======================
+#    Pocketmine Class
+# =======================
+
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
-
 use pocketmine\utils\Config;
 
-use HenryDM\CustomPVP\Events\SoupPvP;
+# =======================
+#      Custom Events
+# =======================
 
-# Normal classes
-use HenryDM\CustomPVP\Events\AntiFlightPvp;
-use HenryDM\CustomPVP\Events\AntiPvPWorld;
-use HenryDM\CustomPVP\Events\AttackCooldown;
-use HenryDM\CustomPVP\Events\DeathEffects;
-use HenryDM\CustomPVP\Events\DeathKick;
-use HenryDM\CustomPVP\Events\HealthRestore;
-# use HenryDM\CustomPVP\Events\ItemDamage;
-use HenryDM\CustomPVP\Events\KillMoney;
-use HenryDM\CustomPVP\Events\KillParticles;
-use HenryDM\CustomPVP\Events\KillReward;
-use HenryDM\CustomPVP\Events\KillSound;
-use HenryDM\CustomPVP\Events\KnockBack;
-use HenryDM\CustomPVP\Events\LeechingMode;
-use HenryDM\CustomPVP\Events\Message;
-use HenryDM\CustomPVP\Events\PingKick;
+use HenryDM\CustomPVP\Events\CustomEvents\AttackCooldown;
+use HenryDM\CustomPVP\Events\CustomEvents\HealthRestore;
+use HenryDM\CustomPVP\Events\CustomEvents\KnockBack;
+use HenryDM\CustomPVP\Events\CustomEvents\LeechingMode;
+use HenryDM\CustomPVP\Events\CustomEvents\SoupPvP;
+
+# =======================
+#      Death Events
+# =======================
+
+use HenryDM\CustomPVP\Events\DeathEvents\DeathClear;
+use HenryDM\CustomPVP\Events\DeathEvents\DeathEffects;
+use HenryDM\CustomPVP\Events\DeathEvents\DeathKick;
+use HenryDM\CustomPVP\Events\DeathEvents\DeathMessage;
+
+# =======================
+#      Kill Events
+# =======================
+
+use HenryDM\CustomPVP\Events\KillEvents\KillEXP;
+use HenryDM\CustomPVP\Events\KillEvents\KillMoney;
+use HenryDM\CustomPVP\Events\KillEvents\KillParticles;
+use HenryDM\CustomPVP\Events\KillEvents\KillReward;
+use HenryDM\CustomPVP\Events\KillEvents\KillSound;
+
+# =======================
+#    Moderation Events
+# =======================
+
+use HenryDM\CustomPVP\Events\ModerationEvents\AntiFlight;
+use HenryDM\CustomPVP\Events\ModerationEvents\AntiPvP;
+use HenryDM\CustomPVP\Events\ModerationEvents\PingKick;
 
 class Main extends PluginBase implements Listener {
 
     /*** @var Main|null */
     private static Main|null $instance;
 
-    const VERSION = "3.2.0";
+    const VERSION = "4.0.0";
 
     /*** @var Config */
     public Config $cfg;
@@ -42,22 +63,23 @@ class Main extends PluginBase implements Listener {
         $this->initConfig();
 
         $events = [
-            AntiFlightPvp::class,
-            AntiPvPWorld::class,
             AttackCooldown::class,
-            DeathEffects::class,
-            DeathKick::class,
             HealthRestore::class,
-            # ItemDamage::class,
+            KnockBack::class,
+            LeechingMode::class,
+            SoupPvP::class,
+            DeathEffects::class,
+            DeathClear::class,
+            DeathKick::class,
+            DeathMessage::class,
+            KillEXP::class,
             KillMoney::class,
             KillParticles::class,
             KillReward::class,
             KillSound::class,
-            KnockBack::class,
-            LeechingMode::class,
-            Message::class,
-            PingKick::class,
-            SoupPvP::class
+            AntiFlight::class,
+            AntiPvP::class,
+            PingKick::class
         ];
         foreach($events as $ev) {
             $this->getServer()->getPluginManager()->registerEvents(new $ev($this), $this);

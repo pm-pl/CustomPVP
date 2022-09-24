@@ -1,10 +1,11 @@
 <?php
 
-namespace HenryDM\CustomPVP\Events;
+namespace HenryDM\CustomPVP\Events\CustomEvents;
 
 use HenryDM\CustomPVP\Main;
-use pocketmine\player\Player;
 use pocketmine\event\Listener;
+
+use pocketmine\player\Player;
 use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 
@@ -14,14 +15,20 @@ class HealthRestore implements Listener {
         $this->main = $main;
     }
 
-    public function onPlayerDeath(PlayerDeathEvent $event) : void {
-        if ($this->getMain()->cfg->get("heath-restore") === true) {
-            $player = $event->getPlayer();
-            $cause = $player->getLastDamageCause();
+    public function onDeath(PlayerDeathEvent $event) : void {
+
+# =======================================================        
+        $player = $event->getPlayer();
+        $cause = $player->getLastDamageCause();
+        $world = $player->getWorld();
+        $worldName = $world->getFolderName();
+# =======================================================
+
+        if ($this->getMain()->cfg->getNested("heath-restore") === true) {
             if ($cause instanceof EntityDamageByEntityEvent) {
                 $damager = $cause->getDamager();
                 if ($damager instanceof Player) {
-                    if (in_array($player->getWorld()->getFolderName(), $this->getMain()->cfg->get("restore-worlds"))) {
+                    if (in_array($worldName, $this->getMain()->cfg->getNested("health-restore-worlds", []))) {
                         $damager->setHealth($damager->getMaxHealth());
                     }
                 }

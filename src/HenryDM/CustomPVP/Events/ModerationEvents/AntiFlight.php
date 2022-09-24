@@ -1,6 +1,6 @@
 <?php
 
-namespace HenryDM\CustomPVP\Events;
+namespace HenryDM\CustomPVP\Events\ModerationEvents;
 
 use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
@@ -9,17 +9,21 @@ use pocketmine\player\Player;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 
-class AntiFlightPvp implements Listener {
+class AntiFlight implements Listener {
 
     public function __construct(private Main $main) {
         $this->main = $main;
     }
 
     public function onDamage(EntityDamageEvent $event) : void {
+
+# ===============================================        
         $entity = $event->getEntity();
         $world = $entity->getWorld();
         $worldName = $world->getFolderName();
-        if ($this->getMain()->cfg->getNested("anti-flight", true)) {
+# ===============================================
+
+        if ($this->getMain()->cfg->getNested("anti-flight") === true) {
             if (in_array($worldName, $this->getMain()->cfg->getNested("antiflight-worlds", []))) {
                 if ($event instanceof EntityDamageByEntityEvent) {
                     $damager = $event->getDamager();
@@ -28,7 +32,7 @@ class AntiFlightPvp implements Listener {
                     if ($damager->getAllowFlight() === true) {
                         $damager->setFlying(false);
                         $damager->setAllowFlight(false);
-                }
+                    }
                 }
             }
         }

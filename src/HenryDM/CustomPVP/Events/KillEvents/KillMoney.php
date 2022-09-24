@@ -1,11 +1,12 @@
 <?php
 
-namespace HenryDM\CustomPVP\Events;
+namespace HenryDM\CustomPVP\Events\KillEvents;
 
 # pocketmine Lib
 use HenryDM\CustomPVP\Main;
-use pocketmine\player\Player;
 use pocketmine\event\Listener;
+
+use pocketmine\player\Player;
 use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 
@@ -20,18 +21,22 @@ class KillMoney implements Listener {
     }
 
     public function onDeath(PlayerDeathEvent $event) : void {
+
+# =================================================================        
         $player = $event->getPlayer();
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
         $damageCause = $player->getLastDamageCause();
-        $amount = $this->getMain()->cfg->get("money-value");
-        if ($this->getMain()->cfg->get("kill-money") === true) {
-            if (in_array($worldName, $this->getMain()->cfg->get("money-worlds"))) {
+        $amount = $this->getMain()->cfg->getNested("money-value");
+# =================================================================
+
+        if ($this->getMain()->cfg->getNested("kill-money") === true) {
+            if (in_array($worldName, $this->getMain()->cfg->getNested("kill-money-worlds", []))) {
                 if ($damageCause instanceof EntityDamageByEntityEvent) {
                     $damager = $damageCause->getDamager();
                     if ($damager instanceof Player) {
                         libEco::addMoney($damager, $amount);
-                        if ($this->getMain()->cfg->get("money-reduce") === true) {
+                        if ($this->getMain()->cfg->getNested("reduce-money") === true) {
                             libEco::reduceMoney($player, $amount, static function (bool $success): void {
                             });
                         }
