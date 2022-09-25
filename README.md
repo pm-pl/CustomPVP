@@ -17,7 +17,6 @@
 
 [![releasesImg]][releases] [![licenseImg]][license] ![phpversion] [![issues]][issueslink] 
 
- • Thanks for **big** downloads, coming soon new code and new features 
  • I finished this project here, thanks for everything guys!
  
 ---
