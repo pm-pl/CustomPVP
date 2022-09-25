@@ -17,7 +17,8 @@
 
 [![releasesImg]][releases] [![licenseImg]][license] ![phpversion] [![issues]][issueslink] 
 
- • Thanks for **200+** downloads, coming soon new code and new features 
+ • Thanks for **big** downloads, coming soon new code and new features 
+ • I finished this project here, thanks for everything guys!
  
 ---
 ## ⭐ • Plugin Features
