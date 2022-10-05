@@ -15,6 +15,7 @@ class AttackCooldown implements Listener {
     }
 
     public function onDamage(EntityDamageEvent $event) {
+        $entity = $event->getEntity();
         $world = $entity->getWorld();
         if ($this->getMain()->getMainConfig()->getNested("attack-cooldown", true)) {
             if (in_array($world->getFolderName(), $this->getMain()->getMainConfig()->getNested("attack-cooldown-worlds", []))) {

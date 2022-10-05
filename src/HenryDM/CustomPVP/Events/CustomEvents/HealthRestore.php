@@ -25,7 +25,7 @@ class HealthRestore implements Listener {
             if ($cause instanceof EntityDamageByEntityEvent) {
                 $damager = $cause->getDamager();
                 if ($damager instanceof Player) {
-                    if (in_array($wolrd->getFolderName(), $this->getMain()->getMainConfig()->getNested("health-restore-worlds", []))) {
+                    if (in_array($world->getFolderName(), $this->getMain()->getMainConfig()->getNested("health-restore-worlds", []))) {
                         $damager->setHealth($damager->getMaxHealth());
                     }
                 }

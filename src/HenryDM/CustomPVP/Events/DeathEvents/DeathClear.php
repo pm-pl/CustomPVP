@@ -17,13 +17,13 @@ class DeathClear implements Listener {
     public function onDeath(PlayerDeathEvent $event) {
         $player = $event->getPlayer();
         $world = $player->getWorld();
-        if($this->getMain()->cfg->getNested("death-clear") === true) {
-            if (in_array($worldName(), $this->getMain()->cfg->getNested("death-clear-worlds"))) {
-                if($this->getMain()->cfg->getNested("death-clear-mode") === "all") {
+        if($this->getMain()->getMainConfig()->getNested("death-clear") === true) {
+            if (in_array($world->getFolderName(), $this->getMain()->getMainConfig()->getNested("death-clear-worlds"))) {
+                if($this->getMain()->getMainConfig()->getNested("death-clear-mode") === "all") {
                     $player->getInventory()->clearAll();
                 }
 
-                if($this->getMain()->cfg->getNested("death-clear-mode") === "armor") {
+                if($this->getMain()->getMainConfig()->getNested("death-clear-mode") === "armor") {
                     $player->getArmorInventory()->clearAll();
                 }
             }
