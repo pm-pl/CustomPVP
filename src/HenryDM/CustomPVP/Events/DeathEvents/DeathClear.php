@@ -15,13 +15,8 @@ class DeathClear implements Listener {
     }
 
     public function onDeath(PlayerDeathEvent $event) {
-
-# ==========================================        
         $player = $event->getPlayer();
         $world = $player->getWorld();
-        $worldName = $world->getFolderName();
-# ==========================================
-
         if($this->getMain()->cfg->getNested("death-clear") === true) {
             if (in_array($worldName(), $this->getMain()->cfg->getNested("death-clear-worlds"))) {
                 if($this->getMain()->cfg->getNested("death-clear-mode") === "all") {

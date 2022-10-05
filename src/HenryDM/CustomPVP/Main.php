@@ -2,50 +2,47 @@
 
 namespace HenryDM\CustomPVP;
 
-# =======================
-#    Pocketmine Class
-# =======================
-
 use pocketmine\plugin\PluginBase;
+
 use pocketmine\event\Listener;
 use pocketmine\utils\Config;
 
-# =======================
-#      Custom Events
-# =======================
+# Custom Events
 
-use HenryDM\CustomPVP\Events\CustomEvents\AttackCooldown;
-use HenryDM\CustomPVP\Events\CustomEvents\HealthRestore;
-use HenryDM\CustomPVP\Events\CustomEvents\KnockBack;
-use HenryDM\CustomPVP\Events\CustomEvents\LeechingMode;
-use HenryDM\CustomPVP\Events\CustomEvents\SoupPvP;
+use HenryDM\CustomPVP\Events\CustomEvents\{
+    AttackCooldown,
+    HealthRestore,
+    KnockBack,
+    LeechingMode,
+    SoupPvP
+};
 
-# =======================
-#      Death Events
-# =======================
+# Death Events
 
-use HenryDM\CustomPVP\Events\DeathEvents\DeathClear;
-use HenryDM\CustomPVP\Events\DeathEvents\DeathEffects;
-use HenryDM\CustomPVP\Events\DeathEvents\DeathKick;
-use HenryDM\CustomPVP\Events\DeathEvents\DeathMessage;
+use HenryDM\CustomPVP\Events\DeathEvents\{
+    DeathClear,
+    DeathEffects,
+    DeathKick,
+    DeathMessage
+};
 
-# =======================
-#      Kill Events
-# =======================
+# Kill Events
 
-use HenryDM\CustomPVP\Events\KillEvents\KillEXP;
-use HenryDM\CustomPVP\Events\KillEvents\KillMoney;
-use HenryDM\CustomPVP\Events\KillEvents\KillParticles;
-use HenryDM\CustomPVP\Events\KillEvents\KillReward;
-use HenryDM\CustomPVP\Events\KillEvents\KillSound;
+use HenryDM\CustomPVP\Events\KillEvents\{
+    KillEXP,
+    KillMoney,
+    KillParticles,
+    KillReward,
+    KillSound
+};
 
-# =======================
-#    Moderation Events
-# =======================
+# Moderation Events
 
-use HenryDM\CustomPVP\Events\ModerationEvents\AntiFlight;
-use HenryDM\CustomPVP\Events\ModerationEvents\AntiPvP;
-use HenryDM\CustomPVP\Events\ModerationEvents\PingKick;
+use HenryDM\CustomPVP\Events\ModerationEvents\{
+    AntiFlight,
+    AntiPvP,
+    PingKick
+};
 
 class Main extends PluginBase implements Listener {
 
@@ -103,6 +100,6 @@ class Main extends PluginBase implements Listener {
     }
 
     public function getMainConfig() : Config {
-        return $this->cfg;
+        return new Config($this->getDataFolder() . "config.yml", Config::YAML);
     }
 }

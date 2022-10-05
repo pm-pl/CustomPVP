@@ -15,16 +15,11 @@ class KnockBack implements Listener {
     }
 
     public function onEntity(EntityDamageByEntityEvent $event) : void {	
-
-# =======================================================        
         $entity = $event->getEntity();
         $world = $entity->getWorld();
-        $worldName = $world->getFolderName();
-# =======================================================
-
-        if($this->getMain()->cfg->get("pvp-knockback") === true) {
-            if (in_array($worldName, $this->getMain()->cfg->getNested("pvp-knockback-worlds", []))) {
-                $event->setKnockBack($this->getMain()->cfg->getNested("pvp-knockback-level") * $event->getKnockBack());
+        if($this->getMain()->getMainConfig()->getNested("pvp-knockback", true)) {
+            if (in_array($world->getFolderName(), $this->getMain()->cfg->getNested("pvp-knockback-worlds", []))) {
+                $event->setKnockBack($this->getMain()->getMainConfig()->getNested("pvp-knockback-level") * $event->getKnockBack());
             }
         }
     }
