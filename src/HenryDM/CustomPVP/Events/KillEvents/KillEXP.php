@@ -15,27 +15,28 @@ class KillEXP implements Listener {
         $this->main = $main;
     }
 
-    public function onKill(PlayerDeathEvent $event) {
+    public function onDeath(PlayerDeathEvent $event) {
 
 # =========================================================        
         $player = $event->getPlayer();
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
-        $xp = $this->getMain()->cfg->getNested("kill-exp-level");
+        $xp = $this->main->cfg->get("kill-exp-level");
         $damageCause = $player->getLastDamageCause();
 # =========================================================
 
-        if($this->getMain()->cfg->getNested("kill-exp") === true) {
-            if (in_array($worldName, $this->getMain()->cfg->getNested("kill-exp-worlds", []))) {
-                if ($damageCause instanceof EntityDamageByEntityEvent) {
+        if($this->main->cfg->get("kill-exp") === true) {
+            if(in_array($worldName, $this->main->cfg->get("kill-exp-worlds", []))) {
+                if($damageCause instanceof EntityDamageByEntityEvent) {
                     $damager = $damageCause->getDamager();
-                    if ($damager instanceof Player) {
+                    if($damager instanceof Player) {
                         $player->getXpManager()->addXpLevels($damager, $xp);
                     }
                 }
             }
         }
     }
+    
     public function getMain() : Main {
         return $this->main;
     }

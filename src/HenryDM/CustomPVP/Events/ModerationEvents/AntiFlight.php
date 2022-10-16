@@ -15,7 +15,7 @@ class AntiFlight implements Listener {
         $this->main = $main;
     }
 
-    public function onDamage(EntityDamageEvent $event) : void {
+    public function onDamage(EntityDamageEvent $event) {
 
 # ===============================================        
         $entity = $event->getEntity();
@@ -23,13 +23,13 @@ class AntiFlight implements Listener {
         $worldName = $world->getFolderName();
 # ===============================================
 
-        if ($this->getMain()->cfg->getNested("anti-flight") === true) {
-            if (in_array($worldName, $this->getMain()->cfg->getNested("antiflight-worlds", []))) {
-                if ($event instanceof EntityDamageByEntityEvent) {
+        if($this->main->cfg->get("anti-flight") === true) {
+            if(in_array($worldName, $this->main->cfg->get("anti-flight-worlds", []))) {
+                if($event instanceof EntityDamageByEntityEvent) {
                     $damager = $event->getDamager();
-                    if (!$damager instanceof Player) return;
-                    if ($damager->isCreative()) return;
-                    if ($damager->getAllowFlight() === true) {
+                    if(!$damager instanceof Player) return;
+                    if($damager->isCreative()) return;
+                    if($damager->getAllowFlight() === true) {
                         $damager->setFlying(false);
                         $damager->setAllowFlight(false);
                     }

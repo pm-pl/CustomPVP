@@ -6,7 +6,6 @@ namespace HenryDM\CustomPVP\Events\DeathEvents;
 
 use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
-use function str_replace;
 
 use pocketmine\player\Player;
 use pocketmine\event\entity\EntityDamageEvent;
@@ -20,21 +19,21 @@ class DeathMessage implements Listener {
         $this->main = $main;
     }
 
-    public function onDeath(PlayerDeathEvent $event) : void {
+    public function onDeath(PlayerDeathEvent $event) {
 
 # ========================================            
         $player = $event->getPlayer();
         $cause = $player->getLastDamageCause();
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
+        $message = str_replace(["{victim}", "{killer}"], [$event->getPlayer()->getName(), $damager->getName()], $this->main->cfg->get("death-message-alert"));
 # ========================================
 
-        if ($this->getMain()->cfg->getNested("death-message") === true) {
-            if ($cause->getCause() == EntityDamageEvent::CAUSE_ENTITY_ATTACK) {
-                if ($cause instanceof EntityDamageByEntityEvent) {
+        if($this->main->cfg->get("death-message") === true) {
+            if($cause->getCause() === EntityDamageEvent::CAUSE_ENTITY_ATTACK) {
+                if($cause instanceof EntityDamageByEntityEvent) {
                     $damager = $cause->getDamager();
                     if ($damager instanceof Player) {
-                        $message = str_replace(["{victim}", "{killer}"], [$event->getPlayer()->getName(), $damager->getName()], $this->getMain()->cfg->getNested("death-message-alert"));
                         $event->setDeathMessage($message);
                     }
                 }

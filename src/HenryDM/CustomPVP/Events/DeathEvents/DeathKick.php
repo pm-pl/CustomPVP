@@ -15,7 +15,7 @@ class DeathKick implements Listener {
         $this->main = $main;
     }
 
-    public function onDeath(PlayerDeathEvent $event) : void {
+    public function onDeath(PlayerDeathEvent $event) {
 
 # ===================================================        
         $player = $event->getPlayer();
@@ -23,12 +23,13 @@ class DeathKick implements Listener {
         $worldName = $world->getFolderName();
 # ===================================================
 
-        if($this->getMain()->cfg->getNested("death-kick") === true) {
-            if (in_array($worldName, $this->getMain()->cfg->getNested("death-kick-worlds", []))) {
-                $player->kick($this->getMain()->cfg->getNested("death-kick-message"));                
+        if($this->getMain()->cfg->get("death-kick") === true) {
+            if(in_array($worldName, $this->main->cfg->get("death-kick-worlds", []))) { 
+                $player->kick($this->main->cfg->get("death-kick-message"));                
             }
         }
     }
+    
     public function getMain() : Main {
         return $this->main;
     }

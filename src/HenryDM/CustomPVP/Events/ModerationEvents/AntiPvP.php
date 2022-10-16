@@ -15,7 +15,7 @@ class AntiPvP implements Listener {
         $this->main = $main;
     }
 
-    public function onDamage(EntityDamageEvent $event) : void {
+    public function onDamage(EntityDamageEvent $event) {
 
 # ==========================================        
         $entity = $event->getEntity(); 
@@ -23,11 +23,11 @@ class AntiPvP implements Listener {
         $worldName = $world->getFolderName();
 # ==========================================  
 
-        if($this->getMain()->cfg->getNested("anti-pvp") === true) {
-            if ($event instanceof EntityDamageByEntityEvent) {
+        if($this->main->cfg->get("anti-pvp") === true) {
+            if($event instanceof EntityDamageByEntityEvent) {
                 $damager = $event->getDamager();
-                if (!$damager instanceof Player) return;
-                if (in_array($worldName, $this->getMain()->cfg->getNested("anti-pvp-worlds", []))) {
+                if(!$damager instanceof Player) return;
+                if(in_array($worldName, $this->main->cfg->get("anti-pvp-worlds", []))) {
                     $event->cancel();        
                 }
             }

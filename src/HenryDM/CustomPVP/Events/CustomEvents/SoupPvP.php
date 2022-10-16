@@ -6,7 +6,7 @@ use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
 
 use pocketmine\event\player\PlayerItemUseEvent;
-use pocketmine\item\ItemFactory;
+use pocketmine\item\LegacyStringToItemParser;
 
 class SoupPvP implements Listener {
 
@@ -14,37 +14,37 @@ class SoupPvP implements Listener {
         $this->main = $main;
     }
 
-    public function onPlayerInteract(PlayerItemUseEvent $event) : void {
+    public function onInteract(PlayerItemUseEvent $event) {
 
 # ============================================        
         $player = $event->getPlayer();
-        $item = $event->getItem();
-	    $worldName = $event->getPlayer()->getWorld()->getDisplayName();
-	    $worlds = $this->getMain()->cfg->getNested("soup-pvp-worlds", []);
+        $hand = $player->getInventory()->getItemInHand()->getId();
+        $soup = $this->main->cfg->get("soup-pvp-id");
         $health = $player->getHealth();
         $maxhealth = $player->getMaxHealth();
+        $world = $player->getWorld();
+        $worldName = $world->getFolderName();
+        $item = LegacyStringToItemParser::getInstance()->parse($soup);
+        $message = $this->main->cfg->get("soup-pvp-consume-message");
 # ============================================
 
-        if ($this->getMain()->getConfig()->get("soup-pvp") === true) {
-            if ($player->getInventory()->getItemInHand()->getId() == $this->getMain()->cfg->getNested("soup-pvp-id")) {
-                if ($health == $maxhealth) {
-                    $event->cancel();
-                } else {
-                    if (in_array($worldName, $worlds) === true) {
-                                $player->setHealth($health + $this->getMain()->cfg->get("soup-hearts"));
-                                $player->getInventory()->removeItem(ItemFactory::getInstance()->get($item->getId(), 0, 1));
-                                if($this->getMain()->cfg->getNested("soup-consume-message") === true) {
-                                    if($this->getMain()->cfg->getNested("soup-consume-message-type-popup") === true) {
-                                        $player->sendPopup($this->getMain()->cfg->getNested("soup-message"));
-                                    } else {
-                                        $player->sendMessage($this->getMain()->cfg->getNested("soup-message"));
-                                    }
-                                }
-                            }
+        if($this->main->cfg->get("soup-pvp") === true) {
+            if($hand === $soup) {
+                if($health < $maxhealth) {
+                    if(in_array($worldName, $this->main->cfg->get("soup-pvp-worlds", []))) {
+                        $player->setHealth($health + $this->main->cfg->get("soup-pvp-hearts"));
+                        $player->getInventory()->removeItem($item->setCount(1));
+
+                        if($this->main->cfg->get("soup-pvp-message") === true) {
+                            $player->sendPopup($message);
                         }
                     }
+                } else {
+                    $event->cancel();
                 }
             }
+        }
+    }
 
     public function getMain() : Main {
         return $this->main;

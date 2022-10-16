@@ -20,23 +20,23 @@ class KillMoney implements Listener {
         $this->main = $main;
     }
 
-    public function onDeath(PlayerDeathEvent $event) : void {
+    public function onDeath(PlayerDeathEvent $event) {
 
 # =================================================================        
         $player = $event->getPlayer();
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
         $damageCause = $player->getLastDamageCause();
-        $amount = $this->getMain()->cfg->getNested("money-value");
+        $amount = $this->main->cfg->get("kill-money-value");
 # =================================================================
 
-        if ($this->getMain()->cfg->getNested("kill-money") === true) {
-            if (in_array($worldName, $this->getMain()->cfg->getNested("kill-money-worlds", []))) {
-                if ($damageCause instanceof EntityDamageByEntityEvent) {
+        if($this->main->cfg->get("kill-money") === true) {
+            if(in_array($worldName, $this->main->cfg->get("kill-money-worlds", []))) {
+                if($damageCause instanceof EntityDamageByEntityEvent) {
                     $damager = $damageCause->getDamager();
-                    if ($damager instanceof Player) {
+                    if($damager instanceof Player) {
                         libEco::addMoney($damager, $amount);
-                        if ($this->getMain()->cfg->getNested("reduce-money") === true) {
+                        if($this->main->cfg->get("kill-reduce-money") === true) {
                             libEco::reduceMoney($player, $amount, static function (bool $success): void {
                             });
                         }

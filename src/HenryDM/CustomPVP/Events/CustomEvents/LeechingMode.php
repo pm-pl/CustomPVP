@@ -2,13 +2,11 @@
 
 namespace HenryDM\CustomPVP\Events\CustomEvents;
 
+use HenryDM\CustomPVP\Main;
 use pocketmine\event\Listener;
 
 use pocketmine\player\Player;
-
 use pocketmine\event\entity\EntityDamageByEntityEvent;
-
-use HenryDM\CustomPVP\Main;
 
 class LeechingMode implements Listener {
 
@@ -16,14 +14,18 @@ class LeechingMode implements Listener {
         $this->main = $main;
     }
 
-    public function onDamage(EntityDamageByEntityEvent $event) : void {
+    public function onDamage(EntityDamageByEntityEvent $event) {
+
+# ================================================        
         $entity = $event->getEntity();
         $world = $entity->getWorld();
         $worldName = $world->getFolderName();
-        if ($this->getMain()->getMainConfig()->getNested("leeching-mode", true)) {          
-            if ($entity instanceof Player) {
-                if (in_array($world->getFolderName(), $this->getMain()->getMainConfig()->getNested("leeching-worlds", []))) {
-                    $entity->setHealth($entity->getHealth() + $this->getMain()->getMainConfig()->getNested("leeching-level"));
+# ================================================
+
+        if($this->main->cfg->get("leeching-mode") === true) {          
+            if($entity instanceof Player) {
+                if(in_array($worldName, $this->main->cfg->get("leeching-mode-worlds", []))) {
+                    $entity->setHealth($entity->getHealth() + $this->main->cfg->get("leeching-mode-level"));
                 }
             }
         }

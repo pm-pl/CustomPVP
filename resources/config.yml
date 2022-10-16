@@ -12,13 +12,6 @@
 # 8. Thanks for everything! - By Henry Thierry [HenryDM]
 
 # ===================
-#   Plugin Version
-# ===================
-# 1º Only for internal use!
-
-config-version: "4.0.0"
-
-# ===================
 #   Attack Cooldown
 # ===================
 # 1º This addon modify player attack cooldown!
@@ -55,8 +48,8 @@ pvp-knockback-worlds: ["KnockbackArena", "KnockbackWorld"]
 # 4º Leeching-level = hearts
 
 leeching-mode: false
-leeching-level: 5
-pvp-knockback-worlds: ["LeechingArena", "LeechingWorld"]
+leeching-mode-level: 5
+leeching-mode-worlds: ["LeechingArena", "LeechingWorld"]
 
 # ===================
 #      Soup PvP
@@ -68,11 +61,10 @@ pvp-knockback-worlds: ["LeechingArena", "LeechingWorld"]
 # 5º "soup-id" = Mushroom Stew (282), you can use too Beetroot Soup id (436)
 
 soup-pvp: false
-soup-hearts: 3
-soup-id: 282
-soup-consume-message: false
-soup-message-type-popup: false
-soup-message: "§a+3 hearts"
+soup-pvp-hearts: 3
+soup-pvp-id: 282
+soup-pvp-message: false
+soup-pvp-consume-message: "§a+3 hearts"
 soup-pvp-worlds: ["SoupArena", "SoupWorld"]
 
 # ===================
@@ -82,22 +74,7 @@ soup-pvp-worlds: ["SoupArena", "SoupWorld"]
 # 2º "death-clear-modes" = all or armor
 
 death-clear: false
-death-clear-mode: "all"
 death-clear-worlds: ["ClearArena", "ClearWorld"]
-
-# ===================
-#    Death Effects
-# ===================
-# 1º This addon add effects to player on death
-
-death-effects: false 
-effect-worlds: ["EffectArnea", "EffectWorld"]
-
-effect:
-  id: 1 # Add effect id here
-  duration: 30 # Add effect duration here
-  level: 1 # Add effect level here
-  particles: false # Set to true to show particles effects
 
 # ===================
 #     Death Kick
@@ -120,17 +97,6 @@ death-message: false
 death-message-alert: "§c{victim} has be killed by {killer}"
 
 # ===================
-#     Kill Money
-# ===================
-# 1º This addon add a popular kill money event!
-# 2º If "reduce-money" is active when player dies he will lose money!
-
-kill-money: false
-reduce-money: false
-money-value: 10 
-kill-money-worlds: ["MoneyArena", "MoneyWorld"]
-
-# ===================
 #     Kill EXP
 # ===================
 # 1º This addon add exp to player when kill another!
@@ -141,12 +107,23 @@ kill-exp-level: 2
 kill-exp-worlds: ["ExpArena", "ExpWorld"]
 
 # ===================
+#     Kill Money
+# ===================
+# 1º This addon add a popular kill money event!
+# 2º If "reduce-money" is active when player dies he will lose money!
+
+kill-money: false
+kill-reduce-money: false
+kill-money-value: 10 
+kill-money-worlds: ["MoneyArena", "MoneyWorld"]
+
+# ===================
 #    Kill Particles
 # ===================
 # 1º This addon add a particle when player dies!
 # 2º Only define to true one particle!
 
-kill-particle: false
+kill-particles: false
 kill-particles-worlds: ["ParticleArena", "ParticleWorld"]
 
 critical-particle: true
@@ -157,23 +134,6 @@ lava-particle: false
 portal-particle: false
 redstone-particle: false
 snow-particle: false
-
-# ===================
-#     Kill Reward
-# ===================
-# 1º This addon add a reward when player kill another!
-# 2º Invalid item id cause plugin error!
-
-kill-rewards: false
-kill-rewards-worlds: ["RewardArena", "RewardWorld"]
-
-rewards-items:
-
-  - slots: 0 # Item slot
-    id: 265 # Item ID
-    damage: 0 # Item damage
-    count: 1 # Item value
-    name: KillReward # Item name
 
 # ===================
 #     Kill Sound
@@ -201,15 +161,4 @@ anti-flight-worlds: ["AntiFlightArena", "AntiFlightWorld"]
 
 anti-pvp: false
 anti-pvp-worlds: ["AntiPvPArena", "AntiPvPWorld"]
-
-# ===================
-#     Ping Kick
-# ===================
-# 1º This addon kick player from the server if their ping is >= "ping-kick-max-ping"
-# 2º You can use minecraft color codes in "ping-kick-message"
-
-ping-kick: false
-ping-kick-max-ping: 120
-ping-kick-message: "§eYour ping has exceeded 120ms"
-ping-kick-worlds: ["PingKickArena", "PingKickWorld"]
 ...
