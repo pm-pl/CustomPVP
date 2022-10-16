@@ -12,7 +12,6 @@ use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\player\PlayerDeathEvent;
 
-
 class DeathMessage implements Listener {
 
     public function __construct(private Main $main) {
@@ -21,19 +20,19 @@ class DeathMessage implements Listener {
 
     public function onDeath(PlayerDeathEvent $event) {
 
-# ========================================            
+# ===============================================            
         $player = $event->getPlayer();
         $cause = $player->getLastDamageCause();
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
-# ========================================
+# ================================================
 
         if($this->main->cfg->get("death-message") === true) {
             if($cause->getCause() === EntityDamageEvent::CAUSE_ENTITY_ATTACK) {
                 if($cause instanceof EntityDamageByEntityEvent) {
                     $damager = $cause->getDamager();
-                    $message = str_replace(["{victim}", "{killer}"], [$event->getPlayer()->getName(), $damager->getName()], $this->main->cfg->get("death-message-alert"));
-                    if ($damager instanceof Player) {
+                    if($damager instanceof Player) {
+                        $message = str_replace(["{victim}", "{killer}"], [$event->getPlayer()->getName(), $damager->getName()], $this->main->cfg->get("death-message-alert"));
                         $event->setDeathMessage($message);
                     }
                 }

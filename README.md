@@ -1,66 +1,65 @@
-## 📟 • Plugin Status
+## ⚔ • Custom PVP
 
-| **Date** | **Version** | **API** |
-| --- | --- | --- | 
-| **17/08/2022** | **1.0.0** | **4.7.1** |
-| **22/08/2022** | **2.0.0** | **4.7.1** |
-| **29/08/2022** | **3.0.0** | **4.7.1** |
-| **24/09/2022** | **4.0.0** | **4.9.0** |
+| Version | Status | Date | 
+| --- | --- | --- |
+| 1.0.0 | Beta-dev | 17/08/2022 |
+| 2.0.0 | Beta-dev | 22/08/2022 |
+| 3.0.0 | Beta-dev | 29/08/2022 |
+| 4.0.0 | stable-dev | 16/10/2022 |
 
-[releases]: https://github.com/Henry12960/CustomPVP/releases/latest
-[releasesImg]: https://img.shields.io/github/v/release/Henry12960/CustomPVP.svg?color=green&include_prereleases&label=RELEASE&style=for-the-badge
-[license]: https://github.com/Henry12960/CustomPVP/blob/master/LICENSE
-[licenseImg]: https://img.shields.io/github/license/Henry12960/CustomPVP.svg?color=purple&style=for-the-badge
-[issues]: https://img.shields.io/github/issues/Henry12960/CustomPVP.svg?color=blue&style=for-the-badge
-[phpversion]: https://img.shields.io/badge/PHP-8.0%2B-red?style=for-the-badge
-[issueslink]: https://github.com/David-pm-pl/EpicCustomAlerts/issues
 
-[![releasesImg]][releases] [![licenseImg]][license] ![phpversion] [![issues]][issueslink] 
+---
 
- • I finished this project here, thanks for everything guys!
+## 📫 • General:
+
+ - Plugin Introduction: 
+
+   > This is an advanced plugin to manage pvp on your minecraft bedrock server, this plugin is public and the best for this area, with this plugin you can enjoy great original and even improved features for the latest api, hope you like it!
+
+ - Change Logs:
+
+   > After several tests the ```ping kick```, ```kill rewards``` and ```Death Effects``` were removed due to instability that directly affected other plugins!
+
+   > Activating all addons can cause severe errors already confirmed in tests, I suggest not doing this and also not activating multiple addons for the same world!
+
+---
+
+## 🔰 • Features 
  
+```
+⏰ • Custom PvP Attack Cooldown
+💖 • Restore Health After Kill [Featured]
+🔰 • Custom PvP Knocback
+🚀 • Original Leeching Mode 
+🥣 • Advanced Soup PvP [Featured]
+🔮 • Simple Death Clear
+📛 • Custom Death Kick
+💬 • Simple Death Message [Featured]
+⭐ • Custom Kill EXP
+💰 • Better Kill Money [Featured]
+🎇 • Simple Kill Particles 
+🎵 • Custom Kill Sound
+🪂 • Better Anti Flight
+🛑 • Best Anti PvP
+```
+    
 ---
-## ⭐ • Plugin Features
 
-| **Feature** | **Version** | **Beta** | **Emoji** | 
-| --- | --- | --- | --- | 
-| **Attack Cooldown** | **1.0-stable** | **No** | ✈ | 
-| **Health Restore** | **1.0-stable** | **No** | ❤ |
-| **PvP Knockback** | **1.3-stable** | **No** | 💢 |
-| **Leeching Mode** | **2.0-beta** | **Yes** | 🚀 |
-| **Soup PvP** | **1.2-stable** | **No** | 🥣 |
-| **Death Clear** | **0.1-beta** | **Yes** | 💨 |
-| **Death Effects** | **1.5-stable** | **No** | ✨ |
-| **Death Kick** | **1.0-stable** | **No** | ❌ |
-| **Death Message** | **1.2-stable** | **No** | 💬 |
-| **Kill EXP** | **0.2-beta** | **Yes** | 🔮 |
-| **Kill Money** | **1.2-stable** | **No** | 💰 |
-| **Kill Particles** | **2.0-stable** | **No** | 🎇 |
-| **Kill Rewards** | **1.4-stable** | **No** | 🏆 |
-| **Kill Sound** | **1.0-stable** | **No** | 🎶 |
-| **Anti Flight** | **1.1-stable** | **No** | 🪂 |
-| **Anti PvP** | **1.0-stable** | **No** | ⛔ |
-| **Ping Kick** | **1.2-stable** | **No** | 🔰 |
+## 📜 • License
 
----
-## 🎯 • Requeriments and Info's
+```
+   Copyright 2022 HenryDM
 
-> 📒 ➜ Official Plugin Wiki: https://github.com/Henry12960/CustomPVP/wiki
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
 
-> 🔮 ➜ Future Plugin Features: https://github.com/Henry12960/CustomPVP/issues/2
+       http://www.apache.org/licenses/LICENSE-2.0
 
-> 📰 ➜ Poggit: https://poggit.pmmp.io/p/CustomPVP
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
 
-> 🚨 ➜ Requeriments: **PHP 8, PocketMine-MP API 4.0**
-
-## 👥 • List of Contributors
-
-➜ Petter: https://github.com/PetterLight
-
-➜ Ihsan: https://github.com/Ihsan48
-
-➜ CaioVox: https://github.com/CaioVox
-
-➜ FernanACM: https://github.com/fernanACM
-
----
+```
