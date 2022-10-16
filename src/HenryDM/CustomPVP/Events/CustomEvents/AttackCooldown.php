@@ -21,7 +21,7 @@ class AttackCooldown implements Listener {
         $worldName = $world->getFolderName();
 # =============================================
 
-        if($this->main->cfg->get("attack-cooldown") ==== true) {
+        if($this->main->cfg->get("attack-cooldown") === true) {
             if(in_array($worldName, $this->main->cfg->get("attack-cooldown-worlds", []))) {
                 $event->setAttackCooldown($event->getAttackCooldown() - $this->main->cfg->get("attack-cooldown-time"));
             }
