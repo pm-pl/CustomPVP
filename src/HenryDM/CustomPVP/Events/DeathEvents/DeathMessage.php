@@ -26,13 +26,13 @@ class DeathMessage implements Listener {
         $cause = $player->getLastDamageCause();
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
-        $message = str_replace(["{victim}", "{killer}"], [$event->getPlayer()->getName(), $damager->getName()], $this->main->cfg->get("death-message-alert"));
 # ========================================
 
         if($this->main->cfg->get("death-message") === true) {
             if($cause->getCause() === EntityDamageEvent::CAUSE_ENTITY_ATTACK) {
                 if($cause instanceof EntityDamageByEntityEvent) {
                     $damager = $cause->getDamager();
+                    $message = str_replace(["{victim}", "{killer}"], [$event->getPlayer()->getName(), $damager->getName()], $this->main->cfg->get("death-message-alert"));
                     if ($damager instanceof Player) {
                         $event->setDeathMessage($message);
                     }

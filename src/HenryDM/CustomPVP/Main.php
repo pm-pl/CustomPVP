@@ -30,6 +30,7 @@ use HenryDM\CustomPVP\Events\DeathEvents\{
 use HenryDM\CustomPVP\Events\KillEvents\{
     KillEXP,
     KillMoney,
+    KillParticles,
     KillSound
 };
 
@@ -66,8 +67,7 @@ class Main extends PluginBase implements Listener {
             KillParticles::class,
             KillSound::class,
             AntiFlight::class,
-            AntiPvP::class,
-            PingKick::class
+            AntiPvP::class
         ];
         foreach($events as $ev) {
             $this->getServer()->getPluginManager()->registerEvents(new $ev($this), $this);

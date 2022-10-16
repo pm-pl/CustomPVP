@@ -19,10 +19,10 @@ class DeathClear implements Listener {
 # ============================================      
         $player = $event->getPlayer();
         $world = $player->getWorld();
-        $worldName = $wold->getFolderName();
+        $worldName = $world->getFolderName();
 # ============================================
 
-        if($this->getMain()->getMainConfig()->getNested("death-clear") === true) {
+        if($this->main->cfg->get("death-clear") === true) {
             if(in_array($worldName, $this->main->cfg->get("death-clear-worlds", []))) {                
                 $player->getInventory()->clearAll();
                 $player->getArmorInventory()->clearAll();
